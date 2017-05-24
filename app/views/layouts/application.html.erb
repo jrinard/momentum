@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movement</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald|Passion+One|Open+Sans" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+  <body>
+      <div class="row">
+        <div class="col-sm-4 left center">
+          <br>
+          <div class="center-notice grey">
+              <%= flash[:notice] %>
+          </div>
+          <br>
+
+          <div class="home">
+            <%= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), people_path %>
+                  <%#= link_to 'Joshua Rinard', projects_path %>
+          </div>
+          <br>
+
+          <h4>Web Developer</h4>
+          <h4>Graphic Design</h4>
+          <br>
+          <h2>TECH SKILLS</h2>
+          <%= image_tag("icon1.png", :class => "icon-size")%>
+          <h5>HTML5 / CSS3</h5>
+
+          <h2>DESIGN SKILLS</h2>
+          <%= image_tag("icon2.png", :class => "icon-size")%>
+          <h5>Front-end Design</h5>
+          <h5>User Interface</h5>
+          <br>
+          <br>
+
+          <div class="contact-info">
+            <%= image_tag("icon6.png", :class => "icon-size")%><br>
+            <div class="h2-black">208-316-8338</div>
+            <div class="h4-black">jrinard2@gmail.com</div><br>
+
+            <a href="https://www.linkedin.com/in/jrinard/" target="_blank"><%= image_tag("icon-lin.png", :class => "icon-size")%></a>
+            <a href="http://www.joshrinardart.com/" target="_blank"><%= image_tag("icon-inst.png", :class => "icon-size")%></a>
+            <a href="https://github.com/jrinard" target="_blank"><%= image_tag("icon-git.png", :class => "icon-size")%></a>
+            <br>
+          </div>
+          <br>
+          <% if current_user %>
+              <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
+          <% else %>
+              <li><%= link_to "Admin", new_user_session_path %></a></li>
+          <% end %>
+        </div> <!-- Left end -->
+
+        <div class="col-sm-8 right">
+          <div class="content">
+             <%= yield %>
+          </div>
+        </div>
+      </div>
+
+  <!-- LOGIN -->
+   <% if @showlogin === true %>
+   <div class="menu">
+     <% if current_user %>
+     <%= link_to "Logout", destroy_user_session_path, method: "delete" %> |
+     <%= link_to current_user.email, edit_user_registration_path %>
+     <% else %>
+     <%= link_to "Log-in", new_user_session_path %></a>
+     <%= link_to "Signup", new_user_registration_path %></a>
+     <% end %>
+   </div> <!-- login end -->
+   <% end %>
+  </body>
+</html>
