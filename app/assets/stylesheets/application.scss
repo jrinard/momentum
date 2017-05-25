@@ -68,6 +68,15 @@ h6 {
   color: #000;
 }
 
+.h2-white {
+  color: #fff;
+  font-size: 2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .h2-black {
   color: #000;
   font-size: 2em;
@@ -127,7 +136,7 @@ h6 {
   border: none;
 }
 .nav a:active {
-  color: #feaf21;
+  color: #fff;
   font-size: 1.2em;
 
 }
@@ -136,7 +145,7 @@ h6 {
   font-size: 1.2em;
 }
 .nav a:hover {
-  color: #feaf21;
+  color: #fff;
   font-size: 1.2em;
   text-decoration: none;
   background: red;
@@ -213,7 +222,7 @@ body {
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
   // background-size: cover;
-    background-color: #111;
+    background-color: #222;
 }
 
 .bg {
@@ -510,40 +519,25 @@ input[type="image"]
 .col-sm-9 {
   padding-left: 0px
 }
-// New Flexbox
-.flex-container {
+//Flexbox two types
+.flex-container-small {
   display: flex;
   height: 300px;
   flex-direction: column;
   flex-wrap:  wrap;
 }
-
-.flex-block {
+.flex-block-small {
   width: 95%;
   margin: 0 auto;
   max-width: 525px;
 }
 
-.flex-container-events {
-  display: flex;
-  align-content: stretch;
-  justify-content: space-around;
-}
-
-.flex-block-events {
-  width: 100%;
-  margin: 0 auto;
-  max-width: 525px;
-}
-
 .flex-container-big {
-  background-color: #000;
   display: flex;
   height: 100%;
   justify-content: center;
 }
 .flex-block-big {
-  background-color: #fff;
   width: 100%;
   padding: 10px;
   margin: 0 auto;
@@ -552,11 +546,11 @@ input[type="image"]
 .left-column {
   background-color: #333;
   padding-bottom: 150px;
+  border-right: solid 2px #000;
 }
 
 .right-column {
   height: 100%;
-  background-color: #fff;
 }
 
 //////////////////////// Topbar
@@ -565,7 +559,7 @@ input[type="image"]
   background-color: #333;
   width: 100%;
   height: 70px;
-  border-bottom: 2px solid #000;
+  border-bottom: 3px solid #000;
 }
 
 .login {
