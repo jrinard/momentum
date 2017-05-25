@@ -82,7 +82,6 @@ h6 {
   font-size: 1.5em;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 1.5px;
-  padding-right: 10px;
   vertical-align: middle;
 }
 
@@ -121,33 +120,71 @@ h6 {
   letter-spacing: 1px;
 }
 
-.home a:link {
+
+//NAVIGATION LINKS
+.nav {
+  width: 100%;
+  border: none;
+}
+.nav a:active {
+  color: #feaf21;
+  font-size: 1.2em;
+
+}
+.nav a:visited {
   color: #fff;
-  font-size: 2.5em;
-  font-family: 'Bangers', cursive;
-  letter-spacing: 1px;
+  font-size: 1.2em;
+}
+.nav a:hover {
+  color: #feaf21;
+  font-size: 1.2em;
+  text-decoration: none;
+  background: red;
+
+}
+.nav a:link {
+ color: #fff;
+ font-size: 1.2em;
+ max-width: 100%;
+ margin: auto;
+ margin: 0;
+}
+.nav > li > a:hover {
+    background-color: #111;
 }
 
-.home a:hover {
-  color: #fff;
-  font-size: 2.5em;
-  font-family: 'Bangers', cursive;
-  letter-spacing: 1px;
-}
 
-.home a:visited {
+// LOGO BOX
+.logo a:link {
   color: #fff;
   font-size: 2.5em;
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
 }
-.home a:active {
+.logo a:hover {
+  color: #fff;
+  font-size: 2.5em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+}
+.logo a:visited {
+  color: #fff;
+  font-size: 2.5em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1px;
+}
+.logo a:active {
   color: #f3f3f3;
   font-size: 2.5em;
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
 }
+.header-box {
+  background-color: #feaf21;
+  padding: 10px 0px;
+}
 
+//
 
 .h4-dark {
   color: #000;
@@ -169,15 +206,14 @@ h6 {
 }
 
 body {
-  margin-right: -10px;
-  background-color: #d2d2d2;
+
   // background: linear-gradient(to bottom, #413f7a , #1680b1);
   min-height: 100%;
   // background: url("/assets/bg.jpg") no-repeat center center fixed;
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
   // background-size: cover;
-    background-color: #333;
+    background-color: #111;
 }
 
 .bg {
@@ -202,28 +238,6 @@ body {
   margin-right: 0;
 }
 
-//TOP NAVIGATION
-.navbar a:link {
-  color: #000;
-  font-size: 1em;
-  text-decoration: none;
-}
-.navbar a:hover {
-  color: #000;
-  background-color: #000;
-  font-size: 1em;
-  text-decoration: none;
-}
-.navbar a:visited {
-  color: #000;
-  font-size: 1em;
-  text-decoration: none;
-}
-.navbar a:active {
-  color: #000;
-  font-size: 1em;
-  text-decoration: none;
-}
 
 .menu {
   background-color: #d2d2d2;
@@ -236,11 +250,6 @@ body {
 
 }
 
-.logo {
-  padding: 5px;
-  margin-left: 0px;
-  margin:auto;
-}
 
 .shiftR {
   margin-left: 10px;
@@ -261,7 +270,7 @@ body {
   bottom: 0;
   background: rgb(255, 255, 255); /* Fall-back for browsers that don'tsupport rgba */
   background: rgba(255, 255, 255, .8);
-  padding-right: 20px;
+
 }
 .btn {
   margin: 0 auto;
@@ -547,14 +556,6 @@ input[type="image"]
   background-color: #fff;
 }
 
-.contact-info {
-  background-color: #d2d2d2;
-  padding: 10px;
-  margin-right: -15px;
-  min-height: 100px;
-  border-top: #fff solid 2px;
-  border-bottom: #000 solid 2px;
-}
 
 .content {
   width: 90%;
@@ -577,14 +578,8 @@ input[type="image"]
   margin-bottom: 10px;
 }
 
-.image-size {
-    max-height: 300px;
-}
+
 
 .icon-size {
   max-width: 50px;
 }
-
-.details{
-       display:none;
-    }
