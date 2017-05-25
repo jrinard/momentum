@@ -121,7 +121,7 @@ h6 {
 }
 
 
-//NAVIGATION LINKS
+////////////////////NAVIGATION LINKS
 .nav {
   width: 100%;
   border: none;
@@ -154,7 +154,7 @@ h6 {
 }
 
 
-// LOGO BOX
+//////////////////// Logo Box
 .logo a:link {
   color: #fff;
   font-size: 2.5em;
@@ -498,12 +498,18 @@ input[type="image"]
   font-size: 1.2em;
 }
 
+
+
+//////////////////// Structure
 .col-xs-12 {
   padding: 5px 15px 5px 5px;
 }
-
-
-
+.col-sm-3 {
+  padding-right: 0px
+}
+.col-sm-9 {
+  padding-left: 0px
+}
 // New Flexbox
 .flex-container {
   display: flex;
@@ -513,7 +519,6 @@ input[type="image"]
 }
 
 .flex-block {
-  // background-color: #000;
   width: 95%;
   margin: 0 auto;
   max-width: 525px;
@@ -531,8 +536,6 @@ input[type="image"]
   max-width: 525px;
 }
 
-
-
 .flex-container-big {
   background-color: #000;
   display: flex;
@@ -546,20 +549,56 @@ input[type="image"]
   margin: 0 auto;
 }
 
-.left {
+.left-column {
   background-color: #333;
   padding-bottom: 150px;
 }
 
-.right {
+.right-column {
   height: 100%;
   background-color: #fff;
 }
 
+//////////////////////// Topbar
 
-.content {
-  width: 90%;
+.topbar {
+  background-color: #333;
+  width: 100%;
+  height: 70px;
+  border-bottom: 2px solid #000;
 }
+
+.login {
+  margin-right: 20px;
+  margin-top: 12px;
+}
+
+.topbar a:active {
+  color: #feaf21;
+  font-size: 1em;
+}
+.topbar a:visited {
+  color: #999;
+  font-size: 1em;
+}
+.topbar a:hover {
+  color: #feaf21;
+  font-size: 1em;
+  text-decoration: none;
+}
+.topbar a:link {
+ color: #999;
+ font-size: 1em;
+ max-width: 100%;
+ margin: auto;
+ margin: 0;
+}
+.topbar > .login > li > a:hover {
+
+}
+
+
+////
 
 .profile {
   max-width: 600px;

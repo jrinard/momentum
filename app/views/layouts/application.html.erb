@@ -9,7 +9,7 @@
 </head>
   <body>
       <div class="row">
-        <div class="col-sm-3 left center">
+        <div class="col-sm-3 left-column center">
 
           <div class="logo header-box">
             <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), people_path %>
@@ -39,19 +39,23 @@
             <h5>Needs/Announcements</h5>
             <h5>Report Bug</h5>
 
-            <%#= image_tag("icon1.png", :class => "icon-size")%>
-
-
-          <br>
-          <% if current_user %>
-              <li><%= link_to current_user.email, edit_user_registration_path %><li>
-              <li><%= link_to "Log-out", destroy_user_session_path, method: "delete" %></li>
-          <% else %>
-              <li><%= link_to "Admin", new_user_session_path %></a></li>
-          <% end %>
         </div> <!-- Left end -->
 
-        <div class="col-sm-9 right">
+        <div class="col-sm-9 right-column">
+          <div class="topbar">
+            <div class="login pull-right">
+            <% if current_user %>
+                <li><%= link_to current_user.email, edit_user_registration_path %> |
+                <%= link_to "Log-out", destroy_user_session_path, method: "delete" %>
+              <%= image_tag("icon1.png", :class => "icon-size")%></li>
+            <% else %>
+                <li><%= link_to "Login", new_user_session_path %></a>
+                <%= image_tag("icon1.png", :class => "icon-size")%></li>
+            <% end %>
+
+            </div>
+          </div>
+
           <div class="content">
              <%= yield %>
           </div>
