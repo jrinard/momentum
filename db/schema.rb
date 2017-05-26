@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525230232) do
+ActiveRecord::Schema.define(version: 20170526163618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(version: 20170525230232) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "units", force: :cascade do |t|
+    t.string  "familyName"
+    t.string  "street"
+    t.string  "city"
+    t.string  "state"
+    t.integer "zip"
+    t.string  "country"
+    t.string  "phonePrimary"
+    t.string  "phoneSecondary"
+    t.string  "emailPrimary"
+    t.string  "emailSecondary"
+    t.string  "notes"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -42,16 +56,7 @@ ActiveRecord::Schema.define(version: 20170525230232) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "street"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.string   "country"
-    t.string   "phonePrimary"
-    t.string   "phoneSecondary"
-    t.string   "emailPrimary"
-    t.string   "emailSecondary"
-    t.string   "notes"
+    t.integer  "family_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

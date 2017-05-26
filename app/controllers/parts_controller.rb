@@ -13,7 +13,7 @@ class PartsController < ApplicationController
 
   def new
     # @user = User.find(params[:user_id])
-    @part = Part.new
+    @part = Part.new(:birthdate => "2000-01-01".to_date)
   end
 
   def create
@@ -45,11 +45,12 @@ class PartsController < ApplicationController
 
   def destroy
     @part = Part.find(params[:id])
-    @part.destroy
-    flash[:notice] = "Outfit has been deleted!"
-    redirect_to root_path
+    if @part.destroy
+      flash[:notice] = "Outfit has been deleted!"
+      redirect_to parts_path
     else
-      render :edit
+      redirect_to parts_path
+  end
 end
 
 

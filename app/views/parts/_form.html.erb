@@ -2,16 +2,36 @@
   <div class="well">
     <%= form_for [@part] do |f| %>
     <div class="field">
+    <%= f.text_field :title, :placeholder => 'Title', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
     <%= f.text_field :firstName, :placeholder => 'First Name', :class => 'form-control input-lg' %>
     </div>
     <div class="field">
     <%= f.text_field :lastName, :placeholder => 'Last Name', :class => 'form-control input-lg' %>
     </div>
     <div class="field">
-      <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.text_field :allergies, :placeholder => 'Allergies', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :parent, :placeholder => 'Parent', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+      <label>Birthdate</label>
+    <%= f.date_select :birthdate, :start_year=>1940,:end_year=>2030, :placeholder => 'birthdate', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_area :notes, :placeholder => 'notes', :class => 'form-control input-lg' %>
     </div>
 
-      <div class="field center">
+
+<!-- Select Box -->
+    <%#= f.select :backCheck, options_for_select([[''], ['True']], :selected => :backCheck) %>
+
+    <div class="field">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+    <div class="field center">
       <%= f.submit "Save", :class => "btn-lg btn-primary"%>
     </div>
   <% end %>

@@ -11,18 +11,19 @@
 
 
               <div class="well">
-                <span class = "solid" ><%= p1.firstName %> </span>
-                <span class = "solid" ><%= p1.lastName %></span>
+                <span class = "NA" ><%= p1.firstName %> </span>
+                <span class = "NA" ><%= p1.lastName %></span>
+                <span class = "NA" ><%= p1.backCheck %></span>
+                  <%#= link_to "Edit", edit_part_path(p1), :class => "btn-sm btn-warning" %>
+                <%= link_to "Edit", part_path(p1), :class => "btn-sm btn-warning pull-right" %>
 
-                <%= link_to "Edit", edit_part_path(p1), :class => "btn-sm btn-warning" %>
-                  <%= link_to "Delete", part_path(@part), :class => "btn-sm btn-danger",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
 
               </div><!-- well end -->
 
 
               <% end %>
             <% else %>
-                <h3>No part</h3>
+                <h3 class="h2-white pull-left">No People</h3>
 
             <% end %>
 
