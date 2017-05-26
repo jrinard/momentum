@@ -1,0 +1,49 @@
+
+  <div class="well">
+    <%= form_for [@unit] do |f| %>
+    <div class="field">
+    <%= f.text_field :familyName, :placeholder => 'Family Name', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :street, :placeholder => 'Street', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :city, :placeholder => 'City', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :state, :placeholder => 'State', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :zip, :placeholder => 'Zip', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :country, :placeholder => 'Country', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :phonePrimary, :placeholder => 'Primary Phone', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :phoneSecondary, :placeholder => 'Secondary Phone', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :emailPrimary, :placeholder => 'Primary Email', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :emailSecondary, :placeholder => 'Secondary Email', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_area :notes, :placeholder => 'notes', :class => 'form-control input-lg' %>
+    </div>
+
+
+<!-- Select Box -->
+    <%#= f.select :backCheck, options_for_select([[''], ['True']], :selected => :backCheck) %>
+
+    <div class="field">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+    <div class="field center">
+      <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+    </div>
+  <% end %>
+</div>
