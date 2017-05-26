@@ -13,6 +13,8 @@ class CreateUnits < ActiveRecord::Migration[5.0]
       t.string :emailSecondary
       t.string :notes
       t.integer :user_id
+
+      t.timestamps
     end
   end
 end

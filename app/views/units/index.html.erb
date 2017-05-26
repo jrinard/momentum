@@ -6,17 +6,18 @@
 
       <br>
       <br>
+    <h4>Sort By: <%= link_to "Updated Recently", :sort_by => "updated_at desc" %> | <%= link_to "Create Date", :sort_by => "created_at" %></h4>
+
       <% if @unit.any? %>
           <% @unit.each do |p1| %>
 
 
-              <div class="well">
-                <span class = "NA" ><%= p1.familyName %> </span>
-                  <%#= link_to "Edit", edit_unit_path(p1), :class => "btn-sm btn-warning" %>
-                <%= link_to "Edit", unit_path(p1), :class => "btn-sm btn-warning pull-right" %>
 
 
-              </div><!-- well end -->
+                <%= link_to "#{p1.familyName}", unit_path(p1), :class => "family-card btn" %><br>
+
+
+
 
 
               <% end %>

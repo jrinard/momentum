@@ -2,9 +2,21 @@ class UnitsController < ApplicationController
 
   def index
     @user = current_user
-    # @users = User.all
-    @unit = Unit.all
-    # @unit = @user.unit.order(id: :desc)
+    @unit = Unit.order(updated_at: :desc)
+  if (params[:sort_by])
+    @unit = Unit.order(params[:sort_by])
+  end
+
+
+  # familyName: :asc
+
+    # @results = Work.basic_search(params[:search])
+
+    # if (params[:order] == 'rank')
+    #   @array.sort_by!(&:asc)
+    # end
+
+
   end
 
   def show

@@ -32,18 +32,20 @@ ActiveRecord::Schema.define(version: 20170526163618) do
   end
 
   create_table "units", force: :cascade do |t|
-    t.string  "familyName"
-    t.string  "street"
-    t.string  "city"
-    t.string  "state"
-    t.integer "zip"
-    t.string  "country"
-    t.string  "phonePrimary"
-    t.string  "phoneSecondary"
-    t.string  "emailPrimary"
-    t.string  "emailSecondary"
-    t.string  "notes"
-    t.integer "user_id"
+    t.string   "familyName"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "country"
+    t.string   "phonePrimary"
+    t.string   "phoneSecondary"
+    t.string   "emailPrimary"
+    t.string   "emailSecondary"
+    t.string   "notes"
+    t.integer  "user_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
