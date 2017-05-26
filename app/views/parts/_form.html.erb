@@ -1,0 +1,18 @@
+
+  <div class="well">
+    <%= form_for [@part] do |f| %>
+    <div class="field">
+    <%= f.text_field :firstName, :placeholder => 'First Name', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :lastName, :placeholder => 'Last Name', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+
+      <div class="field center">
+      <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+    </div>
+  <% end %>
+</div>

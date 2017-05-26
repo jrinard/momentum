@@ -12,14 +12,14 @@
         <div class="col-sm-3 left-column center">
 
           <div class="logo header-box">
-            <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), people_path %>
-            <%= link_to 'Momentum', people_path %>
+            <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), parts_path %>
+            <%= link_to 'Momentum', root_path %>
           </div>
           <div class="center-notice grey"><%= flash[:notice] %></div>
 
           <nav class="nav">
             <li><%= link_to "Home", root_path, :class => 'notWorking' %></li>
-            <li><%= link_to "People", root_path, :class => 'notWorking' %></li>
+            <li><%= link_to "People", parts_path, :class => 'notWorking' %></li>
 
             <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
 
@@ -45,7 +45,9 @@
           <div class="topbar">
             <div class="login pull-right">
             <% if current_user %>
-                <li><%= link_to current_user.email, edit_user_registration_path %> |
+
+                <li><span class="solid"><%= current_user.id %>
+                  <%= link_to current_user.email, edit_user_registration_path %> |
                 <%= link_to "Log-out", destroy_user_session_path, method: "delete" %>
               <%= image_tag("icon1.png", :class => "icon-size")%></li>
             <% else %>

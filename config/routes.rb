@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root :to => 'home#index'
   # resources :about, :only => [:index]
   # resources :home
-  resources :people
+  resources :parts
 
 end
