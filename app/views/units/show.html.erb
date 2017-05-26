@@ -2,6 +2,10 @@
 <div class="flex-container-big">
   <div class="flex-block-big">
 
+    <div class="row">
+      <div class="col-sm-5">
+
+
 
     <div class="h2-white pull-left">Unit - Family - Show</div><br>
 
@@ -9,41 +13,71 @@
 
     <br><br>
 
-    <%= render "form" %>
 
+<!-- Old showdetail -->
+  <%#= link_to "Edit Family", :class => "edit_family", :showdetail => "showdetail" %>
+  <%# if @showdetail === true %>
+    <%#= render "form" %>
+  <%# end %>
+
+  <div class="h2-white pull-left"><%= @unit.familyName %></div><br><br>
 
     <!-- PEOPLE -->
-    <div class="well">
-      <span class="h4-dark">People</span>
       <div class="pull-right">
         <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-warning pull-right" %>
       </div>
 
         <% if @unit.parts.any? %>
-
           <% @unit.parts.each do |part| %>
-          <div class="flex-container-events">
-            <div class="flex-block-events">
-              <div class="btn event-text">
-                <%= part.firstName %> <%= part.lastName %>
-                <%#= link_to part.firstName, unit_part_path(@unit, part.id), :class => "btn-lg" %>
-              </div><!-- event end -->
-              <div class="blue btn">
-                <%= link_to "Edit", edit_unit_part_path(@unit, part.id), :class => "btn" %> <br>
-              </div><!-- blue end -->
-              <div class="pink btn">
-                <%= link_to "Remove", unit_part_path(@unit, part), :class => "btn", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-              </div><br><!-- pink end -->
-            </div><!-- flexbox-events  end -->
-          </div><!-- flex-events container  end -->
-          <hr>
+              <span class="btn well">
+                <%= link_to "#{part.firstName}", edit_unit_part_path(@unit, part.id), :class => "" %>
+                <%= link_to "X", unit_part_path(@unit, part), :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+              </span><br><br>
           <% end %>
           <% else %><br><br>
           <p> No People in this family yet</p>
         <% end %>
-    </div>
 
 
 
+    <p><%= @unit.street %></p>
+    <p><%= @unit.city %></p>
+    <p><%= @unit.state %></p>
+    <p><%= @unit.zip %></p>
+    <p><%= @unit.country %></p>
+    <p><%= @unit.phonePrimary %></p>
+    <p><%= @unit.phoneSecondary %></p>
+    <p><%= @unit.emailPrimary %></p>
+    <p><%= @unit.emailSecondary %></p>
+    <p><%= @unit.notes %></p>
+    <br><br>
+
+
+  <!-- Javascript form toggle -->
+  <div class="edit_family btn btn-sm btn-warning">Edit Family</div>
+   <div class="edit_f">
+     <%= render "form" %>
+   </div>
+
+</div> <!-- col end -->
+<div class="col-sm-4">
+  <% if @unit.parts.any? %>
+    <% @unit.parts.each do |part| %>
+        <div class="people-text">
+          <%= part.title %>
+          <%= part.firstName %>
+          <%= part.lastName %><br>
+          <%= part.allergies %><br>
+          <%= part.parent %><br>
+          <%= part.birthdate %><br>
+          <%= part.notes %>
+        </div><br><br>
+    <% end %>
+    <% else %><br><br>
+    <p> No People in this family yet</p>
+  <% end %>
+
+</div> <!-- col end -->
+</div> <!--row end -->
   </div><!-- flex-block end -->
 </div><!-- flex-container end -->

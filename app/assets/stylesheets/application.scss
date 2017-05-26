@@ -30,7 +30,7 @@ li {
 }
 
 p {
-  color: #000;
+  color: #d2d2d2;
 }
 
 h1 {
@@ -588,8 +588,16 @@ input[type="image"]
  margin: 0;
 }
 .topbar > .login > li > a:hover {
-
 }
+
+.edit_f {
+  display:none;
+}
+
+.people-text {
+  color: #d2d2d2;
+}
+
 
 
 ////
@@ -610,7 +618,6 @@ input[type="image"]
 .panel-body {
   margin-bottom: 10px;
 }
-
 
 
 .icon-size {

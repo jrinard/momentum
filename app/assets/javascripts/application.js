@@ -24,11 +24,13 @@
 //   });
 // });
 
+
+
 //Toggle details and hide the others
-$(document).ready(function () {
-    $(".detail_button").on('click', function () {
-        var $details = $(this).next(".details");
+$(document).on('turbolinks:load', function() {
+    $(".edit_family").on('click', function () {
+        var $details = $(this).next(".edit_f");
         $details.toggle(); //toggle the current one
-        $(".details").not($details).slideUp(); //hide the others
+        $(".edit_f").not($details).slideUp(); //hide the others
     });
 });

@@ -14,7 +14,7 @@
     <%= f.text_field :allergies, :placeholder => 'Allergies', :class => 'form-control input-lg' %>
     </div>
     <div class="field">
-    <%= f.text_field :parent, :placeholder => 'Parent', :class => 'form-control input-lg' %>
+    <%= f.text_field :parent, :placeholder => 'Parent', :class => 'form-control input-lg',:value => @unit.familyName %>
     </div>
     <div class="field">
       <label>Birthdate</label>

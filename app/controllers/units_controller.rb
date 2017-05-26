@@ -8,7 +8,12 @@ class UnitsController < ApplicationController
   end
 
   def show
-     @unit = Unit.find(params[:id])
+    @unit = Unit.find(params[:id])
+
+    @showdetail = false
+    if params[:showdetail]
+      @showdetail = true
+    end
   end
 
   def new
@@ -37,7 +42,7 @@ class UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
     if @unit.update(unit_params)
       flash[:notice] = "Family updated!"
-      redirect_to units_path
+      redirect_to unit_path(@unit)
     else
       render :edit, notice: 'There was an error updating the Family. Please try again.'
     end

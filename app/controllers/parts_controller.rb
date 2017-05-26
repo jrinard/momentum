@@ -23,7 +23,7 @@ class PartsController < ApplicationController
     @part = @unit.parts.new(part_params)
     if @part.save
       flash[:notice] = "Person Saved!"
-      redirect_to units_path(@unit)
+      redirect_to unit_path(@unit)
     else
     render :new, notice: 'There was an error saving the person. Please try again.'
     end
@@ -39,7 +39,7 @@ class PartsController < ApplicationController
     @part = Part.find(params[:id])
     if @part.update(part_params)
       flash[:notice] = "Person updated!"
-      redirect_to units_path(@unit)
+      redirect_to unit_path(@unit)
     else
       render :edit, notice: 'There was an error updating the person. Please try again.'
     end
@@ -50,9 +50,9 @@ class PartsController < ApplicationController
     @part = Part.find(params[:id])
     if @part.destroy
       flash[:notice] = "Outfit has been deleted!"
-      redirect_to units_path(@unit)
+      redirect_to unit_path(@unit)
     else
-      redirect_to units_path(@unit)
+      redirect_to unit_path(@unit)
   end
 end
 
