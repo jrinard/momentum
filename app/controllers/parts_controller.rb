@@ -13,43 +13,46 @@ class PartsController < ApplicationController
 
   def new
     # @user = User.find(params[:user_id])
-    @part = Part.new(:birthdate => "2000-01-01".to_date)
+    # @part = Part.new(:birthdate => "2000-01-01".to_date)
+    @unit = Unit.find(params[:unit_id])
+    @part = @unit.parts.new(:birthdate => "2000-01-01".to_date)
   end
 
   def create
-   @user = current_user
-    @part = Part.new(part_params)
+    @unit = Unit.find(params[:unit_id])
+    @part = @unit.parts.new(part_params)
     if @part.save
       flash[:notice] = "Person Saved!"
-      redirect_to parts_path
+      redirect_to units_path(@unit)
     else
     render :new, notice: 'There was an error saving the person. Please try again.'
     end
   end
 
   def edit
-     @user = current_user
-     @part = Part.new
+     @unit = Unit.find(params[:unit_id])
      @part = Part.find(params[:id])
   end
 
   def update
+    @unit = Unit.find(params[:unit_id])
     @part = Part.find(params[:id])
     if @part.update(part_params)
       flash[:notice] = "Person updated!"
-      redirect_to parts_path
+      redirect_to units_path(@unit)
     else
       render :edit, notice: 'There was an error updating the person. Please try again.'
     end
   end
 
   def destroy
+    @unit = Unit.find(params[:unit_id])
     @part = Part.find(params[:id])
     if @part.destroy
       flash[:notice] = "Outfit has been deleted!"
-      redirect_to parts_path
+      redirect_to units_path(@unit)
     else
-      redirect_to parts_path
+      redirect_to units_path(@unit)
   end
 end
 

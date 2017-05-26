@@ -11,7 +11,7 @@ class CreateParts < ActiveRecord::Migration[5.0]
         t.string :notes
         t.boolean :member
         t.boolean :leader
-        t.integer :user_id
+        t.integer :unit_id
 
         t.timestamps
       end

@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170526163618) do
     t.string   "notes"
     t.boolean  "member"
     t.boolean  "leader"
-    t.integer  "user_id"
+    t.integer  "unit_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170526163618) do
     t.string  "emailPrimary"
     t.string  "emailSecondary"
     t.string  "notes"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,6 +1,6 @@
 
   <div class="well">
-    <%= form_for [@part] do |f| %>
+    <%= form_for [@unit, @part] do |f| %>
     <div class="field">
     <%= f.text_field :title, :placeholder => 'Title', :class => 'form-control input-lg' %>
     </div>
@@ -28,9 +28,6 @@
 <!-- Select Box -->
     <%#= f.select :backCheck, options_for_select([[''], ['True']], :selected => :backCheck) %>
 
-    <div class="field">
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-    </div>
     <div class="field center">
       <%= f.submit "Save", :class => "btn-lg btn-primary"%>
     </div>
