@@ -10,7 +10,7 @@ class Unit < ApplicationRecord
   end
 
   def self.search(search)
-  where("familyName LIKE ?", "%#{search}%") 
-end
+    where("familyName LIKE ?", "%#{search}%")
+  end
 
 end

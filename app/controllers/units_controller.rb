@@ -7,32 +7,19 @@ class UnitsController < ApplicationController
       @unit = Unit.order(params[:sort_by])
     end
 
-
-    if params[:familysearch]
-      @searchResults = if params[:familysearch]
-        # Unit.where("familyname LIKE ?", params[:term])
-        Unit.where("familyname ILIKE ?", params[:familysearch])
-
-      else
-      end
+    if params[:search]
+      @searchResults = Unit.search(params[:search])
+    else
     end
-
-    # @results = Work.basic_search(params[:search])
-
-    # if (params[:order] == 'rank')
-    #   @array.sort_by!(&:asc)
-    # end
 
   end
 
   def show
     @unit = Unit.find(params[:id])
-
     @showdetail = false
     if params[:showdetail]
       @showdetail = true
     end
-
 
   end
 
