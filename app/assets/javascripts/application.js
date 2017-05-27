@@ -34,3 +34,13 @@ $(document).on('turbolinks:load', function() {
         $(".edit_f").not($details).slideUp(); //hide the others
     });
 });
+
+//Test Flip
+$( document ).on('turbolinks:load', function() {
+$('.flip').click(function(){
+    $(this).find('.card').addClass('flipped').mouseleave(function(){
+        $(this).removeClass('flipped');
+    });
+    return true;
+});
+})

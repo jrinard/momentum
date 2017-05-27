@@ -75,7 +75,7 @@
           <% end %>
 
         </div> <!-- people-box -->
-      
+
 
         <h5>
           <% if @unit.accountOwner === current_user.email %>
@@ -91,6 +91,18 @@
          <div class="edit_f">
                    <%= render "form_accountOwner" %>
          </div>
+
+
+         <div class="flip">
+                 <div class="card">
+                     <div class="face front">
+                         <h3>Edit Account Ownership</h3>
+                     </div>
+                     <div class="face back">
+                         <%= render "form_accountOwner" %>
+                     </div>
+                 </div>
+             </div>
 
       </div> <!-- col end -->
     </div> <!--row end -->
