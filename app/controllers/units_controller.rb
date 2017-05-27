@@ -15,10 +15,6 @@ class UnitsController < ApplicationController
     # if (params[:order] == 'rank')
     #   @array.sort_by!(&:asc)
     # end
-
-
-
-
   end
 
   def show

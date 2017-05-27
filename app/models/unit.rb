@@ -9,6 +9,4 @@ class Unit < ApplicationRecord
     self.familyName = self.familyName.titleize
   end
 
-
-
 end

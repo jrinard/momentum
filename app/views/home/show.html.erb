@@ -1,11 +1,18 @@
-<h3>Search Results</h3>
-  <% if @photoSearchResults %>
-    <% @photoSearchResults.each do |p2| %>
 
-    <h1><%= p2.familyName %></h1>
-    <h1><%= p2.zip %></h1>
 
-    <% end %>
-  <% else %>
-  No results
+<!-- Not Currently Working -->
+
+  <h3>Search Results</h3>
+<% if @results %>
+  <% @results.each do |r| %>
+    <div class="col-xs-6">
+      <div class="well well-small">
+
+          <div class="title"><%= r.familyName %></div>
+
+      </div><!-- well end -->
+    </div><!-- col end -->
   <% end %>
+<% else %>
+none
+<% end %>
