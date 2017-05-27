@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 
   def show
       # Not Currently Working
-      @results = Unit.fuzzy_search(params[:familyName])
+      @results = Unit.fuzzy_search(params[:familyname])
   end
 
   def new
@@ -22,5 +22,6 @@ class HomeController < ApplicationController
   def show
 
   end
+
 
 end

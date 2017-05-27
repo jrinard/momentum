@@ -1,7 +1,7 @@
 class CreateUnits < ActiveRecord::Migration[5.0]
   def change
     create_table :units do |t|
-      t.string :familyName
+      t.string :familyname
       t.string :street
       t.string :city
       t.string :state

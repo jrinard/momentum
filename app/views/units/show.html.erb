@@ -7,9 +7,7 @@
         <div class="h2-white">Unit - Family - Show</div>
         <br><br>
 
-
-
-        <h3><%= @unit.familyName %> Family
+        <h3><%= @unit.familyname %> Family
           <div class="pull-right">
             <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-warning pull-right" %>
           </div>
@@ -51,8 +49,6 @@
 
       </div> <!-- col end -->
 
-
-
       <div class="col-sm-4">
         <div class="people-box">
           <h3>Family Members</h3>
@@ -76,20 +72,18 @@
 
         </div> <!-- people-box -->
 
-
-
-
-
-
               <div class="flip">
                 <div class="card">
                   <div class="face front">
                     <span class="h5-white">Edit Account Ownership</span>
                   </div>
                   <div class="face back">
-                    <h5>
-                        <%= @unit.accountOwner %> manages this family.
-                    </h5>
+                     <% if @unit.accountOwner === "" %>
+                     <h5>What email account manages this family?</h5>
+                     <% else %>
+                     <h5> <%= @unit.accountOwner %> manages this family.</h5>
+                     <% end %>
+
                     <%= render "form_accountOwner" %>
                   </div>
                 </div>

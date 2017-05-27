@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20170527014702) do
   end
 
   create_table "units", force: :cascade do |t|
-    t.string   "familyName"
+    t.string   "familyname"
     t.string   "street"
     t.string   "city"
     t.string   "state"

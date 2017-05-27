@@ -11,18 +11,32 @@
 
       <br>
       <br>
-    <h5 class="pull-left">Sort By: <%= link_to "Updated Recently", :sort_by => "updated_at desc" %> | <%= link_to "Create Date", :sort_by => "created_at" %></h5>
+    <h5 class="pull-left">Sort By: <%= link_to "A-Z", :sort_by => "familyname" %> | <%= link_to "Updated Recently", :sort_by => "updated_at desc" %> | <%= link_to "Create Date", :sort_by => "created_at" %></h5>
     <br>
       <% if @unit.any? %>
           <% @unit.each do |p1| %>
-              <%= link_to "#{p1.familyName}", unit_path(p1), :class => "family-card btn" %><br>
+              <%= link_to "#{p1.familyname}", unit_path(p1), :class => "family-card btn" %><br>
           <% end %>
           <% else %>
             <h3 class="h2-white pull-left">No Families Yet</h3>
           <% end %>
 
+        </div> <!-- col end -->
+          <div class="col-sm-4">
+            <div class="people-box">
+              <h3>Search for Family</h3>
+                <%= form_tag(units_path, method: :get) do %>
+                  <%= text_field_tag :familysearch %>
+                  <%= submit_tag 'Search' %>
+                <% end %><br>
 
-
+              <% if @searchResults %>
+                <% for unit in @searchResults %>
+                  <div>
+                      <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card btn" %><br>
+                  </div>
+                <% end %>
+              <% end %> <!-- of SearchResults end -->
 
 
           </div> <!-- col end -->

@@ -3,18 +3,26 @@ class UnitsController < ApplicationController
   def index
     @user = current_user
     @unit = Unit.order(updated_at: :desc)
-  if (params[:sort_by])
-    @unit = Unit.order(params[:sort_by])
-  end
+    if (params[:sort_by])
+      @unit = Unit.order(params[:sort_by])
+    end
 
 
-  # familyName: :asc
+    if params[:familysearch]
+      @searchResults = if params[:familysearch]
+        # Unit.where("familyname LIKE ?", params[:term])
+        Unit.where("familyname ILIKE ?", params[:familysearch])
+
+      else
+      end
+    end
 
     # @results = Work.basic_search(params[:search])
 
     # if (params[:order] == 'rank')
     #   @array.sort_by!(&:asc)
     # end
+
   end
 
   def show
@@ -71,7 +79,8 @@ class UnitsController < ApplicationController
 end
 
   def unit_params
-     params.require(:unit).permit(:familyName, :street, :city, :state, :zip, :country, :phonePrimary, :phoneSecondary, :emailPrimary, :emailSecondary, :notes, :accountOwner)
+     params.require(:unit).permit(:familyname, :street, :city, :state, :zip, :country, :phonePrimary, :phoneSecondary, :emailPrimary, :emailSecondary, :notes, :accountOwner, :familysearch, :peoplesearch)
   end
+
 
 end
