@@ -6,6 +6,10 @@
 // font-family: 'Bangers', cursive;
 // font-family: 'Open Sans', sans-serif;
 
+$yellow: #feaf21;
+$yellow2: #f0ad4e;
+$grey3: #333;
+
 html {
   height: 100%;
     -webkit-background-size: cover;
@@ -96,7 +100,12 @@ h6 {
   letter-spacing: 1.4px;
   text-align: center;
 }
-
+.h5-white {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: .6em;
+}
 .va {
   vertical-align: middle;
 }
@@ -629,22 +638,21 @@ input[type="image"]
   color: #feaf21;
   font-size: 1.1em;
 }
-input, textarea{
-    background-color:#666;
-    color: #FFF;
-}
+// input, textarea{
+//     background-color:#666;
+//     color: #FFF;
+// }
 
 //CARD FLIP
-
 .flip {
   -webkit-perspective: 800;
-   width: 400px;
-   height: 150px;
+  width: 300px;
+  height: 45px;
     position: relative;
-    margin: 50px auto;
+    margin: 25px auto;
 }
 .flip .card.flipped {
-  -webkit-transform: rotatex(-180deg);
+  -webkit-transform: rotatey(-180deg);
   // rotatey
 }
 .flip .card {
@@ -662,41 +670,25 @@ input, textarea{
     font-family: 'Bangers', cursive;
     font-size: 2em;
     text-align: center;
-    line-height: 100px;
+    // line-height: 10px;
+    // padding-top: 10px;
+
 }
 .flip .card .front {
   position: absolute;
   z-index: 1;
-    background: black;
+    background-color: $grey3;
     color: white;
     cursor: pointer;
+
 }
 .flip .card .back {
-  -webkit-transform: rotatex(-180deg);
+  -webkit-transform: rotatey(-180deg);
     background: blue;
     background: white;
     color: black;
     cursor: pointer;
+    width: 300px;
+    height: 80px;
+
 }
-
-
-
-
-// //
-//
-// .profile {
-//   max-width: 600px;
-//   padding: 40px 15px 15px 15px;
-// }
-//
-// .panel-custom {
-//   border: 1px solid #999;
-// }
-//
-// .panel-heading {
-//     background-color: #d2d2d2;
-// }
-//
-// .panel-body {
-//   margin-bottom: 10px;
-// }

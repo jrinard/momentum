@@ -1,11 +1,8 @@
 
 
     <%= form_for [@unit] do |f| %>
-    <div class="field">
-    <%= f.text_field :accountOwner, :placeholder => 'Account Owner Email', :class => 'form-control input-lg', :value => current_user.email %>
-    </div>
 
-    <div class="field center">
-      <%= f.submit "Save", :class => "btn btn-sm btn-primary" ,:data => {:confirm => "Important! You are about to change ownership of this account. Are you sure?",:method => "update"}%>
-    </div>
+    <%= f.text_field :accountOwner, :placeholder => 'Account Owner Email', :class => 'input-sm', :value => current_user.email %>
+    <%= f.submit "Save", :class => "btn-sm btn-primary" ,:data => {:confirm => "Important! You are about to change ownership of this account. Are you sure?",:method => "update"}%>
+
   <% end %>

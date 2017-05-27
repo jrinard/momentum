@@ -77,32 +77,23 @@
         </div> <!-- people-box -->
 
 
-        <h5>
-          <% if @unit.accountOwner === current_user.email %>
-            Your user account belongs to this Family
-            <%else %>
-            This family belongs to:
-            <%= @unit.accountOwner %>
-          <% end %> <!-- Hides Family data end -->
-        </h5>
-
-        <!-- Javascript form toggle -->
-        <div class="edit_family btn btn-sm btn-warning">Edit Account Ownership</div>
-         <div class="edit_f">
-                   <%= render "form_accountOwner" %>
-         </div>
 
 
-         <div class="flip">
-                 <div class="card">
-                     <div class="face front">
-                         <h3>Edit Account Ownership</h3>
-                     </div>
-                     <div class="face back">
-                         <%= render "form_accountOwner" %>
-                     </div>
-                 </div>
-             </div>
+
+
+              <div class="flip">
+                <div class="card">
+                  <div class="face front">
+                    <span class="h5-white">Edit Account Ownership</span>
+                  </div>
+                  <div class="face back">
+                    <h5>
+                        <%= @unit.accountOwner %> manages this family.
+                    </h5>
+                    <%= render "form_accountOwner" %>
+                  </div>
+                </div>
+              </div>
 
       </div> <!-- col end -->
     </div> <!--row end -->
