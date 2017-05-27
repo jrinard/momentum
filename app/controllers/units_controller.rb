@@ -17,6 +17,8 @@ class UnitsController < ApplicationController
     # end
 
 
+
+
   end
 
   def show
@@ -26,6 +28,8 @@ class UnitsController < ApplicationController
     if params[:showdetail]
       @showdetail = true
     end
+
+
   end
 
   def new
