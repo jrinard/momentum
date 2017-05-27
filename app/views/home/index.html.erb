@@ -1,18 +1,25 @@
 <div class="flex-container-big">
   <div class="flex-block-big">
 
-      <div class="h2-white pull-left">Welcome</div>
+      <div class="h2-white pull-left">Welcome</div><br><br><br>
 
+
+
+<!-- Javascript form toggle -->
+<div class="edit_family btn btn-sm btn-warning">Search Toggle</div>
+ <div class="edit_f">
 
 <!-- Not Currently Working -->
-<h3>Search</h3>
+  <div class="h2-white pull-left">Search</div><br><br><br>
   <div class="well center">
     <%= form_tag(show_path, method: 'post', class:'') do %>
       <%= text_field_tag :familyName, "", class: "form-control", placeholder: "Search by Family Name" %><br>
       <button type="submit" class=" btn-lg btn-primary">Search</button>
     <% end %>
-  </div>
 
 
+  </div><!-- search toggle end -->
+
+   </div>
   </div><!-- flex-block end -->
 </div><!-- flex-container end -->

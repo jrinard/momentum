@@ -15,7 +15,6 @@
             <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), parts_path %>
             <%= link_to 'Momentum', root_path %>
           </div>
-          <div class="center-notice grey"><%= flash[:notice] %></div>
 
           <nav class="nav">
             <li><%= link_to "Home", root_path, :class => 'notWorking' %></li>
@@ -43,6 +42,8 @@
 
         <div class="col-sm-9 right-column">
           <div class="topbar">
+
+            <span class="pull-left shift-down grey"><%= flash[:notice] %></span>
             <div class="login pull-right">
             <% if current_user %>
 

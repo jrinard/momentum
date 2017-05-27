@@ -71,7 +71,7 @@ class UnitsController < ApplicationController
 end
 
   def unit_params
-     params.require(:unit).permit(:familyName, :street, :city, :state, :zip, :country, :phonePrimary, :phoneSecondary, :emailPrimary, :emailSecondary, :notes)
+     params.require(:unit).permit(:familyName, :street, :city, :state, :zip, :country, :phonePrimary, :phoneSecondary, :emailPrimary, :emailSecondary, :notes, :accountOwner)
   end
 
 end

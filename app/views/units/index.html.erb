@@ -1,34 +1,32 @@
 <div class="flex-container-big">
   <div class="flex-block-big">
 
-      <div class="h2-white pull-left">Units - Families</div><br>
-      <%= link_to "New Family", new_unit_path, :class => "btn-sm btn-warning pull-right" %>
+    <div class="row">
+      <div class="col-sm-5">
+
+        <div class="h2-white">Units - Families - Index</div>
+        <br><br>
+
+      <%= link_to "New Family", new_unit_path, :class => "btn btn-sm btn-warning" %>
 
       <br>
       <br>
-    <h4>Sort By: <%= link_to "Updated Recently", :sort_by => "updated_at desc" %> | <%= link_to "Create Date", :sort_by => "created_at" %></h4>
-
+    <h5 class="pull-left">Sort By: <%= link_to "Updated Recently", :sort_by => "updated_at desc" %> | <%= link_to "Create Date", :sort_by => "created_at" %></h5>
+    <br>
       <% if @unit.any? %>
           <% @unit.each do |p1| %>
-
-
-
-
-                <%= link_to "#{p1.familyName}", unit_path(p1), :class => "family-card btn" %><br>
-
-
-
-
-
-              <% end %>
-            <% else %>
-                <h3 class="h2-white pull-left">No Families</h3>
-
-            <% end %>
+              <%= link_to "#{p1.familyName}", unit_path(p1), :class => "family-card btn" %><br>
+          <% end %>
+          <% else %>
+            <h3 class="h2-white pull-left">No Families Yet</h3>
+          <% end %>
 
 
 
 
 
-  </div><!-- flex-block end -->
-</div><!-- flex-container end -->
+          </div> <!-- col end -->
+        </div> <!--row end -->
+
+      </div><!-- flex-block end -->
+    </div><!-- flex-container end -->

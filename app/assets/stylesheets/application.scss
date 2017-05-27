@@ -41,16 +41,12 @@ h1 {
 
 h2 {
   color: #fff;
-  font-family: 'Bangers', cursive;
-  letter-spacing: 2px;
-  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h3 {
-  font-family: 'Bangers', cursive;
-  letter-spacing: 2px;
   color: #fff;
-  text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h4 {
@@ -73,7 +69,6 @@ h6 {
   font-size: 2em;
   font-family: 'Bangers', cursive;
   letter-spacing: 2px;
-  text-align: center;
   vertical-align: middle;
 }
 
@@ -127,6 +122,13 @@ h6 {
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
+}
+
+.h5-grey {
+  font-size: 1em;
+  color: #888;
+  font-weight: bold;
+  padding-right: 15px;
 }
 
 
@@ -206,6 +208,13 @@ h6 {
   max-width: 500px;
   margin: 10px, 0;
   padding: 15px;
+}
+.well-grey {
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 10px, 0;
+  padding: 15px;
+  background-color: #444;
 }
 
 .well-small {
@@ -356,61 +365,61 @@ input[type="image"]
 
 
 //PICTURE
-.title {
-  font-size: 2em;
-}
-.description {
-  font-style: italic;
-  color: #777;
-}
+// .title {
+//   font-size: 2em;
+// }
+// .description {
+//   font-style: italic;
+//   color: #777;
+// }
+//
+// .month {
+//   font-size: 1.2em;
+// }
+//
+// .day {
+//   font-size: 1.2em;
+// }
+// //
+// #block1 {
+//   width: 100%;
+//   margin-top: 30px;
+//   float:left;
+//   display: block;
+//   overflow-x: hidden;
+// }
+//
+// #mini-menu {
+//   margin-top: -70px;
+//   margin-left: 60%;
+//   width: 100%;
+// }
+//
+// #block2-mini {
+//   width: 50%;
+//   margin-top: -80px;
+//   margin-left: 50%;
+//   padding-top: 10px;
+//   padding-left: 20px;
+// }
+//
+// #block-bottom {
+//   text-align: center;
+//   clear: both;
+// }
 
-.month {
-  font-size: 1.2em;
-}
-
-.day {
-  font-size: 1.2em;
-}
-
-#block1 {
-  width: 100%;
-  margin-top: 30px;
-  float:left;
-  display: block;
-  overflow-x: hidden;
-}
-
-#mini-menu {
-  margin-top: -70px;
-  margin-left: 60%;
-  width: 100%;
-}
-
-#block2-mini {
-  width: 50%;
-  margin-top: -80px;
-  margin-left: 50%;
-  padding-top: 10px;
-  padding-left: 20px;
-}
-
-#block-bottom {
-  text-align: center;
-  clear: both;
-}
-
-.marginL {
-  margin-left: 0px;
-}
-
-.round {
-  border-radius: 10px;
-  margin-bottom: 5px;
-}
-
-.type {
-  color: #888
-}
+// .marginL {
+//   margin-left: 0px;
+// }
+//
+// .round {
+//   border-radius: 10px;
+//   margin-bottom: 5px;
+// }
+//
+// .type {
+//   color: #888
+// }
 
 .detail {
   font-size: 1.2em;
@@ -418,95 +427,19 @@ input[type="image"]
 }
 
 
-.edit-button {
-  background-color: #222;
-  height: 52px;
-  width: 52px;
-  border-radius: 50%;
-}
-
-.photo-button {
-  background-color: #000;
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-}
-
-//tutorial buttons
-.photo-button-tut {
-  background-color: #000;
-  height: 23px;
-  width: 23px;
-  border-radius: 50%;
-}
-.home-button-tut {
-  background-color: #552c75;
-  height: 23px;
-  width: 23px;
-  border-radius: 50%;
-}
-
-.edit-button-tut {
-  background-color: #000;
-  height: 23px;
-  width: 23px;
-  border-radius: 50%;
-}
-.event-button-tut {
-  background-color: #3fbeaa;
-  height: 23px;
-  width: 23px;
-  border-radius: 50%;
-}
-.fav-button-tut {
-  background-color: #bd3e9e;
-  height: 23px;
-  width: 23px;
-  border-radius: 50%;
-}
-
-
-//admin
-.admin-container {
-  display: flex;
-  height: 300px;
-  flex-direction: column;
-
-}
-
-.admin-block {
-  background-color: #f2f2f2;
-  width: 90%;
-  border: solid thin #222;
-  padding: 10px;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-.solid {
-  font-weight: bold;
-  color: #feaf21;
-  font-size: 1.1em;
-}
-.admin-title {
-  font-size: 1.5em;
-  text-align: center;
-}
-
-.size {
-  font-size: 1em;
-  color: #fff;
-}
-
-.tutorial {
-  text-align: center;
-  color: #d1d1d1;
-  width: 85%;
-  padding: 10px;
-  margin-left: 20px;
-  font-size: 1.2em;
-}
-
+// .edit-button {
+//   background-color: #222;
+//   height: 52px;
+//   width: 52px;
+//   border-radius: 50%;
+// }
+//
+// .photo-button {
+//   background-color: #000;
+//   height: 70px;
+//   width: 70px;
+//   border-radius: 50%;
+// }
 
 
 //////////////////// Structure
@@ -590,9 +523,13 @@ input[type="image"]
 .topbar > .login > li > a:hover {
 }
 
-.edit_f {
-  display:none;
+.shift-down {
+  margin-top: 10px;
+  margin-left: 30px;
 }
+
+
+//FAMILY - PEOPLE
 
 .people-text {
   color: #d2d2d2;
@@ -604,28 +541,118 @@ input[type="image"]
   margin: 5px;
 }
 
-
-
-////
-
-.profile {
-  max-width: 600px;
-  padding: 40px 15px 15px 15px;
+.edit_f {
+  display:none;
 }
 
-.panel-custom {
-  border: 1px solid #999;
+.grey-btn{
+  margin: 0 auto;
+  padding: 0px 2px;
+  -webkit-box-shadow: none !important;
+   box-shadow: none  !important;
+   padding: 10px;
+   background-color: #777;
+}
+.black {
+  color: #000;
+  background-color: #777;
+  padding: 10px;
 }
 
-.panel-heading {
-    background-color: #d2d2d2;
+.grey-btn a:link {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.grey-btn a:hover {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.grey-btn a:visited {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.grey-btn a:active {
+  color: #f3f3f3;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
 }
 
-.panel-body {
-  margin-bottom: 10px;
+.black a:link {
+  color: #000;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.black a:hover {
+  color: #000;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.black a:visited {
+  color: #000;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.black a:active {
+  color: #f3f3f3;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+
+.people-box {
+  margin-top: 100px;
+  background-color: #333;
+  padding: 10px;
+}
+
+.person-detail{
+  font-size: 1.5em;
 }
 
 
+//// MISC
 .icon-size {
   max-width: 50px;
 }
+.solid {
+  font-weight: bold;
+  color: #feaf21;
+  font-size: 1.1em;
+}
+input, textarea{
+    background-color:#666;
+    color: #FFF;
+}
+
+
+
+
+
+// //
+//
+// .profile {
+//   max-width: 600px;
+//   padding: 40px 15px 15px 15px;
+// }
+//
+// .panel-custom {
+//   border: 1px solid #999;
+// }
+//
+// .panel-heading {
+//     background-color: #d2d2d2;
+// }
+//
+// .panel-body {
+//   margin-bottom: 10px;
+// }

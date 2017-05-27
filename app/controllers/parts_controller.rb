@@ -49,7 +49,7 @@ class PartsController < ApplicationController
     @unit = Unit.find(params[:unit_id])
     @part = Part.find(params[:id])
     if @part.destroy
-      flash[:notice] = "Outfit has been deleted!"
+      flash[:notice] = "Person has been deleted!"
       redirect_to unit_path(@unit)
     else
       redirect_to unit_path(@unit)

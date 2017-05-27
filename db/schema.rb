@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170527014702) do
     t.string   "emailSecondary"
     t.string   "notes"
     t.integer  "user_id"
+    t.string   "accountOwner"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

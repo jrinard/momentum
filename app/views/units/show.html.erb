@@ -1,86 +1,99 @@
-
 <div class="flex-container-big">
   <div class="flex-block-big">
 
     <div class="row">
       <div class="col-sm-5">
 
+        <div class="h2-white">Unit - Family - Show</div>
+        <br><br>
 
 
-    <div class="h2-white pull-left">Unit - Family - Show</div><br>
 
-    <%= link_to "Delete Family", unit_path(@unit), :class => "btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
-
-    <br><br>
-
-
-<!-- Old showdetail -->
-  <%#= link_to "Edit Family", :class => "edit_family", :showdetail => "showdetail" %>
-  <%# if @showdetail === true %>
-    <%#= render "form" %>
-  <%# end %>
-
-  <div class="h2-white pull-left"><%= @unit.familyName %></div><br><br>
+        <h3><%= @unit.familyName %> Family
+          <div class="pull-right">
+            <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-warning pull-right" %>
+          </div>
+        </h3><br><!-- family-name-end -->
 
     <!-- PEOPLE -->
-      <div class="pull-right">
-        <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-warning pull-right" %>
-      </div>
-
         <% if @unit.parts.any? %>
           <% @unit.parts.each do |part| %>
-              <span class="btn well">
-                <%= link_to "#{part.firstName}", edit_unit_part_path(@unit, part.id), :class => "" %>
-                <%= link_to "X", unit_part_path(@unit, part), :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-              </span><br><br>
+            <span class="grey-btn">
+              <%= link_to "#{part.firstName} #{part.lastName}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
+            </span>
+                  <span class="black">
+              <%= link_to "X", unit_part_path(@unit, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+            </span><br><br>
           <% end %>
           <% else %><br><br>
-          <p> No People in this family yet</p>
-        <% end %>
+        <% end %><br>
+          <span class="h5-grey">Address</span>
+          <p><%= @unit.street %></p>
+          <p><%= @unit.city %> <%= @unit.state %></p>
+          <p><%= @unit.zip %> <%= @unit.country %></p>
+          <span class="h5-grey">Primary Phone</span> <span class="h5-grey">Secondary Phone</span>
+          <p><%= @unit.phonePrimary %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @unit.phoneSecondary %></p>
+          <span class="h5-grey">Primary Email</span>
+          <p><%= @unit.emailPrimary %></p>
+          <span class="h5-grey">Secondary Email</span>
+          <p><%= @unit.emailSecondary %></p>
+          <span class="h5-grey">Notes</span>
+          <p><%= @unit.notes %></p>
+          <br><br>
+
+          <%= link_to "Delete Family", unit_path(@unit), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
+
+        <!-- Javascript form toggle -->
+        <div class="edit_family btn btn-sm btn-warning">Edit Family</div>
+         <div class="edit_f">
+           <%= render "form" %>
+         </div>
+
+      </div> <!-- col end -->
 
 
 
-    <p><%= @unit.street %></p>
-    <p><%= @unit.city %></p>
-    <p><%= @unit.state %></p>
-    <p><%= @unit.zip %></p>
-    <p><%= @unit.country %></p>
-    <p><%= @unit.phonePrimary %></p>
-    <p><%= @unit.phoneSecondary %></p>
-    <p><%= @unit.emailPrimary %></p>
-    <p><%= @unit.emailSecondary %></p>
-    <p><%= @unit.notes %></p>
-    <br><br>
+      <div class="col-sm-4">
+        <div class="people-box">
+          <h3>Family Members</h3>
 
+          <% if @unit.parts.any? %>
+            <% @unit.parts.each do |part| %>
+                <div class="people-text">
+                  <%= part.title %>
+                  <span class="person-detail"><%= part.firstName %></span>
+                  <span class="person-detail"><%= part.lastName %></span><br>
+                  <span class="h5-grey">Allergies:</span>
+                  <%= part.allergies %><br>
+                  <span class="h5-grey">Birthdate:</span>
+                  <%= part.birthdate %><br>
+                  <%= part.notes %>
+                </div><br>
+            <% end %>
+            <% else %><br>
+            <p> No People in this family yet</p>
+          <% end %>
 
-  <!-- Javascript form toggle -->
-  <div class="edit_family btn btn-sm btn-warning">Edit Family</div>
-   <div class="edit_f">
-     <%= render "form" %>
-   </div>
+        </div> <!-- people-box -->
+      
 
-</div> <!-- col end -->
-<div class="col-sm-4">
-  <% if @unit.parts.any? %>
-    <% @unit.parts.each do |part| %>
-        <div class="people-text">
-          <%= part.title %>
-          <%= part.firstName %>
-          <%= part.lastName %><br>
-          <%= part.allergies %><br>
-          <%= part.parent %><br>
-          <%= part.birthdate %><br>
-          <%= part.notes %>
-        </div><br><br>
-    <% end %>
-    <% else %><br><br>
-    <p> No People in this family yet</p>
-  <% end %>
+        <h5>
+          <% if @unit.accountOwner === current_user.email %>
+            Your user account belongs to this Family
+            <%else %>
+            This family belongs to:
+            <%= @unit.accountOwner %>
+          <% end %> <!-- Hides Family data end -->
+        </h5>
 
+        <!-- Javascript form toggle -->
+        <div class="edit_family btn btn-sm btn-warning">Edit Account Ownership</div>
+         <div class="edit_f">
+                   <%= render "form_accountOwner" %>
+         </div>
 
+      </div> <!-- col end -->
+    </div> <!--row end -->
 
-
-</div> <!-- col end -->
-</div> <!--row end -->
   </div><!-- flex-block end -->
 </div><!-- flex-container end -->
