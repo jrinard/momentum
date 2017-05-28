@@ -6,9 +6,10 @@
 // font-family: 'Bangers', cursive;
 // font-family: 'Open Sans', sans-serif;
 
-$yellow: #feaf21;
+$yellow: #feb831;
 $yellow2: #f0ad4e;
 $grey3: #333;
+$blue: #337ab7;
 
 html {
   height: 100%;
@@ -203,8 +204,8 @@ h6 {
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
 }
-.header-box {
-  background-color: #feaf21;
+.logo-box {
+  background-color: $yellow;
   padding: 10px 0px;
 }
 
