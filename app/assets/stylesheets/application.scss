@@ -555,6 +555,11 @@ input[type="image"]
   margin: 5px;
 }
 
+.family-card-search {
+  width: 200px;
+  background-color: #fff;
+}
+
 .edit_f {
   display:none;
 }
@@ -629,9 +634,24 @@ input[type="image"]
   padding: 10px;
 }
 
-.person-detail{
-  font-size: 1.5em;
-}
+.people-box-search {
+  background-color: #333;
+  padding: 10px;
+
+  }
+
+//// SEARCH RELATED
+  .grey-bg {
+    background-color: #333;
+  }
+
+  .tiny-margin {
+    margin:5px 0px;
+  }
+
+  .person-detail{
+    font-size: 1.5em;
+  }
 
 
 //// MISC

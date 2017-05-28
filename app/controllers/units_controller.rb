@@ -11,11 +11,18 @@ class UnitsController < ApplicationController
       @searchResults = Unit.search(params[:search])
     else
     end
-    
+
+    if params[:search_people]
+      @searchResultsPeople = Part.search(params[:search_people])
+    else
+    end
+
   end
 
   def show
+    if params[:id]
     @unit = Unit.find(params[:id])
+    end
     @showdetail = false
     if params[:showdetail]
       @showdetail = true

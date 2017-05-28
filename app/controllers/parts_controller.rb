@@ -41,7 +41,8 @@ class PartsController < ApplicationController
       flash[:notice] = "Person updated!"
       redirect_to unit_path(@unit)
     else
-      render :edit, notice: 'There was an error updating the person. Please try again.'
+      flash[:notice] = "First Name is required."
+      render :edit
     end
   end
 

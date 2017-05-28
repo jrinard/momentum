@@ -23,6 +23,8 @@
 
         </div> <!-- col end -->
           <div class="col-sm-4">
+
+
             <div class="people-box center">
               <h3>Search for Family</h3>
               <%= form_tag(units_path, :method => "get", id: "search-form") do %>
@@ -33,15 +35,31 @@
                   </div> </div><!-- /btn-group -->
                   </div><!-- /input-group -->
               <% end %>
-
               <% if @searchResults %>
                 <% for unit in @searchResults %>
-                  <div class="center">
-                      <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card btn" %><br>
+                  <div class="center grey-bg">
+                      <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card-search btn tiny-margin" %><br>
                   </div>
                 <% end %>
               <% end %> <!-- of SearchResults end -->
 
+              <div class="people-box-search center">
+                <h3>Search for People</h3>
+                <%= form_tag(units_path, :method => "get", id: "search-form") do %>
+                 <div class="input-group">
+                    <%= text_field_tag :search_people, params[:search_people], placeholder: "Search People", class: "form-control", required: true %>
+                    <div class="input-group-btn">
+                      <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
+                    </div> </div><!-- /btn-group -->
+                    </div><!-- /input-group -->
+                <% end %>
+                <% if @searchResultsPeople %>
+                  <% for part in @searchResultsPeople %>
+                    <div class="center grey-bg">
+                      <%= link_to "#{part.firstName} #{part.lastName}", unit_path(part.unit_id), :class => "family-card-search btn tiny-margin" %><br>
+                    </div>
+                  <% end %>
+                <% end %> <!-- of SearchResults end -->
 
           </div> <!-- col end -->
         </div> <!--row end -->

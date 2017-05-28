@@ -15,6 +15,10 @@ class Unit < ApplicationRecord
     where("familyName LIKE ?", "%#{search}%")
   end
 
+  def self.search_people(search_people)
+    where("firstName LIKE ? OR lastName LIKE ?", "%#{search_people}%", "%#{search_people}%")
+  end
+
 
 
 end
