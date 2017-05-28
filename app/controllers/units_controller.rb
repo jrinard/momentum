@@ -11,7 +11,7 @@ class UnitsController < ApplicationController
       @searchResults = Unit.search(params[:search])
     else
     end
-
+    
   end
 
   def show
@@ -35,7 +35,8 @@ class UnitsController < ApplicationController
       flash[:notice] = "Family Saved!"
       redirect_to units_path
     else
-    render :new, notice: 'There was an error saving the family. Please try again.'
+      flash[:notice] = "Family Name is required and it can only contain letters."
+      render :new
     end
   end
 
@@ -51,7 +52,8 @@ class UnitsController < ApplicationController
       flash[:notice] = "Family updated!"
       redirect_to unit_path(@unit)
     else
-      render :edit, notice: 'There was an error updating the Family. Please try again.'
+      flash[:notice] = "There was an error. Updating the family."
+      render :edit
     end
   end
 

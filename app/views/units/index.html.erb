@@ -27,13 +27,12 @@
               <h3>Search for Family</h3>
               <%= form_tag(units_path, :method => "get", id: "search-form") do %>
                <div class="input-group">
-                  <%= text_field_tag :search, params[:search], placeholder: "Search Families", class: "form-control" %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search Families", class: "form-control", required: true %>
                   <div class="input-group-btn">
-                    <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary  " %>
+                    <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
                   </div> </div><!-- /btn-group -->
                   </div><!-- /input-group -->
               <% end %>
-
 
               <% if @searchResults %>
                 <% for unit in @searchResults %>

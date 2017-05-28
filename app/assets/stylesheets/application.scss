@@ -266,16 +266,16 @@ body {
 }
 
 
-.menu {
-  background-color: #d2d2d2;
-  text-align: center;
-  width: 100%;
-  font-size: 1.2em;
-  border-top: 1px solid #555;
-  background: rgb(255, 255, 255); /* Fall-back for browsers that don'tsupport rgba */
-  background: rgba(255, 255, 255, .8);
-
-}
+// .menu {
+//   background-color: #d2d2d2;
+//   text-align: center;
+//   width: 100%;
+//   font-size: 1.2em;
+//   border-top: 1px solid #555;
+//   background: rgb(255, 255, 255); /* Fall-back for browsers that don'tsupport rgba */
+//   background: rgba(255, 255, 255, .8);
+//
+// }
 
 
 .shiftR {
@@ -492,7 +492,7 @@ input[type="image"]
 
 .left-column {
   background-color: #333;
-  padding-bottom: 150px;
+  padding-bottom: 300px;
   border-right: solid 2px #000;
 }
 

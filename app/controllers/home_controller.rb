@@ -6,21 +6,16 @@ class HomeController < ApplicationController
   end
 
   def show
-      # Not Currently Working
-      @results = Unit.fuzzy_search(params[:familyname])
   end
 
   def new
-
   end
 
 
   def create
-
   end
 
   def show
-
   end
 
 

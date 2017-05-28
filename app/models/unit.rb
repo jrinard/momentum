@@ -2,15 +2,19 @@ class Unit < ApplicationRecord
   belongs_to :user
   has_many :parts
 
-  validates :familyname, :presence => true
+  validates :familyname, :presence => true, :format => { :with => /\A[a-z0-9\s]+\Z/i,
+    :message => "Only letters, spaces, and numbers allowed" }
 
-  before_save :tileize_unit
-  def tileize_unit
-    self.familyname = self.familyname.titleize
+  before_save :titleize_unit
+
+  def titleize_unit
+    self.familyname = self.familyname.downcase.titleize
   end
 
   def self.search(search)
     where("familyName LIKE ?", "%#{search}%")
   end
+
+
 
 end
