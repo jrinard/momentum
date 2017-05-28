@@ -19,6 +19,6 @@ class Unit < ApplicationRecord
     where("firstName LIKE ? OR lastName LIKE ?", "%#{search_people}%", "%#{search_people}%")
   end
 
-
-
+  self.per_page = 10
 end
+  WillPaginate.per_page = 10

@@ -17,6 +17,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'aws-sdk', '< 2.0' # online storage
 gem 'httparty'
 gem 'textacular'
+gem 'will_paginate', '~> 3.1.0'
 
 
 group :development, :test do

@@ -2,9 +2,11 @@ class UnitsController < ApplicationController
 
   def index
     @user = current_user
-    @unit = Unit.order(updated_at: :desc)
+
+    @units = Unit.paginate(:page => params[:page]).order(updated_at: :desc)
+
     if (params[:sort_by])
-      @unit = Unit.order(params[:sort_by])
+      @units = Unit.order(params[:sort_by]).paginate(:page => params[:page])
     end
 
     if params[:search]
@@ -16,6 +18,7 @@ class UnitsController < ApplicationController
       @searchResultsPeople = Part.search(params[:search_people])
     else
     end
+
 
   end
 
