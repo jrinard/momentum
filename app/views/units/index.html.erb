@@ -1,72 +1,82 @@
 <div class="flex-container-big">
   <div class="flex-block-big">
-
     <div class="row">
       <div class="col-sm-5">
 
         <div class="h2-white">Units - Families - Index</div>
         <br><br>
-
-      <%= link_to "New Family", new_unit_path, :class => "btn btn-sm btn-warning" %>
-
-    <br>
-    <br>
-    <div class="family-list">
-
-
-    <h5 class="center">Sort By:  <%= link_to "Updated Recently", :sort_by => "updated_at desc" %> | <%= link_to "A-Z", :sort_by => "familyname" %></h5>
-    <br>
-      <% if @units.any? %>
+        <%= link_to "New Family", new_unit_path, :class => "btn btn-sm btn-warning" %>
+        <br><br>
+        <div class="family-list">
+          <h5 class="center">Sort By:
+            <%= link_to "Updated Recently", :sort_by => "updated_at desc" %>
+            |
+            <%= link_to "A-Z", :sort_by => "familyname" %></h5>
+          <br>
+          <% if @units.any? %>
           <% @units.each do |p1| %>
-              <%= link_to "#{p1.familyname}", unit_path(p1), :class => "family-card btn" %><br>
+          <%= link_to "#{p1.familyname}", unit_path(p1), :class => "family-card btn" %><br>
           <% end %>
-          <% else %>
-            <h3 class="h2-white pull-left">No Families Yet</h3>
+        <% else %>
+          <h3 class="h2-white pull-left">No Families Yet</h3>
           <% end %>
           <span class="h5-grey center"><%= will_paginate @units, :class => ""  %></span>
-        </div> <!-- family list -->
-        </div> <!-- col end -->
-          <div class="col-sm-4">
+        </div>
+        <!-- family list -->
+      </div>
+      <!-- col end -->
+      <div class="col-sm-4">
 
+        <div class="people-box center">
+          <h3>Search for Family</h3>
+          <%= form_tag(units_path, :method => "get", id: "search-form") do %>
+          <div class="input-group">
+            <%= text_field_tag :search, params[:search], placeholder: "Search Families", class: "form-control", required: true %>
+            <div class="input-group-btn">
+              <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
+            </div>
+          </div>
+          <!-- /btn-group -->
+        </div>
+        <!-- /input-group -->
+        <% end %>
+        <% if @searchResults %>
+        <% for unit in @searchResults %>
+        <div class="center grey-bg">
+          <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card-search btn tiny-margin" %><br>
+        </div>
+        <% end %>
+        <% end %>
+        <!-- of SearchResults end -->
 
-            <div class="people-box center">
-              <h3>Search for Family</h3>
-              <%= form_tag(units_path, :method => "get", id: "search-form") do %>
-               <div class="input-group">
-                  <%= text_field_tag :search, params[:search], placeholder: "Search Families", class: "form-control", required: true %>
-                  <div class="input-group-btn">
-                    <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
-                  </div> </div><!-- /btn-group -->
-                  </div><!-- /input-group -->
-              <% end %>
-              <% if @searchResults %>
-                <% for unit in @searchResults %>
-                  <div class="center grey-bg">
-                      <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card-search btn tiny-margin" %><br>
-                  </div>
-                <% end %>
-              <% end %> <!-- of SearchResults end -->
+        <div class="people-box-search center">
+          <h3>Search for People</h3>
+          <%= form_tag(units_path, :method => "get", id: "search-form") do %>
+          <div class="input-group">
+            <%= text_field_tag :search_people, params[:search_people], placeholder: "Search People", class: "form-control", required: true %>
+            <div class="input-group-btn">
+              <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
+            </div>
+          </div>
+          <!-- /btn-group -->
+        </div>
+        <!-- /input-group -->
+        <% end %>
+        <% if @searchResultsPeople %>
+        <% for part in @searchResultsPeople %>
+        <div class="center grey-bg">
+          <%= link_to "#{part.firstName} #{part.lastName}", unit_path(part.unit_id), :class => "family-card-search btn tiny-margin" %><br>
+        </div>
+        <% end %>
+        <% end %>
+        <!-- of SearchResults end -->
 
-              <div class="people-box-search center">
-                <h3>Search for People</h3>
-                <%= form_tag(units_path, :method => "get", id: "search-form") do %>
-                 <div class="input-group">
-                    <%= text_field_tag :search_people, params[:search_people], placeholder: "Search People", class: "form-control", required: true %>
-                    <div class="input-group-btn">
-                      <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
-                    </div> </div><!-- /btn-group -->
-                    </div><!-- /input-group -->
-                <% end %>
-                <% if @searchResultsPeople %>
-                  <% for part in @searchResultsPeople %>
-                    <div class="center grey-bg">
-                      <%= link_to "#{part.firstName} #{part.lastName}", unit_path(part.unit_id), :class => "family-card-search btn tiny-margin" %><br>
-                    </div>
-                  <% end %>
-                <% end %> <!-- of SearchResults end -->
+      </div>
+      <!-- col end -->
+    </div>
+    <!--row end -->
 
-          </div> <!-- col end -->
-        </div> <!--row end -->
-
-      </div><!-- flex-block end -->
-    </div><!-- flex-container end -->
+  </div>
+  <!-- flex-block end -->
+</div>
+<!-- flex-container end -->

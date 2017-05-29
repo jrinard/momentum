@@ -1,8 +1,7 @@
-class HomeController < ApplicationController
+class StatsController < ApplicationController
 
   def index
     @user = current_user
-    @unit = Unit.order(updated_at: :desc)
   end
 
   def show
