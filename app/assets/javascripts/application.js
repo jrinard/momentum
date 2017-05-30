@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
+//= require chartkick
+
 //Toggle a div
 // $(function() {
 //   $('a#show_details').click(function(event){

@@ -18,6 +18,8 @@ gem 'aws-sdk', '< 2.0' # online storage
 gem 'httparty'
 gem 'textacular'
 gem 'will_paginate', '~> 3.1.0'
+gem "chartkick" # charts http://chartkick.com/
+gem 'groupdate' # for charts https://github.com/ankane/groupdate
 
 
 group :development, :test do

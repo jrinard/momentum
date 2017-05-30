@@ -162,7 +162,6 @@ h6 {
 .nav a:active {
   color: #fff;
   font-size: 1.2em;
-
 }
 .nav a:visited {
   color: #fff;
@@ -173,7 +172,6 @@ h6 {
   font-size: 1.2em;
   text-decoration: none;
   background: red;
-
 }
 .nav a:link {
  color: #fff;
@@ -185,6 +183,11 @@ h6 {
 .nav > li > a:hover {
     background-color: #111;
 }
+
+.nav > .active_bg {
+    background-color: $yellow;
+}
+
 
 
 //////////////////// Logo Box

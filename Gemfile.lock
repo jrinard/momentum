@@ -63,6 +63,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chartkick (2.2.2)
     climate_control (0.2.0)
     cliver (0.3.2)
     cocaine (0.5.8)
@@ -103,6 +104,8 @@ GEM
     ffi (1.9.18)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    groupdate (3.2.0)
+      activesupport (>= 3)
     hashdiff (0.3.4)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -283,11 +286,13 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
   capybara
+  chartkick
   coffee-rails (~> 4.2)
   database_cleaner
   devise
   dotenv-rails
   factory_girl_rails
+  groupdate
   httparty
   jbuilder (~> 2.5)
   jquery-rails

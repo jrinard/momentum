@@ -18,6 +18,13 @@
         <p>Month: <%= @parts30 %></p>
         <p>Year: <%= @parts365 %></p>
 
+        <div class="h3-white">Families</div>
+        <%= line_chart Unit.group_by_day(:created_at).count %>
+        <div class="h3-white">People</div>
+        <%= line_chart Part.group_by_day(:created_at).count %>
+        <div class="h3-white">People by week</div>
+        <%= pie_chart Part.group_by_week(:created_at).count %>
+
 
       </div>
       <!-- col end -->

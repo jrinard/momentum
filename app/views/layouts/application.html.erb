@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Bangers|Oswald|Passion+One|Open+Sans" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
   <body>
@@ -17,8 +18,9 @@
           </div>
 
           <nav class="nav">
-            <li><%= link_to "Home", root_path, :class => 'notWorking' %></li>
-            <li><%= link_to "People", units_path, :class => 'notWorking' %></li>
+
+            <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
+            <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
             <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
             <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
             <hr>
