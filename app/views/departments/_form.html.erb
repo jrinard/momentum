@@ -1,0 +1,19 @@
+
+  <div class="well">
+    <%= form_for [@department] do |f| %>
+    <div class="field">
+    <%= f.text_field :name, :placeholder => 'Department Name', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :description, :placeholder => 'Description', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :leaderName, :placeholder => 'Leader Name', :class => 'form-control input-lg' %>
+    </div>
+
+
+    <div class="field center">
+      <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+    </div>
+  <% end %>
+</div>

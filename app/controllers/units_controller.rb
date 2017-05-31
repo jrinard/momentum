@@ -19,7 +19,6 @@ class UnitsController < ApplicationController
     else
     end
 
-
   end
 
   def show

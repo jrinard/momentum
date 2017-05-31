@@ -10,6 +10,8 @@ $yellow: #feb831;
 $yellow2: #f0ad4e;
 $grey3: #333;
 $blue: #337ab7;
+$green: #5cb85c;
+$black: #000;
 
 html {
   height: 100%;
@@ -181,18 +183,17 @@ h6 {
  margin: 0;
 }
 .nav > li > a:hover {
-    background-color: #111;
+    background-color: $blue;
 }
 
 .nav > .active_bg {
-    background-color: $yellow;
+    background-color: #222;
 }
-
 
 
 //////////////////// Logo Box
 .logo a:link {
-  color: #fff;
+  color: $blue;
   font-size: 2.5em;
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
@@ -204,19 +205,19 @@ h6 {
   letter-spacing: 1px;
 }
 .logo a:visited {
-  color: #fff;
+  color: $blue;
   font-size: 2.5em;
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
 }
 .logo a:active {
-  color: #f3f3f3;
+  color: #111;
   font-size: 2.5em;
   font-family: 'Bangers', cursive;
   letter-spacing: 1px;
 }
 .logo-box {
-  background-color: $yellow;
+  background-color: $black;
   padding: 10px 0px;
 }
 

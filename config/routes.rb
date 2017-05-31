@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :parts
   end
   resources :stats, :only => [:index]
+  resources :departments
 
   # post '/', to: 'home#show', as: 'show'
 

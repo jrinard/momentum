@@ -14,7 +14,7 @@
 
           <div class="logo logo-box">
             <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), parts_path %>
-            <%= link_to 'Momentum', root_path %>
+            <%= link_to 'Momentum', root_path, :class => 'Not Working'  %>
           </div>
 
           <nav class="nav">
@@ -24,7 +24,7 @@
             <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
             <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
             <hr>
-            <li><%= link_to "Departments", root_path, :class => 'notWorking' %></li>
+            <li class="<%= 'active_bg' if current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
             <li><%= link_to "Events", root_path, :class => 'notWorking' %></li>
 
             <h5>Attendance Entry</h5>
