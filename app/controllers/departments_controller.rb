@@ -11,6 +11,14 @@ class DepartmentsController < ApplicationController
     if params[:id]
     @department = Department.find(params[:id])
     end
+    if params[:search_people]
+      @searchResultsPeople = Part.search(params[:search_people])
+    else
+    end
+
+    # @test = Part.find(params[:test])
+
+
   end
 
   def new

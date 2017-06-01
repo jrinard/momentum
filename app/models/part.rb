@@ -1,6 +1,6 @@
 class Part < ApplicationRecord
   belongs_to :unit
-  # has_many :departments
+  has_and_belongs_to_many :departments
   validates :firstName, :presence => true
 
 

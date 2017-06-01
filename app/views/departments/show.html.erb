@@ -8,28 +8,26 @@
         <br><br>
 
         <h3><%= @department.name %> Department
-          <div class="pull-right">
-            <%#= link_to "Add Person to Department", new_department_part_path(@unit), :class => "btn-sm btn-warning pull-right" %>
-          </div>
         </h3><br><!-- family-name-end -->
+        <span class="h5-grey">Description</span>
+        <p><%= @department.description %></p>
+        <span class="h5-grey">Leader</span>
+        <p><%= @department.leaderName %></p>
 
-    <!-- PEOPLE -->
-        <% if @departments.any? %>
-          <% @departments.each do |part| %>
+    <!-- PEOPLE WILL BE Loop to show members-->
+        <%# if @department.parts.any? %>
+          <%# @department.parts.each do |part| %>
             <span class="grey-btn">
               <%#= link_to "#{part.name} #{part.description}", edit_department__path(@department, part.id), :class => "NA" %>
-              <%= link_to "#{part.name} #{part.description}", edit_department_path(@department), :class => "NA" %>
+              <%#= link_to "#{part.name} #{part.description}", edit_department_path(@department), :class => "NA" %>
             </span>
                   <span class="black">
               <%#= link_to "X", department_part_path(@department, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-              <%= link_to "X", department_path(@department), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+              <%#= link_to "X", department_path(@department), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
             </span><br><br>
-          <% end %>
-          <% else %><br><br>
-        <% end %><br>
-          <p><%= @department.description %></p>
-          <p><%= @department.leaderName %></p>
-
+          <%# end %>
+          <%# else %><br><br>
+        <%# end %><br>
           <br><br>
 
           <%= link_to "Delete Department", department_path(@department), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
@@ -42,31 +40,49 @@
 
       </div> <!-- col end -->
 
+
       <div class="col-sm-4">
-        <div class="people-box">
-          <h3>Members of this Department</h3>
 
-          <%# if @department.parts.any? %>
-            <%# @department.parts.each do |part| %>
-                <div class="people-text">
-                  <%#= part.title %>
-                  <span class="person-detail"><%#= part.firstName %></span>
-                  <span class="person-detail"><%#= part.lastName %></span><br>
-                  <%#= part.notes %>
-                </div><br>
-            <%# end %>
-            <%# else %><br>
-            <p> No People in this Department yet</p>
-          <%# end %>
+        <div class="people-box-search center">
+          <h3>Search for People</h3>
+          <%= form_tag(department_path(@department), :method => "get", id: "search-form") do %>
+          <div class="input-group">
+            <%= text_field_tag :search_people, params[:search_people], placeholder: "Search People", class: "form-control", required: true %>
+            <div class="input-group-btn">
+              <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
+            </div>
+          </div>
+          <!-- /btn-group -->
+        </div>
+        <!-- /input-group -->
+        <% end %>
+        <% if @searchResultsPeople %>
+        <% for part in @searchResultsPeople %>
+        <div class="center grey-bg">
+          <%#= link_to "#{part.firstName} #{part.lastName}", unit_path(part.unit_id), :class => "family-card-search btn tiny-margin" %>
+          <div class="family-card-search family-card-search btn tiny-margin"><%= part.firstName %>
+            <%= form_for [@department] do |f| %>
+              <%= f.hidden_field :leaderName, :value => "#{part.firstName} #{part.lastName}" %>
+              <%= f.submit "Leader", :class => "btn btn-sm btn-primary"%>
+          <% end %>
+          </div>
 
-        </div> <!-- people-box -->
+
+
+
+        </div>
+
+        <% end %>
+        <% end %>
+        <!-- of SearchResults end -->
+
 
         <!-- !!!!! Loop a partial form with a add button to push people into family. -->
 
               <div class="flip">
                 <div class="card">
                   <div class="face front">
-                    <span class="h5-white">Edit Account Ownership</span>
+                    <span class="h5-white">Probably remove</span>
                   </div>
                   <div class="face back">
                      <% if @department.leaderName === "" %>
