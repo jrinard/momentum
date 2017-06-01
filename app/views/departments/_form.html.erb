@@ -11,6 +11,10 @@
     <%= f.text_field :leaderName, :placeholder => 'Leader Name', :class => 'form-control input-lg' %>
     </div>
 
+<!-- Probably doesn't need -->
+    <div class="field">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
 
     <div class="field center">
       <%= f.submit "Save", :class => "btn-lg btn-primary"%>

@@ -1,1 +1,87 @@
-<h1>show</h1>
+<div class="flex-container-big">
+  <div class="flex-block-big">
+
+    <div class="row">
+      <div class="col-sm-5">
+
+        <div class="h2-white">Department - Show</div>
+        <br><br>
+
+        <h3><%= @department.name %> Department
+          <div class="pull-right">
+            <%#= link_to "Add Person to Department", new_department_part_path(@unit), :class => "btn-sm btn-warning pull-right" %>
+          </div>
+        </h3><br><!-- family-name-end -->
+
+    <!-- PEOPLE -->
+        <% if @departments.any? %>
+          <% @departments.each do |part| %>
+            <span class="grey-btn">
+              <%#= link_to "#{part.name} #{part.description}", edit_department__path(@department, part.id), :class => "NA" %>
+              <%= link_to "#{part.name} #{part.description}", edit_department_path(@department), :class => "NA" %>
+            </span>
+                  <span class="black">
+              <%#= link_to "X", department_part_path(@department, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+              <%= link_to "X", department_path(@department), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+            </span><br><br>
+          <% end %>
+          <% else %><br><br>
+        <% end %><br>
+          <p><%= @department.description %></p>
+          <p><%= @department.leaderName %></p>
+
+          <br><br>
+
+          <%= link_to "Delete Department", department_path(@department), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
+
+        <!-- Javascript form toggle -->
+        <div class="edit_family btn btn-sm btn-warning">Edit Department</div>
+         <div class="edit_f">
+           <%= render "form" %>
+         </div>
+
+      </div> <!-- col end -->
+
+      <div class="col-sm-4">
+        <div class="people-box">
+          <h3>Members of this Department</h3>
+
+          <%# if @department.parts.any? %>
+            <%# @department.parts.each do |part| %>
+                <div class="people-text">
+                  <%#= part.title %>
+                  <span class="person-detail"><%#= part.firstName %></span>
+                  <span class="person-detail"><%#= part.lastName %></span><br>
+                  <%#= part.notes %>
+                </div><br>
+            <%# end %>
+            <%# else %><br>
+            <p> No People in this Department yet</p>
+          <%# end %>
+
+        </div> <!-- people-box -->
+
+        <!-- !!!!! Loop a partial form with a add button to push people into family. -->
+
+              <div class="flip">
+                <div class="card">
+                  <div class="face front">
+                    <span class="h5-white">Edit Account Ownership</span>
+                  </div>
+                  <div class="face back">
+                     <% if @department.leaderName === "" %>
+                     <h5>Who is the leader</h5>
+                     <% else %>
+                     <h5> <%= @department.leaderName %> is the leader</h5>
+                     <% end %>
+
+                    <%#= render "form_accountOwner" %>
+                  </div>
+                </div>
+              </div>
+
+      </div> <!-- col end -->
+    </div> <!--row end -->
+
+  </div><!-- flex-block end -->
+</div><!-- flex-container end -->

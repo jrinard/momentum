@@ -2,25 +2,20 @@ class DepartmentsController < ApplicationController
 
   def index
     @user = current_user
-    @part = Part.all
+    @parts = Part.all
     @departments = Department.all
+  end
+
+  def show
+    @departments = Department.all
+    if params[:id]
+    @department = Department.find(params[:id])
+    end
   end
 
   def new
     @department = Department.new
   end
-  #
-  # def create
-  #   @user = current_user
-  #     @department = Department.new(depart_params)
-  #     if @department.save
-  #       flash[:notice] = "Department Saved!"
-  #       redirect_to root_path
-  #     else
-  #       flash[:notice] = "Name is required and it can only contain letters."
-  #       render :new
-  #     end
-  #   end
 
     def create
      @user = current_user
@@ -29,7 +24,7 @@ class DepartmentsController < ApplicationController
         flash[:notice] = "Department Saved!"
         redirect_to departments_path
       else
-        flash[:notice] = "Family Name is required and it can only contain letters."
+        flash[:notice] = "Department Name is required and it can only contain letters."
         render :new
       end
     end
@@ -37,7 +32,7 @@ class DepartmentsController < ApplicationController
   def edit
     @user = current_user
     @department = Department.new
-    @department = Department.find(parms[:id])
+    @department = Department.find(params[:id])
   end
 
   def update
@@ -52,8 +47,8 @@ class DepartmentsController < ApplicationController
   end
 
   def destroy
-    @department = Department.find(parms[:id])
-    if @unit.destroy
+    @department = Department.find(params[:id])
+    if @department.destroy
       flash[:notice] = "Department has been deleted!"
       redirect_to departments_path
     else
