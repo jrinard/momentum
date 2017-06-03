@@ -12,6 +12,7 @@ $grey3: #333;
 $blue: #337ab7;
 $green: #5cb85c;
 $black: #000;
+$white: #fff;
 
 html {
   height: 100%;
@@ -153,6 +154,10 @@ h6 {
   color: #888;
   font-weight: bold;
   padding-right: 15px;
+}
+
+.white {
+  color: #fff;
 }
 
 
@@ -569,6 +574,10 @@ input[type="image"]
 
 .people-text {
   color: #d2d2d2;
+}
+.people-btn {
+  min-width: 200px;
+  // background-color: #555;
 }
 .family-card {
   width: 200px;

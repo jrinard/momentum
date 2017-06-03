@@ -10,6 +10,13 @@ class DepartmentsController < ApplicationController
   def show
     @departments = Department.all
     @positions = Position.all
+
+
+    # @specific_positions = Position.all
+    @department = Department.find(params[:id])
+
+
+
     if params[:id]
     @department = Department.find(params[:id])
     end
