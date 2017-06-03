@@ -13,24 +13,9 @@
         <p><%= @department.description %></p>
         <span class="h5-grey">Leader</span>
         <p><%= @department.leaderName %></p>
+        <br>
 
-    <!-- PEOPLE WILL BE Loop to show members-->
-        <%# if @department.parts.any? %>
-          <%# @department.parts.each do |part| %>
-            <span class="grey-btn">
-              <%#= link_to "#{part.name} #{part.description}", edit_department__path(@department, part.id), :class => "NA" %>
-              <%#= link_to "#{part.name} #{part.description}", edit_department_path(@department), :class => "NA" %>
-            </span>
-                  <span class="black">
-              <%#= link_to "X", department_part_path(@department, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-              <%#= link_to "X", department_path(@department), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-            </span><br><br>
-          <%# end %>
-          <%# else %><br><br>
-        <%# end %><br>
-          <br><br>
-
-          <%= link_to "Delete Department", department_path(@department), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
+        <%= link_to "Delete Department", department_path(@department), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
 
         <!-- Javascript form toggle -->
         <div class="edit_family btn btn-sm btn-warning">Edit Department</div>
@@ -72,26 +57,6 @@
         <% end %>
         <!-- of SearchResults end -->
 
-
-
-        <!-- !!!!! Loop a partial form with a add button to push people into family. -->
-
-              <div class="flip">
-                <div class="card">
-                  <div class="face front">
-                    <span class="h5-white">Probably remove</span>
-                  </div>
-                  <div class="face back">
-                     <% if @department.leaderName === "" %>
-                     <h5>Who is the leader</h5>
-                     <% else %>
-                     <h5> <%= @department.leaderName %> is the leader</h5>
-                     <% end %>
-
-                    <%#= render "form_accountOwner" %>
-                  </div>
-                </div>
-              </div>
 
       </div> <!-- col end -->
     </div> <!--row end -->
