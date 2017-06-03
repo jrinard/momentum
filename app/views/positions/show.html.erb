@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Department:</b>
+  <%= @position.department.name %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= @position.part.firstName %>
+</p>
+
+<%= link_to 'Edit', edit_position_path(@position) %> |

@@ -4,10 +4,12 @@ class DepartmentsController < ApplicationController
     @user = current_user
     @parts = Part.all
     @departments = Department.all
+    @positions = Position.all
   end
 
   def show
     @departments = Department.all
+    @positions = Position.all
     if params[:id]
     @department = Department.find(params[:id])
     end
@@ -15,27 +17,23 @@ class DepartmentsController < ApplicationController
       @searchResultsPeople = Part.search(params[:search_people])
     else
     end
-
-    # @test = Part.find(params[:test])
-
-
   end
 
   def new
     @department = Department.new
   end
 
-    def create
-     @user = current_user
-      @depart = Department.new(depart_params)
-      if @depart.save
-        flash[:notice] = "Department Saved!"
-        redirect_to departments_path
-      else
-        flash[:notice] = "Department Name is required and it can only contain letters."
-        render :new
-      end
+  def create
+   @user = current_user
+    @depart = Department.new(depart_params)
+    if @depart.save
+      flash[:notice] = "Department Saved!"
+      redirect_to departments_path
+    else
+      flash[:notice] = "Department Name is required and it can only contain letters."
+      render :new
     end
+  end
 
   def edit
     @user = current_user

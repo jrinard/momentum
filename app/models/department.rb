@@ -1,6 +1,7 @@
 class Department < ApplicationRecord
 
-  has_and_belongs_to_many :people
+  has_many :positions
+  has_many :parts, through: :positions
 
   validates :name, :presence => true
 

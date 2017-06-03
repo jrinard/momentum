@@ -1,6 +1,5 @@
 class Part < ApplicationRecord
   belongs_to :unit
-  has_and_belongs_to_many :departments
   validates :firstName, :presence => true
 
 
@@ -8,5 +7,9 @@ class Part < ApplicationRecord
   def tileize_part
     self.firstName = self.firstName.titleize
   end
+
+
+  has_many :positions
+  has_many :departments, through: :positions
 
 end

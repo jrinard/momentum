@@ -1,0 +1,23 @@
+<%= form_for(@position) do |f| %>
+  <% if @position.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
+
+      <ul>
+      <% @position.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.select :department_id, Department.all.collect { |p| [ p.name, p.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.select :part_id, Part.all.collect { |p| [ p.firstName, p.id ] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+  </div>
+<% end %>

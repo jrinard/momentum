@@ -8,6 +8,7 @@
 
         <br><br>
         <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
+        <%= link_to 'New Position', new_position_path, :class => "btn btn-sm btn-warning" %>
         <br><br>
         <div class="family-list">
 
@@ -22,6 +23,27 @@
         </div>
         <!-- family list -->
       </div>
+
+
+      <h3>Positions</h3>
+      <p>
+      <span>Department</span> | <span>Position</span><br>
+      </p>
+
+      <% @positions.each do |position| %>
+          <p><%= position.department.name %> |
+              <%= position.part.firstName %> |
+          <%= link_to 'Show', position %> |
+          <%= link_to 'Edit', edit_position_path(position) %> |
+          <%= link_to 'Delete', position, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+      <% end %>
+      <br />
+
+      <%= link_to 'New Position', new_position_path %>
+
+
+
 
       </div>
       <!-- col end -->
