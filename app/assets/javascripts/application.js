@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require chosen-jquery
+//= require scaffold
 
 //= require chartkick
 

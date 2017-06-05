@@ -1,6 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 // font-family: 'Passion One', cursive;
 // font-family: 'Oswald', sans-serif;
 // font-family: 'Bangers', cursive;
@@ -754,8 +755,8 @@ li.selected {
     background-color: #f90;
 }
 
-.test {
-  background-color: red;
-  color: red;
-  height: 100px;
+.selected {
+  color: purple;
+  max-width: 200px;
+
 }

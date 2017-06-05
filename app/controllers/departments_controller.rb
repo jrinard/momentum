@@ -59,6 +59,7 @@ class DepartmentsController < ApplicationController
       flash[:notice] = "Department has been deleted!"
       redirect_to departments_path
     else
+      flash[:notice] = "Department can not be deleted if there are people in it."
       redirect_to departments_path
     end
   end

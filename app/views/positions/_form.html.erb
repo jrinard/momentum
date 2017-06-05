@@ -11,11 +11,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.select :department_id, Department.all.collect { |p| [ p.name, p.id ] } %>
+  <%= f.select :department_id,
+  Department.all.collect { |u| [u.name, u.id] },
+               { include_blank: false },
+               { class: 'form-control selected' }
+               %>
   </div>
+
+
   <div class="field">
-    <%= f.select :part_id, Part.all.collect { |p| [ p.firstName, p.id ] }%>
+  <%= f.select :part_id,
+  Part.all.collect { |u| [u.firstName + " " + u.lastName, u.id] },
+               { include_blank: false },
+               { class: 'form-control selected' }
+               %>
   </div>
+
 
   <div class="actions">
     <%= f.submit "Save", :class => "btn-lg btn-primary"%>

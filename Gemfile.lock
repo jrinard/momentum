@@ -64,6 +64,10 @@ GEM
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
     chartkick (2.2.2)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     climate_control (0.2.0)
     cliver (0.3.2)
     cocaine (0.5.8)
@@ -287,6 +291,7 @@ DEPENDENCIES
   byebug
   capybara
   chartkick
+  chosen-rails
   coffee-rails (~> 4.2)
   database_cleaner
   devise
