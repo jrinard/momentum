@@ -10,6 +10,9 @@ class PositionsController < ApplicationController
 
   def new
     @position = Position.new
+    if params[:search_people]
+      @searchResultsPeople = Part.search(params[:search_people])
+    end
   end
 
   def create

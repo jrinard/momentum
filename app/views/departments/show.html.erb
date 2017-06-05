@@ -69,7 +69,7 @@
         <% if position.department.id === @department.id %>
         <div class="people-btn">
             <span class="grey-btn white">
-             <%= position.part.firstName %>
+             <%= position.part.firstName %> <%= position.part.lastName %>
             </span>
             <span class="black">
               <%= link_to "X", position, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>

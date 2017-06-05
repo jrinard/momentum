@@ -6,6 +6,7 @@
 // font-family: 'Bangers', cursive;
 // font-family: 'Open Sans', sans-serif;
 
+
 $yellow: #feb831;
 $yellow2: #f0ad4e;
 $grey3: #333;
@@ -751,4 +752,10 @@ input[type="image"]
 
 li.selected {
     background-color: #f90;
+}
+
+.test {
+  background-color: red;
+  color: red;
+  height: 100px;
 }
