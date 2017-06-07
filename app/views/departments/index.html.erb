@@ -5,17 +5,38 @@
         <div class="h2-white">Departments - Index</div>
         <br><br>
 
-
         <br><br>
         <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
-        <%= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
+        <%#= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
         <br><br>
         <div class="family-list">
-
           <br>
-        <% if @departments.any? %>
-          <% @departments.each do |d1| %>
-          <%= link_to "#{d1.name}", department_path(d1), :class => "family-card btn" %><br>
+
+          <% if @departments.any? %>
+          <% @departments.each do |dep| %>
+          <div class="family-card">
+            <%= link_to "#{dep.name}", department_path(dep), :class => "h2-black" %>
+            <%= link_to "Edit",  edit_department_path(dep, @dep_id = dep.id), :class => "pull-right" %>
+            <%= link_to 'Add Person', new_position_path, :class => "btn custom-btn btn-primary" %>
+
+            <div class="people-box2">
+              <% @positions.each do |position| %>
+              <!-- Filters only this department -->
+              <% if position.department.id === dep.id %>
+              <div class="single-person">
+                <span class="white">
+                  <%= position.part.firstName %>
+                  <%= position.part.lastName %>
+                </span>
+                <span class="black2">
+                  <%= link_to "X", position, :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+                </span>
+              </div>
+              <% end %>
+              <% end %>
+              <!-- Filter end -->
+            </div>
+          </div>
           <% end %>
         <% else %>
           <h3 class="h2-white pull-left">No Departments Yet</h3>
@@ -24,12 +45,11 @@
         <!-- family list -->
       </div>
 
-
-      </div>
-      <!-- col end -->
     </div>
-    <!--row end -->
+    <!-- col end -->
   </div>
-  <!-- flex-block end -->
+  <!--row end -->
+</div>
+<!-- flex-block end -->
 </div>
 <!-- flex-container end -->

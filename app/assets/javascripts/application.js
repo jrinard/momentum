@@ -39,9 +39,20 @@ $(document).on('turbolinks:load', function() {
     });
 });
 
-//Test Flip
+//Flip
 $( document ).on('turbolinks:load', function() {
 $('.flip').click(function(){
+    $(this).find('.card').addClass('flipped').mouseleave(function(){
+        $(this).removeClass('flipped');
+    });
+    return true;
+});
+})
+
+
+//Department Flip
+$( document ).on('turbolinks:load', function() {
+$('.flip_dep').click(function(){
     $(this).find('.card').addClass('flipped').mouseleave(function(){
         $(this).removeClass('flipped');
     });

@@ -5,6 +5,8 @@ class DepartmentsController < ApplicationController
     @parts = Part.all
     @departments = Department.all
     @positions = Position.all
+
+
   end
 
   def show

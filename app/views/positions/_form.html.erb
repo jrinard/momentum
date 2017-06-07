@@ -11,6 +11,7 @@
   <% end %>
 
   <div class="field">
+  <label class="white">Department</label>
   <%= f.select :department_id,
   Department.all.collect { |u| [u.name, u.id] },
                { include_blank: false },
@@ -18,16 +19,20 @@
                %>
   </div>
 
+
+
   <div class="field">
+  <label class="white">Person</label>
   <%= f.select :part_id,
   Part.all.collect { |u| [u.firstName + " " + u.lastName, u.id] },
-               { include_blank: false },
+               { include_blank: false},
                { class: 'form-control selected' }
                %>
   </div>
 
   <div class="field">
-    <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position), {:include_blank => true}, {:required => true, :class => 'select'} %>
+      <label class="white">Position</label>
+    <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
   </div>
 
 

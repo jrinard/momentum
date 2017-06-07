@@ -570,7 +570,6 @@ input[type="image"]
 
 
 //FAMILY - PEOPLE
-
 .family-list {
   max-width: 230px;
   padding-left: 10px;
@@ -581,13 +580,20 @@ input[type="image"]
 }
 .people-btn {
   min-width: 200px;
-  // background-color: #555;
+
+}
+.custom-btn {
+    border-radius: 0px;
+    width: 100%;
+    // font-size: 1.5em;   //for +
+    line-height: 12px;
 }
 .family-card {
   width: 200px;
   background-color: #fff;
-  padding: 10px;
-  margin: 5px;
+  padding: 10px 10px;
+  margin: 5px 5px;
+  border-radius: 5px;
 }
 
 .family-card-search {
@@ -672,8 +678,24 @@ input[type="image"]
 .people-box-search {
   background-color: #333;
   padding: 10px;
+}
 
-  }
+//// department
+
+.people-box2 {
+  background-color: #333;
+  padding: 10px;
+  width: 100%;
+}
+
+.black2 {
+  color: #000;
+  padding: 10px;
+}
+
+.single-person {
+  padding: 8px;
+}
 
 //// SEARCH RELATED
   .grey-bg {
@@ -751,6 +773,56 @@ input[type="image"]
     width: 300px;
     height: 80px;
 }
+
+
+//Department Flip
+.flip_dep {
+  -webkit-perspective: 800;
+    position: relative;
+    width: 200px;
+    background-color: #fff;
+    padding: 10px 10px;
+    margin: 5px 5px;
+    border-radius: 5px;
+}
+.flip_dep .card.flipped {
+  -webkit-transform: rotatey(-180deg);
+  // rotatey
+}
+.flip_dep .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+}
+.flip_dep .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden ;
+  z-index: 2;
+
+}
+.flip_dep .card .front {
+  position: absolute;
+  z-index: 1;
+    cursor: pointer;
+    height: 50px;
+
+}
+.flip_dep .card .back {
+  -webkit-transform: rotatey(-180deg);
+    background: blue;
+    background: white;
+    color: black;
+    cursor: pointer;
+    width: 300px;
+    height: 80px;
+}
+
+
+
+
 
 
 li.selected {
