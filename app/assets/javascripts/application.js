@@ -40,6 +40,17 @@ $(document).on('turbolinks:load', function() {
 });
 
 
+//Toggle details and hide the others
+$(document).on('turbolinks:load', function() {
+    $(".edit_dep").on('click', function () {
+        var $details = $(this).next(".edit_d");
+        $details.toggle(); //toggle the current one
+        $(".edit_d").not($details).slideUp(); //hide the others
+    });
+});
+
+
+
 
 
 

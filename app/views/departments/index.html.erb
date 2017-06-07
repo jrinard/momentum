@@ -1,21 +1,21 @@
-<div class="flex-container-big">
-  <div class="flex-block-big">
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="h2-white">Departments - Index</div>
-        <br><br>
 
-        <br><br>
-        <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
+        <div class="center">
+        <div class="h2-white">Departments - Index</div>
+        <br><br><br><br>
+            <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
+        </div>
+
         <%#= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
         <br><br>
-        <div class="family-list">
+
           <br>
 
           <% if @departments.any? %>
           <% @departments.each do |dep| %>
-          <div class="family-card">
-                <%= link_to "#{dep.name}", department_path(dep), :class => "h2-black" %>
+          <div class="col-xs-3">
+            <div class="well2">
+
+            <%= link_to "#{dep.name}", department_path(dep), :class => "h2-black" %>
             <!-- Javascript form toggle -->
             <div class="edit_family pull-right">Edit</div>
              <div class="edit_f">
@@ -28,6 +28,7 @@
                </div>
                 <% end %>
              </div>
+
 
             <%#= link_to "Edit",  edit_department_path(dep, @dep_id = dep.id), :class => "pull-right" %>
             <%= link_to 'Add Person', new_position_path, :class => "btn custom-btn btn-primary" %>
@@ -46,23 +47,12 @@
                 </span>
               </div>
               <% end %>
-              <% end %>
-              <!-- Filter end -->
-            </div>
-          </div>
+              <% end %><!-- Filter end -->
+            </div><!-- people-box2 end -->
+
+            </div>    <!-- well2 end -->
+            </div><!-- col2 end -->
           <% end %>
         <% else %>
           <h3 class="h2-white pull-left">No Departments Yet</h3>
           <% end %>
-        </div>
-        <!-- family list -->
-      </div>
-
-    </div>
-    <!-- col end -->
-  </div>
-  <!--row end -->
-</div>
-<!-- flex-block end -->
-</div>
-<!-- flex-container end -->

@@ -238,6 +238,7 @@ h6 {
   text-align: center;
 }
 
+
 .well {
   border-radius: 8px;
   max-width: 500px;
@@ -516,6 +517,20 @@ input[type="image"]
   margin: 0 auto;
 }
 
+.flex-container {
+  display: flex;
+  height: 300px;
+  flex-direction: row;
+  flex-wrap:  wrap;
+  // justify-content: flex-start;
+
+}
+
+.flex-block {
+  width: 95%;
+  margin: 0 auto;
+}
+
 .left-column {
   background-color: #333;
   padding-bottom: 300px;
@@ -588,6 +603,18 @@ input[type="image"]
     // font-size: 1.5em;   //for +
     line-height: 12px;
 }
+.well2 {
+  min-width: 120px;
+  max-width: 200px;
+  padding: 8px 8px;
+  margin: 5px 2.5px 5px 2.5px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
 .family-card {
   width: 200px;
   background-color: #fff;
