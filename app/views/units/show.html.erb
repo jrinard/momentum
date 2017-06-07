@@ -17,7 +17,7 @@
         <% if @unit.parts.any? %>
           <% @unit.parts.each do |part| %>
             <span class="grey-btn">
-              <%= link_to "#{part.firstName} #{part.lastName}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
+              <%= link_to "#{part.firstname} #{part.lastname}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
             </span>
                   <span class="black">
               <%= link_to "X", unit_part_path(@unit, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
@@ -57,8 +57,8 @@
             <% @unit.parts.each do |part| %>
                 <div class="people-text">
                   <%= part.title %>
-                  <span class="person-detail"><%= part.firstName %></span>
-                  <span class="person-detail"><%= part.lastName %></span><br>
+                  <span class="person-detail"><%= part.firstname %></span>
+                  <span class="person-detail"><%= part.lastname %></span><br>
                   <span class="h5-grey">Allergies:</span>
                   <%= part.allergies %><br>
                   <span class="h5-grey">Birthdate:</span>

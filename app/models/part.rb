@@ -1,11 +1,11 @@
 class Part < ApplicationRecord
   belongs_to :unit
-  validates :firstName, :presence => true
+  validates :firstname, :presence => true
 
 
   before_save :tileize_part
   def tileize_part
-    self.firstName = self.firstName.titleize
+    self.firstname = self.firstname.titleize
   end
 
 

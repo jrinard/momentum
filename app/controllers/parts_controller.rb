@@ -59,7 +59,7 @@ end
 
 
   def part_params
-     params.require(:part).permit(:title, :firstName, :lastName, :allergies, :parent, :birthdate, :backCheck, :notes, :member, :leader, :user_id)
+     params.require(:part).permit(:title, :firstname, :lastname, :allergies, :parent, :birthdate, :backCheck, :notes, :member, :leader, :user_id)
   end
 
 end

@@ -16,7 +16,7 @@ class Unit < ApplicationRecord
   end
 
   def self.search_people(search_people)
-    where("firstName LIKE ? OR lastName LIKE ?", "%#{search_people}%", "%#{search_people}%")
+    where("firstname LIKE ? OR lastname LIKE ?", "%#{search_people}%", "%#{search_people}%")
   end
 
   self.per_page = 10

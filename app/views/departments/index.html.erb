@@ -20,7 +20,7 @@
       <div class="input-group">
         <%= f.text_field :name, :placeholder => 'Department Name', :class => 'form-control' %>
         <div class="input-group-btn">
-          <%= f.submit "Save", :name => nil, class: "btn-search btn-sm btn-success" %>
+          <%= f.submit "Save", :name => nil, class: "btn-search btn-sm btn-primary" %>
         </div>
       </div>
       <% end %>
@@ -35,9 +35,19 @@
       <% if position.department.id === dep.id %>
       <div class="single-person">
         <span class="white">
-          <%= position.part.firstName %>
-          <%= position.part.lastName %>
+          <%= position.part.firstname %>
+          <%= position.part.lastname %>
+          <% if position.position2 === "Worker" %>
+          <%= image_tag("worker.png", :class => "icon-size-tiny")%>
+          <% end %>
+          <% if position.position2 === "Leader" %>
+          <%= image_tag("leader.png", :class => "icon-size-tiny")%>
+          <% end %>
+          <% if position.position2 === "Department Head" %>
+          <%= image_tag("dep_head2.png", :class => "icon-size-tiny")%>
+          <% end %>
         </span>
+
         <span class="black2">
           <%= link_to "X", position, :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
         </span>

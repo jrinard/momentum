@@ -595,6 +595,8 @@ input[type="image"]
 }
 .people-btn {
   min-width: 200px;
+  // display: inline-block;
+  width: 100%;
 
 }
 .custom-btn {
@@ -634,11 +636,11 @@ input[type="image"]
 
 .grey-btn{
   margin: 0 auto;
-  padding: 0px 2px;
   -webkit-box-shadow: none !important;
    box-shadow: none  !important;
    padding: 10px;
    background-color: #777;
+
 }
 .black {
   color: #000;
@@ -741,6 +743,10 @@ input[type="image"]
 //// MISC
 .icon-size {
   max-width: 50px;
+}
+.icon-size-tiny {
+  max-width: 15px;
+  padding-bottom: 5px;
 }
 .solid {
   font-weight: bold;

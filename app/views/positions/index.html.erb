@@ -7,7 +7,7 @@
 
 <% @positions.each do |position| %>
     <p><%= position.department.name %> |
-        <%= position.part.firstName %> |
+        <%= position.part.firstname %> |
     <%= link_to 'Show', position %> |
     <%= link_to 'Edit', edit_position_path(position) %> |
     <%= link_to 'Delete', position, method: :delete, data: { confirm: 'Are you sure?' } %>

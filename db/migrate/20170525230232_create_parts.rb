@@ -2,12 +2,12 @@ class CreateParts < ActiveRecord::Migration[5.0]
     def change
       create_table :parts do |t|
         t.string :title
-        t.string :firstName
-        t.string :lastName
+        t.string :firstname
+        t.string :lastname
         t.string :allergies
         t.string :parent
         t.date :birthdate
-        t.boolean :backCheck
+        t.boolean :backcheck
         t.string :notes
         t.boolean :member
         t.boolean :leader

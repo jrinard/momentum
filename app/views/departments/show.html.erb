@@ -11,8 +11,6 @@
         </h3><br><!-- family-name-end -->
         <span class="h5-grey">Description</span>
         <p><%= @department.description %></p>
-        <span class="h5-grey">Leader</span>
-        <p><%= @department.leaderName %></p>
         <br>
 
         <%= link_to "Delete Department", department_path(@department), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
@@ -24,39 +22,34 @@
          </div>
 
       </div> <!-- col end -->
-
-
       <div class="col-sm-4">
 
-        <div class="people-box-search center">
-          <h3>Search for People</h3>
-          <%= form_tag(department_path(@department), :method => "get", id: "search-form") do %>
-          <div class="input-group">
-            <%= text_field_tag :search_people, params[:search_people], placeholder: "Search People", class: "form-control", required: true %>
-            <div class="input-group-btn">
-              <%= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
-            </div>
-          </div>
-          <!-- /btn-group -->
-        </div>
-        <!-- /input-group -->
-        <% end %>
-        <% if @searchResultsPeople %>
-        <% for part in @searchResultsPeople %>
-        <div class="center grey-bg">
-          <%#= link_to "#{part.firstName} #{part.lastName}", unit_path(part.unit_id), :class => "family-card-search btn tiny-margin" %>
-          <div class="family-card-search family-card-search btn tiny-margin"><%= part.firstName %> <%= part.lastName %>
-            <%= form_for [@department] do |f| %>
-              <%= f.hidden_field :leaderName, :value => "#{part.firstName} #{part.lastName}" %>
-              <%= f.submit "Leader", :class => "btn btn-sm btn-primary"%>
-          <% end %>
-          </div>
-        </div>
 
-        <% end %>
-        <% end %>
-        <!-- of SearchResults end -->
-        <br><br>
+        <!-- <div class="people-box-search center">
+          <h3>Search for People</h3>
+          <%#= form_tag(department_path(@department), :method => "get", id: "search-form") do %>
+          <div class="input-group">
+            <%#= text_field_tag :search_people, params[:search_people], placeholder: "Search People", class: "form-control", required: true %>
+            <div class="input-group-btn">
+              <%#= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
+            </div>
+          </div>  -->
+          <!-- /btn-group -->
+        <!-- </div> -->
+        <!-- /input-group -->
+        <%# end %>
+        <%# if @searchResultsPeople %>
+        <%# for part in @searchResultsPeople %>
+        <!-- <div class="center grey-bg">
+          <div class="family-card-search family-card-search btn tiny-margin"><%#= part.firstname %> <%#= part.lastname %> -->
+            <%#= form_for [@department] do |f| %>
+              <%#= f.hidden_field :leaderName, :value => "#{part.firstname} #{part.lastname}" %>
+              <%#= f.submit "Leader", :class => "btn btn-sm btn-primary"%>
+          <%# end %>
+          <!-- </div>
+        </div> -->
+        <%# end %>
+        <%# end %>
 
 
 
@@ -69,7 +62,16 @@
         <% if position.department.id === @department.id %>
         <div class="people-btn">
             <span class="grey-btn white">
-             <%= position.part.firstName %> <%= position.part.lastName %>
+             <%= position.part.firstname %> <%= position.part.lastname %>
+             <% if position.position2 === "Worker" %>
+             <%= image_tag("worker.png", :class => "icon-size-tiny")%>
+             <% end %>
+             <% if position.position2 === "Leader" %>
+             <%= image_tag("leader.png", :class => "icon-size-tiny")%>
+             <% end %>
+             <% if position.position2 === "Department Head" %>
+             <%= image_tag("dep_head2.png", :class => "icon-size-tiny")%>
+             <% end %>
             </span>
             <span class="black">
               <%= link_to "X", position, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
@@ -87,7 +89,7 @@
 <!-- Original Version -->
         <%# @positions.each do |position| %>
           <%#= position.department.name %>
-                <%#= position.part.firstName %>
+                <%#= position.part.firstname %>
             <%#= link_to 'Show', position %>
             <%#= link_to 'Edit', edit_position_path(position) %>
             <%#= link_to 'Delete', position, method: :delete, data: { confirm: 'Are you sure?' } %>

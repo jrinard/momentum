@@ -4,14 +4,12 @@ class DepartmentsController < ApplicationController
     @user = current_user
     @parts = Part.all
     @departments = Department.all
-    @positions = Position.all
-
-
+    @positions = Position.order('position2 asc')
   end
 
   def show
     @departments = Department.all
-    @positions = Position.all
+    @positions = Position.order('position2 asc')
 
     if params[:id]
     @department = Department.find(params[:id])

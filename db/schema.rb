@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20170602204633) do
 
   create_table "parts", force: :cascade do |t|
     t.string   "title"
-    t.string   "firstName"
-    t.string   "lastName"
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "allergies"
     t.string   "parent"
     t.date     "birthdate"
-    t.boolean  "backCheck"
+    t.boolean  "backcheck"
     t.string   "notes"
     t.boolean  "member"
     t.boolean  "leader"

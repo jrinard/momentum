@@ -1,40 +1,40 @@
 <%= form_for(@position) do |f| %>
-  <% if @position.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@position.errors.count, "error") %> prohibited this position from being saved:</h2>
-      <ul>
-      <% @position.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @position.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@position.errors.count, "error") %>
+    prohibited this position from being saved:</h2>
+  <ul>
+    <% @position.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
+<div class="field">
   <label class="white">Department</label>
   <%= f.select :department_id,
-  Department.all.collect { |u| [u.name, u.id] },
+  Department.order('name asc').all.collect { |u| [u.name, u.id] },
                { include_blank: false },
                { class: 'form-control selected' }
                %>
-  </div>
+</div>
 
-  <div class="field">
+<div class="field">
   <label class="white">Person</label>
   <%= f.select :part_id,
-  Part.order('title asc').all.map { |u| [u.firstName + " " + u.lastName, u.id] },
+  Part.order('lastname asc').all.map { |u| [u.lastname + ", " + u.firstname, u.id] },
                { include_blank: false},
                { class: 'form-control selected' }
                %>
-  </div>
+</div>
 
-  <div class="field">
-      <label class="white">Position</label>
-    <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
-  </div>
+<div class="field">
+  <label class="white">Position</label>
+  <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
+</div>
 
-
-  <div class="actions">
-    <%= f.submit "Save", :class => "btn-lg btn-primary"%>
-  </div>
+<div class="actions">
+  <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+</div>
 <% end %>
