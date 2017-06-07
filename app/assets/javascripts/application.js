@@ -39,6 +39,11 @@ $(document).on('turbolinks:load', function() {
     });
 });
 
+
+
+
+
+
 //Flip
 $( document ).on('turbolinks:load', function() {
 $('.flip').click(function(){

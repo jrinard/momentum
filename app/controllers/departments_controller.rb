@@ -48,7 +48,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
     if @department.update(depart_params)
       flash[:notice] = "Deparment Updated!"
-      redirect_to department_path(@department)
+      redirect_to departments_path
     else
       flash[:notice] = "There was an error. Updating the department"
       render :edit

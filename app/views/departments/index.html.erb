@@ -15,8 +15,21 @@
           <% if @departments.any? %>
           <% @departments.each do |dep| %>
           <div class="family-card">
-            <%= link_to "#{dep.name}", department_path(dep), :class => "h2-black" %>
-            <%= link_to "Edit",  edit_department_path(dep, @dep_id = dep.id), :class => "pull-right" %>
+                <%= link_to "#{dep.name}", department_path(dep), :class => "h2-black" %>
+            <!-- Javascript form toggle -->
+            <div class="edit_family pull-right">Edit</div>
+             <div class="edit_f">
+               <%= form_for [dep] do |f| %>
+               <div class="input-group">
+                <%= f.text_field :name, :placeholder => 'Department Name', :class => 'form-control' %>
+                 <div class="input-group-btn">
+                   <%= f.submit "Save", :name => nil, class: "btn-search btn-sm btn-success" %>
+                 </div>
+               </div>
+                <% end %>
+             </div>
+
+            <%#= link_to "Edit",  edit_department_path(dep, @dep_id = dep.id), :class => "pull-right" %>
             <%= link_to 'Add Person', new_position_path, :class => "btn custom-btn btn-primary" %>
 
             <div class="people-box2">
