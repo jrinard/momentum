@@ -51,7 +51,7 @@ end
 
 
   def position_params
-     params.require(:position).permit(:title, :firstName, :lastName, :allergies, :parent, :birthdate, :backCheck, :notes, :member, :leader, :user_id, :department_id, :part_id)
+     params.require(:position).permit(:position, :position2, :user_id, :department_id, :part_id)
   end
 
 end

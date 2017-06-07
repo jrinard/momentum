@@ -15,6 +15,8 @@ $blue: #337ab7;
 $green: #5cb85c;
 $black: #000;
 $white: #fff;
+$spacegrey: #36424b;
+$pink: #c05a76;
 
 html {
   height: 100%;
@@ -527,7 +529,7 @@ input[type="image"]
 //////////////////////// Topbar
 
 .topbar {
-  background-color: #333;
+  background-color: #222;
   width: 100%;
   height: 70px;
   border-bottom: 3px solid #000;
@@ -758,5 +760,20 @@ li.selected {
 .selected {
   color: purple;
   max-width: 200px;
-
 }
+
+// Experimental ux
+
+.blue-bar {
+  background-color: $blue;
+  height: 55px;
+  width: 245%;
+  padding: 8px;
+}
+.pink-bar {
+  background-color: $pink;
+  height: 65px;
+  width: 1000px;
+  margin: -10px;
+}
+//

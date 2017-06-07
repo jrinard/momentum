@@ -45,7 +45,7 @@
         <% for part in @searchResultsPeople %>
         <div class="center grey-bg">
           <%#= link_to "#{part.firstName} #{part.lastName}", unit_path(part.unit_id), :class => "family-card-search btn tiny-margin" %>
-          <div class="family-card-search family-card-search btn tiny-margin"><%= part.firstName %>
+          <div class="family-card-search family-card-search btn tiny-margin"><%= part.firstName %> <%= part.lastName %>
             <%= form_for [@department] do |f| %>
               <%= f.hidden_field :leaderName, :value => "#{part.firstName} #{part.lastName}" %>
               <%= f.submit "Leader", :class => "btn btn-sm btn-primary"%>

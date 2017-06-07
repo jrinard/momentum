@@ -44,9 +44,8 @@ ActiveRecord::Schema.define(version: 20170602204633) do
   create_table "positions", force: :cascade do |t|
     t.integer  "department_id"
     t.integer  "part_id"
-    t.boolean  "head"
-    t.boolean  "leader"
-    t.boolean  "worker"
+    t.boolean  "position"
+    t.string   "position2"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["department_id"], name: "index_positions_on_department_id", using: :btree
