@@ -19,12 +19,10 @@
                %>
   </div>
 
-
-
   <div class="field">
   <label class="white">Person</label>
   <%= f.select :part_id,
-  Part.all.collect { |u| [u.firstName + " " + u.lastName, u.id] },
+  Part.order('title asc').all.map { |u| [u.firstName + " " + u.lastName, u.id] },
                { include_blank: false},
                { class: 'form-control selected' }
                %>

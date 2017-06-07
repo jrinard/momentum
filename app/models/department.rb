@@ -10,4 +10,6 @@ class Department < ApplicationRecord
     self.name = self.name.titleize
   end
 
+  # scope :desc, order("departments.order DESC")
+
 end
