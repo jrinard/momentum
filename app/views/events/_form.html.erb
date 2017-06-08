@@ -1,0 +1,15 @@
+
+  <div class="well">
+    <%= form_for [@event] do |f| %>
+    <div class="field">
+    <%= f.text_field :name, :placeholder => 'Name', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_area :description, :placeholder => 'Description', :class => 'form-control input-lg' %>
+    </div>
+
+    <div class="field center">
+      <%= f.submit "Save", :class => "btn-sm btn-primary"%>
+    </div>
+  <% end %>
+</div>

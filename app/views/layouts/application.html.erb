@@ -25,7 +25,7 @@
         <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
         <hr>
         <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
-        <li><%= link_to "Events", root_path, :class => 'notWorking' %></li>
+        <li class="<%= 'active_bg' if current_page?(events_path) %>"><%= link_to "Events", events_path, :class => 'notWorking' %></li>
 
         <h5>Attendance Entry</h5>
         <h5>Groups</h5>

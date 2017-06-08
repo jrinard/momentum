@@ -8,11 +8,10 @@ Rails.application.routes.draw do
   end
   resources :stats, :only => [:index]
 
-  resources :departments do
-    resources :parts
-  end
-
+  resources :departments
+  resources :events
   resources :positions
+  resources :spectators
 
   # post '/', to: 'home#show', as: 'show'
 

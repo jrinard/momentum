@@ -1,0 +1,36 @@
+<%= form_for(@spectator) do |f| %>
+<% if @spectator.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@spectator.errors.count, "error") %>
+    prohibited this spectator from being saved:</h2>
+  <ul>
+    <% @spectator.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <label class="white">Event</label>
+  <%= f.select :event_id,
+  Event.order('name asc').all.collect { |u| [u.name, u.id] },
+               { include_blank: false },
+               { class: 'form-control selected' }
+               %>
+</div>
+
+<div class="field">
+  <label class="white">Person</label>
+  <%= f.select :part_id,
+  Part.order('lastname asc').all.map { |u| [u.lastname + ", " + u.firstname, u.id] },
+               { include_blank: false},
+               { class: 'form-control selected' }
+               %>
+</div>
+
+
+<div class="actions">
+  <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+</div>
+<% end %>

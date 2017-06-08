@@ -1,0 +1,66 @@
+<div class="flex-container-big">
+  <div class="flex-block-big">
+
+    <div class="blue-bar">
+      <div class="h2-white">events - Index</div>
+    </div>
+
+    <br><br><br><br>
+    <%= link_to "New event", new_event_path, :class => "btn btn-sm btn-primary" %>
+    <%= link_to 'Assign Person', new_spectator_path, :class => "btn btn-sm btn-warning" %>
+
+    <br><br>
+    <br>
+    <% if @events.any? %>
+    <% @events.each do |eve| %>
+    <div class="col-xs-3">
+      <div class="well2">
+
+        <%= link_to "#{eve.name}", event_path(eve), :class => "h2-black" %>
+        <!-- Javascript form toggle -->
+        <div class="edit_family pull-right">Edit</div>
+        <div class="edit_f">
+          <%= form_for [eve] do |f| %>
+          <div class="input-group">
+            <%= f.text_field :name, :placeholder => 'Name', :class => 'form-control' %>
+            <div class="input-group-btn">
+              <%= f.submit "Save", :name => nil, class: "btn-search btn-sm btn-primary" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+        <%#= link_to "Edit",  edit_event_path(eve, @eve_id = eve.id), :class => "pull-right" %>
+        <%#= link_to 'Add Person', new_spectator_path, :class => "btn custom-btn btn-primary" %>
+
+        <div class="people-box2">
+          <% @spectators.each do |spectator| %>
+          <!-- Filters only this event -->
+          <% if spectator.event.id === eve.id %>
+          <div class="single-person">
+            <span class="white">
+              <%= spectator.part.firstname %>
+              <%= spectator.part.lastname %>
+            </span>
+
+            <span class="black2">
+              <%= link_to "X", spectator, :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+            </span>
+          </div>
+          <% end %>
+          <% end %>
+          <!-- Filter end -->
+        </div>
+        <!-- people-box2 end -->
+
+      </div>
+      <!-- well2 end -->
+    </div>
+    <!-- col2 end -->
+    <% end %>
+  <% else %>
+    <h3 class="h2-white pull-left">No events Yet</h3>
+    <% end %>
+
+  </div>
+</div>
