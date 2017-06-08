@@ -8,8 +8,10 @@ class Part < ApplicationRecord
     self.firstname = self.firstname.titleize
   end
 
-
   has_many :positions
   has_many :departments, through: :positions
+
+  has_many :spectators
+  has_many :events, through: :spectators
 
 end
