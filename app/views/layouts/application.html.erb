@@ -7,76 +7,81 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+  </head>
   <body>
-      <div class="row">
-        <div class="col-sm-3 left-column center">
+    <div class="row">
+      <div class="col-sm-3 left-column center">
 
-          <div class="logo logo-box">
-            <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), parts_path %>
-            <%= link_to 'Momentum', root_path, :class => 'Not Working'  %>
-          </div>
+        <div class="logo logo-box">
+          <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), parts_path %>
+          <%= link_to 'Momentum', root_path, :class => 'Not Working'  %>
+        </div>
 
-          <nav class="nav">
+        <nav class="nav">
 
-            <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
-            <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
-            <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
-            <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
-            <hr>
-            <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
-            <li><%= link_to "Events", root_path, :class => 'notWorking' %></li>
+        <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
+        <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
+        <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
+        <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
+        <hr>
+        <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
+        <li><%= link_to "Events", root_path, :class => 'notWorking' %></li>
 
-            <h5>Attendance Entry</h5>
-            <h5>Groups</h5>
-            <h5>Files</h5>
-            <h5>Give</h5>
-            <h5>Forms</h5>
-            <h5>Mail Merges</h5>
-            <h5>Messages</h5>
-            <h5>Needs/Announcements</h5>
-            <h5>Report Bug</h5>
+        <h5>Attendance Entry</h5>
+        <h5>Groups</h5>
+        <h5>Files</h5>
+        <h5>Give</h5>
+        <h5>Forms</h5>
+        <h5>Mail Merges</h5>
+        <h5>Messages</h5>
+        <h5>Needs/Announcements</h5>
+        <h5>Report Bug</h5>
 
-        </div> <!-- Left end -->
+      </div>
+      <!-- Left end -->
 
-        <div class="col-sm-9 right-column">
-          <div class="topbar">
+      <div class="col-sm-9 right-column">
+        <div class="topbar">
 
-            <span class="pull-left shift-down grey"><%= flash[:notice] %><%= flash[:errors] %></span>
-            <div class="login pull-right">
+          <span class="pull-left shift-down grey"><%= flash[:notice] %><%= flash[:errors] %></span>
+          <div class="login pull-right">
             <% if current_user %>
 
-                <li><span class="solid"><%= current_user.id %>
-                  <%= link_to current_user.email, edit_user_registration_path %> |
+            <li>
+              <span class="blue">
+                <%= link_to current_user.email, edit_user_registration_path %>
+                |
                 <%= link_to "Log-out", destroy_user_session_path, method: "delete" %>
-              <%= image_tag("icon1.png", :class => "icon-size")%></li>
-            <% else %>
-                <li><%= link_to "Login", new_user_session_path %></a>
                 <%= image_tag("icon1.png", :class => "icon-size")%></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></a>
+              <%= image_tag("icon1.png", :class => "icon-size")%></li>
             <% end %>
 
-            </div>
-          </div>
-
-          <div class="content">
-             <%= yield %>
           </div>
         </div>
+
+        <div class="content">
+          <%= yield %>
+        </div>
       </div>
+    </div>
 
-  <!-- LOGIN -->
-   <% if @showlogin === true %>
-   <div class="menu">
-     <% if current_user %>
-     <%= link_to "Logout", destroy_user_session_path, method: "delete" %> |
-     <%= link_to current_user.email, edit_user_registration_path %>
-     <% else %>
-     <%= link_to "Log-in", new_user_session_path %></a>
-     <%= link_to "Signup", new_user_registration_path %></a>
-     <% end %>
-   </div> <!-- login end -->
-   <% end %>
+    <!-- LOGIN -->
+    <% if @showlogin === true %>
+    <div class="menu">
+      <% if current_user %>
+      <%= link_to "Logout", destroy_user_session_path, method: "delete" %>
+      |
+      <%= link_to current_user.email, edit_user_registration_path %>
+    <% else %>
+      <%= link_to "Log-in", new_user_session_path %></a>
+    <%= link_to "Signup", new_user_registration_path %></a>
+  <% end %>
+</div>
+<!-- login end -->
+<% end %>
 
-   </nav>
-  </body>
+</nav>
+</body>
 </html>
