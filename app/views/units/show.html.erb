@@ -18,10 +18,10 @@
           <% @unit.parts.each do |part| %>
             <span class="grey-btn">
               <%= link_to "#{part.firstname} #{part.lastname}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
-            </span>
-                  <span class="black">
+
+                  <span class="X">
               <%= link_to "X", unit_part_path(@unit, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-            </span><br><br>
+            </span></span>
           <% end %>
           <% else %><br><br>
         <% end %><br>
@@ -62,7 +62,7 @@
                   <span class="h5-grey">Allergies:</span>
                   <%= part.allergies %><br>
                   <span class="h5-grey">Birthdate:</span>
-                  <%= part.birthdate %><br>
+                  <%= part.birthdate.strftime("%b %d, %Y") %><br>
                   <%= part.notes %>
                 </div><br>
             <% end %>

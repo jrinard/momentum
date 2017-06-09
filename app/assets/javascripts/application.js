@@ -17,6 +17,7 @@
 //= require_tree .
 //= require chosen-jquery
 //= require scaffold
+//= require bootstrap-datepicker
 
 //= require chartkick
 
@@ -27,6 +28,7 @@
 //     $('div#whatever').toggle();
 //   });
 // });
+
 
 
 
@@ -48,8 +50,6 @@ $(document).on('turbolinks:load', function() {
         $(".edit_d").not($details).slideUp(); //hide the others
     });
 });
-
-
 
 
 

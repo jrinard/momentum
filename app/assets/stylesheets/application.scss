@@ -2,6 +2,7 @@
 @import "bootstrap";
 
 
+
 // font-family: 'Passion One', cursive;
 // font-family: 'Oswald', sans-serif;
 // font-family: 'Bangers', cursive;
@@ -17,6 +18,10 @@ $black: #000;
 $white: #fff;
 $spacegrey: #36424b;
 $pink: #c05a76;
+$midnight: #21252b;
+$midnight-light: #282c34;
+$midnight-dark: #1b1d23;
+
 
 html {
   height: 100%;
@@ -200,7 +205,7 @@ h6 {
 }
 
 .nav > .active_bg {
-    background-color: #222;
+    background-color: $midnight_dark;
 }
 
 
@@ -271,7 +276,7 @@ body {
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
   // background-size: cover;
-    background-color: #222;
+    background-color: $midnight;
 }
 
 .bg {
@@ -536,7 +541,7 @@ input[type="image"]
 }
 
 .left-column {
-  background-color: #333;
+  background-color: $midnight-light;
   padding-bottom: 300px;
   border-right: solid 2px #000;
 }
@@ -548,7 +553,7 @@ input[type="image"]
 //////////////////////// Topbar
 
 .topbar {
-  background-color: #222;
+  background-color: $midnight-light;
   width: 100%;
   height: 70px;
   border-bottom: 3px solid #000;
@@ -621,6 +626,18 @@ input[type="image"]
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
 }
 
+.well-event {
+  min-width: 300px;
+  max-width: 500px;
+  padding: 8px 8px;
+  margin: 5px 2.5px 5px 2.5px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
 .family-card {
   width: 200px;
   background-color: #fff;
@@ -643,13 +660,18 @@ input[type="image"]
   -webkit-box-shadow: none !important;
    box-shadow: none  !important;
    padding: 10px;
-   background-color: #777;
+   background-color: $midnight-light; //#777
+   display: block;
+   margin-bottom: 2px;
 
 }
-.black {
-  color: #000;
-  background-color: #777;
-  padding: 10px;
+.X {
+  color: #fff;
+  background-color: $midnight-light; //#777
+  padding-right: 10px;
+  margin-top: -2px;
+  float: right;
+
 }
 
 .grey-btn a:link {
@@ -704,19 +726,19 @@ input[type="image"]
 
 .people-box {
   margin-top: 100px;
-  background-color: #333;
+  background-color: $midnight-dark; //#333
   padding: 10px;
 }
 
 .people-box-search {
-  background-color: #333;
+  background-color: $midnight-dark; //#333
   padding: 10px;
 }
 
 //// department
 
 .people-box2 {
-  background-color: #333;
+  background-color: $midnight-dark; //#333
   padding: 10px;
   width: 100%;
 }
@@ -757,6 +779,15 @@ input[type="image"]
   color: #feaf21;
   font-size: 1.1em;
 }
+.time-select {
+  width: 15%;
+  display: inline;
+}
+.marg- {
+  margin-top: -40px;
+  margin-right: 10px;
+}
+
 // input, textarea{
 //     background-color:#666;
 //     color: #FFF;

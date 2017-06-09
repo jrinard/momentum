@@ -2,11 +2,38 @@
   <div class="well">
     <%= form_for [@event] do |f| %>
     <div class="field">
-    <%= f.text_field :name, :placeholder => 'Name', :class => 'form-control input-lg' %>
+    <%= f.text_field :name, :placeholder => 'Event Name', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%#= f.date_select :date,:order => [:month, :day, :year], :class => 'form-control input-lg' %>
+    <%= f.text_field :date, data:{ provide:'datepicker' }, :placeholder => 'Date of Event', :class => 'form-control input-lg'  %>
+    </div>
+    <div class="field">
+      <%= f.time_select :starttime, {:ampm => true}, :default => Time.now, :class => 'form-control time-select' %>
+    </div><hr>
+    <div class="field">
+    <%= f.text_field :locationname, :placeholder => 'Location Nickname', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :street, :placeholder => 'Street', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :city, :placeholder => 'City', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :state, :placeholder => 'State', :class => 'form-control input-lg' %>
+    </div>
+    <div class="field">
+    <%= f.text_field :zip, :placeholder => 'Zip', :class => 'form-control input-lg' %>
     </div>
     <div class="field">
     <%= f.text_area :description, :placeholder => 'Description', :class => 'form-control input-lg' %>
+  </div> <hr>
+    <div class="field">
+      <label>Recurring</label>
+      <%= f.select :recurring, options_for_select([["Yes", "True"], ["No", ""]]), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
     </div>
+
 
     <div class="field center">
       <%= f.submit "Save", :class => "btn-sm btn-primary"%>

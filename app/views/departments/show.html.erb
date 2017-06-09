@@ -72,10 +72,10 @@
               <% if position.position2 === "Department Head" %>
               <%= image_tag("dep_head2.png", :class => "icon-size-tiny")%>
               <% end %>
-            </span>
-            <span class="black">
+
+            <span class="X">
               <%= link_to "X", position, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-            </span><br><br>
+            </span></span>
           </div>
           <% end %>
           <% end %>

@@ -10,6 +10,8 @@ class EventsController < ApplicationController
   def show
     @events = Event.all
     @spectators = Spectator.all
+    @count = Event.all.count
+    # @count = event
 
     if params[:id]
     @event = Event.find(params[:id])
@@ -65,7 +67,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name, :description, :date, :starttime, :endtime, :locationname, :street, :state, :zip, :country, :recurring, :attendance, :volunteers, :created_at, :updated_at)
+    params.require(:event).permit(:name, :description, :date, :starttime, :endtime, :locationname, :street, :state, :city, :zip, :country, :recurring, :attendance, :volunteers, :created_at, :updated_at)
   end
 
 end
