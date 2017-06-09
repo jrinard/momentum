@@ -6,9 +6,9 @@
         <br><br>
 
         <h3><%= @event.name %></h3>
-        <p><%= @event.date.strftime("%A, %b %d, %Y") %></p><!-- Tuesday, Jan 28, 2015 -->
+        <p><%= @event.date%></p><!-- .strftime("%A, %b %d, %Y")  Tuesday, Jan 28, 2015 -->
         <span class="h5-grey">Starting</span>
-        <p><%= @event.starttime.strftime("%I:%M %p") %></p><br>
+        <p><%= @event.starttime %></p><br> <!--.strftime("%I:%M %p") -->
         <span class="h5-grey">Location</span>
         <p><%= @event.locationname %></p>
         <span class="h5-grey">Address</span>

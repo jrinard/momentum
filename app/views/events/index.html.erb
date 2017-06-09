@@ -15,17 +15,18 @@
     <% @events.each do |eve| %>
     <div class="well-event">
       <%= link_to "#{eve.name}", event_path(eve), :class => "h2-black" %><br>
-      <%= eve.date.strftime("%A, %b %d") %><!-- Tuesday, Jan 28, 2015 -->
-      @ <%= eve.starttime.strftime("%I:%M %p") %><br><!-- Javascript form toggle -->
+      <%= eve.date.strftime("%A, %b %d") %><!--   Tuesday, Jan 28, 2015 -->
+      @ <%= eve.starttime.strftime("%I:%M %p") %><br><!--   Javascript form toggle -->
       <div class="edit_family pull-right marg-">Quick Edit</div>
         <div class="edit_f">
           <%= form_for [eve] do |f| %>
             <div class="field">
-              <%= f.text_field :name, :placeholder => 'Event Name', :class => 'form-control input-lg' %>
+              <%= f.text_field :name, :required => 'true', :class => 'form-control input-lg' %>
             </div>
 
             <div class="field">
-              <%= f.text_field :date, data:{ provide:'datepicker' }, :placeholder => 'Date of Event', :class => 'form-control input-lg'  %>
+              <%= f.date_select :date,:order => [:month, :day, :year], :class => 'form-control input-lg' %>
+              <%#= f.text_field :date, data:{ provide:'datepicker' }, :placeholder => 'Date of Event', :required => 'true', :class => 'form-control input-lg'  %>
             </div>
             <div class="field">
               <%= f.time_select :starttime, {:ampm => true}, :default => Time.now, :class => 'form-control time-select' %>

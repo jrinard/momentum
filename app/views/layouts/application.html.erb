@@ -26,11 +26,11 @@
         <hr>
 
 
-
-        <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
+        <li class="NA"><%= link_to "Event Check-in", events_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(events_path) %>"><%= link_to "Events", events_path, :class => 'notWorking' %></li>
+        <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
 
-        <h5>Attendance Entry</h5>
+
         <h5>Groups</h5>
         <h5>Files</h5>
         <h5>Give</h5>
