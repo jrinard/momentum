@@ -1,0 +1,26 @@
+<div class="flex-container-big">
+  <div class="flex-block-big">
+
+    <div class="blue-bar">
+      <div class="h2-white">Event Checkin</div>
+    </div>
+
+    <br><br><br><br>
+
+    <%#= link_to 'Check Person In', new_spectator_path, :class => "btn btn-sm btn-success" %>
+    <div class="h2-white">Events Today</div>
+    <br>
+    <br>
+    <% if @events.any? %>
+    <% @events.each do |eve| %>
+    <div class="well-event">
+      <%= link_to "#{eve.name}", checkin_path(eve), :class => "h2-black" %><br>
+      <%= eve.date.strftime("%A, %b %d") %><!--   Tuesday, Jan 28, 2015 -->
+      @ <%= eve.starttime.strftime("%I:%M %p") %><br><!--   Javascript form toggle -->
+    </div>  <!-- well-event end -->
+    <% end %>
+    <% else %>
+      <h3 class="h2-white pull-left">No events scheduled today</h3>
+    <% end %>
+  </div>  <!-- flex block end -->
+</div>

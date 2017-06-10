@@ -11,7 +11,6 @@ class EventsController < ApplicationController
     @events = Event.all
     @spectators = Spectator.all
     @count = Event.all.count
-    # @count = event
 
     if params[:id]
     @event = Event.find(params[:id])
@@ -63,6 +62,19 @@ class EventsController < ApplicationController
     else
       flash[:notice] = "Event can not be deleted if there are people in it."
       redirect_to events_path
+    end
+  end
+
+  def checkins
+    @events = Event.today
+  end
+
+  def checkin
+    @events = Event.all
+    @spectators = Spectator.order(id: :desc)
+    @count = Event.all.count
+    if params[:id]
+    @event = Event.find(params[:id])
     end
   end
 

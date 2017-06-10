@@ -23,10 +23,11 @@
         <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
         <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
         <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
+        <li class="NA"><%= link_to "Event Check-in", checkins_path, :class => 'notWorking' %></li>
         <hr>
 
 
-        <li class="NA"><%= link_to "Event Check-in", events_path, :class => 'notWorking' %></li>
+
         <li class="<%= 'active_bg' if current_page?(events_path) %>"><%= link_to "Events", events_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
 

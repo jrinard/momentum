@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   resources :positions
   resources :spectators
 
+  get '/checkins', to: 'events#checkins', as: 'checkins'
+  get '/checkin/:id', to: 'events#checkin', as: 'checkin'
+
   # post '/', to: 'home#show', as: 'show'
 
 

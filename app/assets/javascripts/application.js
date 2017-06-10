@@ -51,10 +51,10 @@ $(document).on('turbolinks:load', function() {
     });
 });
 
-//datepicker
-$(document).on('turbolinks:load', function(){
-    $('.datepicker').datepicker();
-  });
+// //datepicker
+// $(document).on('turbolinks:load', function(){
+//     $('.datepicker').datepicker();
+//   });
 
 
 
