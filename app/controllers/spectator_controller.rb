@@ -5,7 +5,9 @@ class SpectatorsController < ApplicationController
   end
 
   def show
-     @spectator = Spectator.find(params[:id])
+     @spectator = Events.spectator.find(params[:id])
+    # @event = Event.find(params[:test])
+    # @event = Event.find(params[:id])
   end
 
   def new
@@ -13,13 +15,16 @@ class SpectatorsController < ApplicationController
     if params[:search_people]
       @searchResultsPeople = Part.search(params[:search_people])
     end
+
   end
 
   def create
     @spectator = Spectator.new(spectator_params)
     if @spectator.save
       flash[:notice] = "Spectator Saved !!!!!"
-      redirect_to events_path
+      if params[:checkin]
+         redirect_to events_path
+      end
     else
     render :new, notice: 'There was an error saving the person. Please try again.'
     end
@@ -41,10 +46,12 @@ class SpectatorsController < ApplicationController
   end
 
   def destroy
+    # @event = Event.find(params[:test])
     @spectator = Spectator.find(params[:id])
     if @spectator.destroy
       flash[:notice] = "Spectator has been deleted!"
-      redirect_to events_path
+      # redirect_to events_path
+      redirect_to event_path(@spectator.event) #allows routing to same page
     else
   end
 end

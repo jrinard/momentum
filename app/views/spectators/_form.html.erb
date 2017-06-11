@@ -1,3 +1,4 @@
+<!-- [@event, @spectator] -->
 <%= form_for(@spectator) do |f| %>
 <% if @spectator.errors.any? %>
 <div id="error_explanation">
@@ -20,6 +21,7 @@
                %>
 </div>
 
+
 <div class="field">
   <label class="white">Person</label>
   <%= f.select :part_id,
@@ -29,8 +31,11 @@
                %>
 </div>
 
-
 <div class="actions">
   <%= f.submit "Save", :class => "btn-lg btn-primary"%>
 </div>
 <% end %>
+
+<%#= f.select :event_id, @event %>
+<%#= f.select :part_id, Part.all{ |u| [u.name, u.id] }  %>
+<%#= f.hidden_field :event_id, value: event.id %>
