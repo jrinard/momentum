@@ -22,12 +22,10 @@ class SpectatorsController < ApplicationController
     @spectator = Spectator.new(spectator_params)
     if @spectator.save
       flash[:notice] = "Spectator Saved !!!!!"
-      if params[:checkin]
          redirect_to events_path
-      end
-    else
-    render :new, notice: 'There was an error saving the person. Please try again.'
-    end
+       else
+         render :new, notice: 'There was an error saving the person. Please try again.'
+       end
   end
 
   def edit
