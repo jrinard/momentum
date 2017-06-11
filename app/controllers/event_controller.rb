@@ -66,7 +66,7 @@ class EventsController < ApplicationController
   end
 
   def checkins
-    @events = Event.today
+    @events = Event.where("DATE(date) = ?", Date.today) #works
   end
 
   def checkin

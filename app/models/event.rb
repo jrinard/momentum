@@ -15,10 +15,10 @@ class Event < ApplicationRecord
   #   object.starts_at.strftime("%m/%d/%Y %H:%M")
   # end
 
-#Today for events
-  def self.today
-    where("created_at >= ?", Time.zone.now.beginning_of_day)
-  end
+#Today for events # not working
+  # def self.today
+  #   where("DATE(created_at) = ?", Date.today)
+  # end
 
 
 end
