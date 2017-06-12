@@ -78,3 +78,24 @@ $('.flip_dep').click(function(){
     return true;
 });
 })
+
+// NAVIGATION POPOUT
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+    document.getElementById("content-container").style.marginLeft = "265px";
+}
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("content-container").style.marginLeft = "0";
+}
+
+// //overlay
+// /* Set the width of the side navigation to 250px */
+// function openNav() {
+//     document.getElementById("mySidenav").style.width = "250px";
+// }
+//
+// /* Set the width of the side navigation to 0 */
+// function closeNav() {
+//     document.getElementById("mySidenav").style.width = "0";
+// }

@@ -10,27 +10,28 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-sm-3 left-column center">
+      <div class="col-sm-12 left-column center">
 
-        <div class="logo logo-box">
-          <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), parts_path %>
-          <%= link_to 'Momentum', root_path, :class => 'Not Working'  %>
-        </div>
+      <div id="icon-menu">
+      <br>
+      <%= image_tag("threelines.png", :class => "icon-size", :onclick => 'openNav()')%>
+      <%= link_to image_tag("home.png", :class => "nav-icon-size"), root_path %>
+      <%= link_to image_tag("people.png", :class => "nav-icon-size"), units_path %>
+      <%= link_to image_tag("serve.png", :class => "nav-icon-size"), root_path %>
+      <%= link_to image_tag("stats.png", :class => "nav-icon-size"), stats_path %>
+      <%= link_to image_tag("checkin.png", :class => "nav-icon-size"), checkins_path %>
 
+      </div>
+      <div id="mySidenav" class="sidenav">
         <nav class="nav">
-
+        <li class="close-menu" onclick="closeNav()"><%= link_to "Menu", root_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
         <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
         <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
         <li class="NA"><%= link_to "Event Check-in", checkins_path, :class => 'notWorking' %></li>
-        <hr>
-
-
-
         <li class="<%= 'active_bg' if current_page?(events_path) %>"><%= link_to "Events", events_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
-
 
         <h5>Groups</h5>
         <h5>Files</h5>
@@ -40,17 +41,18 @@
         <h5>Messages</h5>
         <h5>Needs/Announcements</h5>
         <h5>Report Bug</h5>
-
       </div>
-      <!-- Left end -->
 
-      <div class="col-sm-9 right-column">
+    <div id="content-container">
+      <div class="right-column"> <!-- col-sm-9 -->
+        <div class="logo logo-box">
+          <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), root_path %>
+          <%= link_to 'Momentum', root_path, :class => 'NA'  %></span>
+        </div>
         <div class="topbar">
-
           <span class="pull-left shift-down grey"><%= flash[:notice] %><%= flash[:errors] %></span>
           <div class="login pull-right">
             <% if current_user %>
-
             <li>
               <span class="blue">
                 <%= link_to current_user.email, edit_user_registration_path %>
@@ -61,15 +63,15 @@
               <li><%= link_to "Login", new_user_session_path %></a>
               <%= image_tag("icon1.png", :class => "icon-size")%></li>
             <% end %>
-
           </div>
         </div>
 
         <div class="content">
           <%= yield %>
         </div>
-      </div>
-    </div>
+
+      </div> <!-- right-col end -->
+    </div> <!-- content-container end -->
 
     <!-- LOGIN -->
     <% if @showlogin === true %>
