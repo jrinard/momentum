@@ -5,6 +5,28 @@
       <div class="h2-white">Events - Index</div>
     </div>
 
+
+
+
+  <%= month_calendar events: @events do |date, events| %>
+  <%= date %>
+
+  <% events.each do |events| %>
+    <div>
+      <%= events.name %>
+    </div>
+  <% end %>
+<% end %>
+
+  <hr>
+
+  <%#= calendar number_of_days: 7 do |date| %>
+    <%#= date %>
+  <%# end %>
+
+
+
+
     <br><br><br><br>
     <%= link_to "New event", new_event_path, :class => "btn btn-sm btn-primary" %>
     <%= link_to 'Check Person In', new_spectator_path, :class => "btn btn-sm btn-warning" %>

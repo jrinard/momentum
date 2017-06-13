@@ -10,6 +10,10 @@ class Event < ApplicationRecord
     self.name = self.name.titleize
   end
 
+  #simple_calendar
+  def start_time
+     self.date ##Where 'start' is a attribute of type 'Date' accessible through MyModel's relationship
+  end
 
   # def starts_at
   #   object.starts_at.strftime("%m/%d/%Y %H:%M")
@@ -19,6 +23,5 @@ class Event < ApplicationRecord
   # def self.today
   #   where("DATE(created_at) = ?", Date.today)
   # end
-
 
 end

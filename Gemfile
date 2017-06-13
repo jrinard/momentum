@@ -21,7 +21,8 @@ gem 'will_paginate', '~> 3.1.0'
 gem "chartkick" # charts http://chartkick.com/
 gem 'groupdate' # for charts https://github.com/ankane/groupdate
 gem 'chosen-rails' # for fancy select form field
-gem 'bootstrap-datepicker-rails' # https://github.com/Nerian/bootstrap-datepicker-rails
+gem 'bootstrap-datepicker-rails' # https://github.com/Nerian/bootstrap-datepicker-rails #not currently working
+gem "simple_calendar", "~> 2.0" #https://github.com/excid3/simple_calendar
 
 
 group :development, :test do

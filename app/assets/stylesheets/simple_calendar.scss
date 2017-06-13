@@ -1,0 +1,77 @@
+
+$yellow: #feb831;
+$yellow2: #f0ad4e;
+$grey3: #333;
+$offwhite: #d2d2d2;
+$blue: #337ab7;
+$green: #5cb85c;
+$black: #000;
+$white: #fff;
+$spacegrey: #36424b;
+$pink: #c05a76;
+$midnight: #21252b;
+$midnight-light: #282c34;
+$midnight-dark: #1b1d23;
+
+
+.day-width {
+  width: 50px;
+}
+
+.week {
+  height: 90px;
+}
+
+.table-striped{
+  background-color: #fff;
+}
+
+.weekdays {
+  background-color: #999;
+}
+
+.well-midnight {
+  width: 700px;
+  padding: 8px 8px;
+  margin: 5px 2.5px 5px 2.5px;
+  background-color: $midnight-dark;
+  border: 1px solid $midnight-light;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.calendar-title {
+  color: #fff;
+  font-size: 2em;
+  padding: 0 15px;
+}
+
+.simple-calendar {
+  font-size: .8em;
+
+  .day {}
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {
+    background-color: $blue;
+  }
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {    background-color: $offwhite;}
+  .next-month {     background-color: $offwhite;}
+  .current-month {}
+
+  .has-events {
+    background-color: $yellow2;
+  }
+}
