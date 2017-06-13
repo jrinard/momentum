@@ -4,22 +4,37 @@ $yellow2: #f0ad4e;
 $grey3: #333;
 $offwhite: #d2d2d2;
 $blue: #337ab7;
+$blue-light: #badaf6;
 $green: #5cb85c;
 $black: #000;
 $white: #fff;
 $spacegrey: #36424b;
+$grey-light: #f1f1f1;
 $pink: #c05a76;
 $midnight: #21252b;
 $midnight-light: #282c34;
+$midnight-light2: #464c58;
 $midnight-dark: #1b1d23;
 
+.cal-date {
+  float: right;
+  background-color: $grey-light;
+  padding: 1px 3px;
+  margin-right: -8px;
+  margin-top: -8px;
+}
+
+.cal-bold {
+  // font-weight: bold;
+  font-size: 1em;
+}
 
 .day-width {
-  width: 50px;
+  // width: 40px;
 }
 
 .week {
-  height: 90px;
+  height: 70px;
 }
 
 .table-striped{
@@ -27,11 +42,13 @@ $midnight-dark: #1b1d23;
 }
 
 .weekdays {
-  background-color: #999;
+  background-color: $midnight-light2;
+  color: #fff;
+  text-align: center;
 }
 
 .well-midnight {
-  width: 700px;
+  width: 620px;
   padding: 8px 8px;
   margin: 5px 2.5px 5px 2.5px;
   background-color: $midnight-dark;
@@ -50,7 +67,11 @@ $midnight-dark: #1b1d23;
 .simple-calendar {
   font-size: .8em;
 
-  .day {}
+  .day {
+      border: solid 1px $midnight-light;
+      min-width: 85px;
+      // min-height: 180px;
+  }
   .wday-0 {}
   .wday-1 {}
   .wday-2 {}
@@ -60,7 +81,8 @@ $midnight-dark: #1b1d23;
   .wday-6 {}
 
   .today {
-    background-color: $blue;
+    border: solid 3px $blue;
+
   }
   .past {}
   .future {}
@@ -72,6 +94,6 @@ $midnight-dark: #1b1d23;
   .current-month {}
 
   .has-events {
-    background-color: $yellow2;
+    background-color: $blue-light;
   }
 }
