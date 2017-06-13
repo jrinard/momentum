@@ -10,19 +10,21 @@
   </head>
   <body>
     <div class="row">
-      <div class="col-sm-12 left-column center">
+      <div class="col-sm-12 left-column">
 
-      <div id="icon-menu">
+      <div id="icon-menu" class="center">
       <br>
-      <%= image_tag("threelines.png", :class => "icon-size", :onclick => 'openNav()')%>
+      <%= image_tag("threelines.png", :class => "menu-icon-size", :onclick => 'openNav()')%>
       <%= link_to image_tag("home.png", :class => "nav-icon-size"), root_path %>
       <%= link_to image_tag("people.png", :class => "nav-icon-size"), units_path %>
       <%= link_to image_tag("serve.png", :class => "nav-icon-size"), root_path %>
       <%= link_to image_tag("stats.png", :class => "nav-icon-size"), stats_path %>
       <%= link_to image_tag("checkin.png", :class => "nav-icon-size"), checkins_path %>
+      <%= link_to image_tag("event.png", :class => "nav-icon-size"), events_path %>
+      <%= link_to image_tag("departments.png", :class => "nav-icon-size"), departments_path %>
 
       </div>
-      <div id="mySidenav" class="sidenav">
+      <div id="mySidenav" class="sidenav center">
         <nav class="nav">
         <li class="close-menu" onclick="closeNav()"><%= link_to "Menu", root_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
@@ -45,7 +47,7 @@
 
     <div id="content-container">
       <div class="right-column"> <!-- col-sm-9 -->
-        <div class="logo logo-box">
+        <div class="logo logo-box center">
           <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), root_path %>
           <%= link_to 'Momentum', root_path, :class => 'NA'  %></span>
         </div>
@@ -58,15 +60,15 @@
                 <%= link_to current_user.email, edit_user_registration_path %>
                 |
                 <%= link_to "Log-out", destroy_user_session_path, method: "delete" %>
-                <%= image_tag("icon1.png", :class => "icon-size")%></li>
+                <%= image_tag("settings.png", :class => "icon-size")%></li>
             <% else %>
               <li><%= link_to "Login", new_user_session_path %></a>
-              <%= image_tag("icon1.png", :class => "icon-size")%></li>
+              <%= image_tag("settings.png", :class => "icon-size")%></li>
             <% end %>
           </div>
         </div>
 
-        <div class="content">
+        <div class="">
           <%= yield %>
         </div>
 

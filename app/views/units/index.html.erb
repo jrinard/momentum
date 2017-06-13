@@ -43,7 +43,7 @@
         <% end %>
         <% if @searchResults %>
         <% for unit in @searchResults %>
-        <div class="center grey-bg">
+        <div class="center midnight-bg">
           <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card-search btn tiny-margin" %><br>
         </div>
         <% end %>
@@ -65,7 +65,7 @@
         <% end %>
         <% if @searchResultsPeople %>
         <% for part in @searchResultsPeople %>
-        <div class="center grey-bg">
+        <div class="center midnight-bg">
           <%= link_to "#{part.firstname} #{part.lastname}", unit_path(part.unit_id), :class => "family-card-search btn tiny-margin" %><br>
         </div>
         <% end %>

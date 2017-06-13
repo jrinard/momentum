@@ -278,14 +278,13 @@ h6 {
 }
 
 body {
-
   // background: linear-gradient(to bottom, #413f7a , #1680b1);
-  min-height: 100%;
+  height: 100%;
   // background: url("/assets/bg.jpg") no-repeat center center fixed;
   // -webkit-background-size: cover;
   // -moz-background-size: cover;
   // background-size: cover;
-    background-color: $midnight;
+  background-color: $midnight-light;
 }
 
 .bg {
@@ -564,13 +563,15 @@ input[type="image"]
 .topbar {
   background-color: $midnight-dark;
   width: 100%;
-  height: 70px;
+  min-height: 70px;
   border-bottom: 3px solid #000;
+  margin:auto 0;
 }
 
 .login {
-  margin-right: 20px;
+  margin-right: -2px;
   margin-top: 12px;
+  width: 300px;
 }
 
 .topbar a:active {
@@ -766,6 +767,10 @@ input[type="image"]
     background-color: #333;
   }
 
+  .midnight-bg {
+    background-color: $midnight-dark;
+  }
+
   .tiny-margin {
     margin:5px 0px;
   }
@@ -782,6 +787,10 @@ input[type="image"]
 .icon-size-tiny {
   max-width: 15px;
   padding-bottom: 5px;
+}
+.menu-icon-size {
+  max-width: 50px;
+  margin-bottom: 15px;
 }
 .nav-icon-size {
   max-width: 35px;
