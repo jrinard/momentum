@@ -8,11 +8,9 @@
     <div class="col-sm-5">
       <br>
       <br>
-    <%= link_to "New event", new_event_path, :class => "btn btn-sm btn-primary" %>
-    <%= link_to 'Check Person In', new_spectator_path, :class => "btn btn-sm btn-warning" %>
-
-    <br><br>
-    <br>
+      <%= link_to "New event", new_event_path, :class => "btn btn-sm btn-primary" %>
+      <%= link_to 'Check Person In', new_spectator_path, :class => "btn btn-sm btn-warning" %>
+      <br><br><br>
     <% if @events.any? %>
     <% @events.each do |eve| %>
     <div class="well-event">
@@ -37,28 +35,22 @@
           <% end %>
         </div>
     </div>  <!-- well-event end -->
-        <%#= link_to "Edit",  edit_event_path(eve, @eve_id = eve.id), :class => "pull-right" %>
-        <%#= link_to 'Add Person', new_spectator_path, :class => "btn custom-btn btn-primary" %>
+      <%#= link_to "Edit",  edit_event_path(eve, @eve_id = eve.id), :class => "pull-right" %>
+      <%#= link_to 'Add Person', new_spectator_path, :class => "btn custom-btn btn-primary" %>
     <% end %>
     <% else %>
       <h3 class="h2-white pull-left">No events Yet</h3>
     <% end %>
+    </div>  <!-- col end -->
 
-
-</div>  <!-- col end -->
-
-  <div class="col-sm-7">
-
-    <%= month_calendar events: @events do |date, events| %>
-        <div class="pull-right cal-date"><%= date %></div>
-
-    <% events.each do |events| %>
-        <div class="cal-bold"><%= events.starttime.strftime("%I:%M %P") %></div> <!-- %e removed leading 0 -->
-        <div class="cal-text"><%= events.name %></div>
-    <% end %>
-  <% end %>
-
+    <div class="col-sm-7">
+      <%= month_calendar events: @events do |date, events| %>
+          <div class="pull-right cal-date"><%= date %></div>
+          <% events.each do |events| %>
+            <div class="cal-bold"><%= events.starttime.strftime("%I:%M %P") %></div> <!-- %e removed leading 0 -->
+            <div class="cal-text"><%= events.name %></div>
+          <% end %>
+      <% end %>
     </div><!-- col end -->
-
   <!-- </div>
 </div> -->
