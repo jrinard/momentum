@@ -38,6 +38,7 @@ Momentum is a software that allows non profit organizations or social movements 
 * As a leader you will be able to message your group members
 * As a user you will be able to email other people
 * As a user you will be able to report a bug or development suggestion
+* Build out responsive version
 
 
 ### Support and Contact Details
