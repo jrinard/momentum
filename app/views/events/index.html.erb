@@ -1,26 +1,13 @@
 <!-- <div class="flex-container-big">
   <div class="flex-block-big"> -->
 
-    <div class="col-sm-6">
+  <div class="blue-bar">
+    <div class="h2-white">Events - Index</div>
+  </div>
 
-    <div class="blue-bar">
-      <div class="h2-white">Events - Index</div>
-    </div>
-
-    <%= month_calendar events: @events do |date, events| %>
-        <div class="pull-right cal-date"><%= date %></div>
-
-    <% events.each do |events| %>
-      <div>
-        <div class="cal-bold"><%= events.starttime.strftime("%I:%M %P") %></div> <!-- %e removed leading 0 -->
-        <div class="cal-text"><%= events.name %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-  <div class="col-sm-6">
-
+    <div class="col-sm-5">
+      <br>
+      <br>
     <%= link_to "New event", new_event_path, :class => "btn btn-sm btn-primary" %>
     <%= link_to 'Check Person In', new_spectator_path, :class => "btn btn-sm btn-warning" %>
 
@@ -56,6 +43,21 @@
     <% else %>
       <h3 class="h2-white pull-left">No events Yet</h3>
     <% end %>
+
+
+</div>  <!-- col end -->
+
+  <div class="col-sm-7">
+
+    <%= month_calendar events: @events do |date, events| %>
+        <div class="pull-right cal-date"><%= date %></div>
+
+    <% events.each do |events| %>
+        <div class="cal-bold"><%= events.starttime.strftime("%I:%M %P") %></div> <!-- %e removed leading 0 -->
+        <div class="cal-text"><%= events.name %></div>
+    <% end %>
+  <% end %>
+
     </div><!-- col end -->
 
   <!-- </div>

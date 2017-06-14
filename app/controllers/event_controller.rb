@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   def index
     @user = current_user
     @parts = Part.all
-    @events = Event.all
+    @events = Event.order('date asc')
     @spectators = Spectator.all
   end
 
