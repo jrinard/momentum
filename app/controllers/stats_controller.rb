@@ -36,13 +36,19 @@ class StatsController < ApplicationController
     @startlastweek = lastweek.strftime("%b %d")
     endlastweek = Date.today.at_beginning_of_week - 1
     @endlastweek = endlastweek.strftime("%d")
+    @adultthisweek = Spectator.where("date(created_at) > ?", 6.days.ago).count
 
-    @adultthisweek = Date.today.at_beginning_of_week
+    @test2 = Spectator.where("date(created_at) > ?", 6.days.ago).count
 
     # @test = Spectator.where(:val => 5).group('week(created_at)').count
     # @test = Date.today.strftime("%U").to_i
     @countunits = Unit.top(:familyname).count
-    @test = Spectator.top(:created_at).count
+    # @test = Spectator.top(:created_at).count
+    @test = Time.now.wday
+
+    #date object ot test if the day is wednesday
+    date = Date.new(Time.now.year, Time.now.month, Time.now.day)
+    @test = date.wednesday?
 end
 
 end
