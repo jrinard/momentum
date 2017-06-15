@@ -1,12 +1,45 @@
-<div class="flex-container-big">
+<!-- <div class="flex-container-big">
   <div class="flex-block-big">
-    <div class="row">
-      <div class="col-sm-5">
-        <div class="h2-white">Stats - Index</div>
-        <br><br>
+    <div class="row"> -->
+      <div class="col-sm-12">
+        <br>
+        <div class="h2-white">Statistics</div>
+        <br>
+
+        <div class="big-white-box ">
+          <div class="col-sm-3">
+            <div class="stat-title"><%= @current_year %></div>
+
+              Total Attendance <span class="stat pull-right"><%= @spectactors_year %></span><br>
+              Sunday Average <span class="stat"><%= @sunday_average %></span><br>
+              Wednesday Average <span class="stat"><%= @wednesday_average %></span><br>
+              Kids Average <span class="stat"><%= @kids_average %></span><br>
+              Serving Average <span class="stat pull-right"><%= @serving_average %></span><br>
+<%= @test %>
+            </div>
+            <div class="col-sm-9">
+              <div class="chart">
+                <%= area_chart @chart1 %>
+              </div>
+            </div>
+        </div>
+
+        <div class="white-box col-sm-1">
+          <span class="stat-title">This Week - <%= @startweek %>-<%= @endweek %></span><br>
+          <span class="stat-sub">Adult Attendance </span><br>
+          <%= @adultthisweek %>
+          <span class="stat-body">Kids Attendance</span> <br>
+          <%= @kidsthisweek %>
+          <span class="stat-body">Serving </span> <br>
+          <%= @servingthisweek %>
+        </div>
+        <div class="white-box col-sm-1">
+          <span class="stat-title">Last Week - <%= @startlastweek %>-<%= @endlastweek %></span><br>
+        </div>
+
 
         <div class="h3-white">Users</div>
-        <p>Total:<%= @users.count %></p>
+        <p>Total Users<%= @users.count %></p>
         <div class="h3-white">Families</div>
         <p>Total:<%= @units.count %></p>
         <p>Week: <%= @units7 %></p>
@@ -28,9 +61,6 @@
 
       </div>
       <!-- col end -->
-    </div>
-    <!--row end -->
+    <!-- </div>
   </div>
-  <!-- flex-block end -->
-</div>
-<!-- flex-container end -->
+</div> -->

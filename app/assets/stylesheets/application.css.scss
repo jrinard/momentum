@@ -784,6 +784,46 @@ input[type="image"]
     font-size: 1.5em;
   }
 
+//// STAT RELATED
+
+.big-white-box {
+background-color: #fff;
+height: 300px;
+width: 100%;
+padding: 20px;
+// width: 800px;
+// position: fixed;
+}
+.white-box {
+background-color: #fff;
+height: 300px;
+width: 300px;
+padding: 20px;
+margin: 5px 2.5px;
+}
+
+.chart {
+margin-top: -20px;
+margin-right: -40px;
+width: 100%;
+}
+.stat-title {
+  color: $black;
+  font-size: 2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+
+.stat-sub {
+  font-size: 1.3em;
+}
+.stat {
+  margin-left: 40px;
+}
+.stat-body {
+  font-size: 1em;
+}
+
 
 //// MISC
 .icon-size {
@@ -873,51 +913,51 @@ input[type="image"]
     height: 80px;
 }
 
-
-//Department Flip
-.flip_dep {
-  -webkit-perspective: 800;
-    position: relative;
-    width: 200px;
-    background-color: #fff;
-    padding: 10px 10px;
-    margin: 5px 5px;
-    border-radius: 5px;
-}
-.flip_dep .card.flipped {
-  -webkit-transform: rotatey(-180deg);
-  // rotatey
-}
-.flip_dep .card {
-  width: 100%;
-  height: 100%;
-  -webkit-transform-style: preserve-3d;
-  -webkit-transition: 0.5s;
-}
-.flip_dep .card .face {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  -webkit-backface-visibility: hidden ;
-  z-index: 2;
-
-}
-.flip_dep .card .front {
-  position: absolute;
-  z-index: 1;
-    cursor: pointer;
-    height: 50px;
-
-}
-.flip_dep .card .back {
-  -webkit-transform: rotatey(-180deg);
-    background: blue;
-    background: white;
-    color: black;
-    cursor: pointer;
-    width: 300px;
-    height: 80px;
-}
+//
+// //Department Flip
+// .flip_dep {
+//   -webkit-perspective: 800;
+//     position: relative;
+//     width: 200px;
+//     background-color: #fff;
+//     padding: 10px 10px;
+//     margin: 5px 5px;
+//     border-radius: 5px;
+// }
+// .flip_dep .card.flipped {
+//   -webkit-transform: rotatey(-180deg);
+//   // rotatey
+// }
+// .flip_dep .card {
+//   width: 100%;
+//   height: 100%;
+//   -webkit-transform-style: preserve-3d;
+//   -webkit-transition: 0.5s;
+// }
+// .flip_dep .card .face {
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   -webkit-backface-visibility: hidden ;
+//   z-index: 2;
+//
+// }
+// .flip_dep .card .front {
+//   position: absolute;
+//   z-index: 1;
+//     cursor: pointer;
+//     height: 50px;
+//
+// }
+// .flip_dep .card .back {
+//   -webkit-transform: rotatey(-180deg);
+//     background: blue;
+//     background: white;
+//     color: black;
+//     cursor: pointer;
+//     width: 300px;
+//     height: 80px;
+// }
 
 
 

@@ -113,6 +113,8 @@ GEM
     groupdate (3.2.0)
       activesupport (>= 3)
     hashdiff (0.3.4)
+    hightop (0.2.0)
+      activerecord
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     httparty (0.15.5)
@@ -303,6 +305,7 @@ DEPENDENCIES
   dotenv-rails
   factory_girl_rails
   groupdate
+  hightop
   httparty
   jbuilder (~> 2.5)
   jquery-rails
