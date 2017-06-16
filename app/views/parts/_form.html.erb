@@ -8,13 +8,13 @@
     <%= f.text_field :firstname, :placeholder => 'First Name', :class => 'form-control input-lg' %>
     </div>
     <div class="field">
-    <%= f.text_field :lastname, :placeholder => 'Last Name', :class => 'form-control input-lg' %>
+    <%= f.text_field :lastname, :placeholder => 'Last Name', :class => 'form-control input-lg',:value => @unit.familyname %>
     </div>
     <div class="field">
     <%= f.text_field :allergies, :placeholder => 'Allergies', :class => 'form-control input-lg' %>
     </div>
     <div class="field">
-    <%= f.text_field :parent, :placeholder => 'Parent', :class => 'form-control input-lg',:value => @unit.familyname %>
+    <%= f.text_field :parent, :placeholder => 'Guardian', :class => 'form-control input-lg',:value => @unit.familyname %>
     </div>
     <div class="field">
       <label>Birthdate</label>
@@ -31,5 +31,8 @@
     <div class="field center">
       <%= f.submit "Save", :class => "btn-lg btn-primary"%>
     </div>
-  <% end %>
+
+    <%= link_to "Cancel", :back, {:class=>"btn-sm btn-default btn-cancel"} %>
+<% end %>
+
 </div>

@@ -1,3 +1,5 @@
+<div class="well">
+
 <!-- [@event, @spectator] -->
 <%= form_for(@spectator) do |f| %>
 <% if @spectator.errors.any? %>
@@ -13,7 +15,7 @@
 <% end %>
 
 <div class="field">
-  <label class="white">Event</label>
+  <label class="na">Event</label>
   <%= f.select :event_id,
   Event.order('name asc').all.collect { |u| [u.name, u.id] },
                { include_blank: false },
@@ -23,7 +25,7 @@
 
 
 <div class="field">
-  <label class="white">Person</label>
+  <label class="na">Person</label>
   <%= f.select :part_id,
   Part.order('lastname asc').all.map { |u| [u.lastname + ", " + u.firstname, u.id] },
                { include_blank: false},
@@ -35,7 +37,8 @@
   <%= f.submit "Save", :class => "btn-lg btn-primary"%>
 </div>
 <% end %>
-
+  <%= link_to "Cancel", :back, {:class=>"btn-sm btn-default btn-cancel"} %>
+</div>
 <%#= f.select :event_id, @event %>
 <%#= f.select :part_id, Part.all{ |u| [u.name, u.id] }  %>
 <%#= f.hidden_field :event_id, value: event.id %>

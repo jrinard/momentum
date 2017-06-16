@@ -1,3 +1,5 @@
+<div class="well">
+
 <%= form_for(@position) do |f| %>
 <% if @position.errors.any? %>
 <div id="error_explanation">
@@ -12,7 +14,7 @@
 <% end %>
 
 <div class="field">
-  <label class="white">Department</label>
+  <label class="na">Department</label>
   <%= f.select :department_id,
   Department.order('name asc').all.collect { |u| [u.name, u.id] },
                { include_blank: false },
@@ -21,7 +23,7 @@
 </div>
 
 <div class="field">
-  <label class="white">Person</label>
+  <label class="na">Person</label>
   <%= f.select :part_id,
   Part.order('lastname asc').all.map { |u| [u.lastname + ", " + u.firstname, u.id] },
                { include_blank: false},
@@ -30,11 +32,13 @@
 </div>
 
 <div class="field">
-  <label class="white">Position</label>
+  <label class="na">Position</label>
   <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
 </div>
 
 <div class="actions">
   <%= f.submit "Save", :class => "btn-lg btn-primary"%>
 </div>
+  <%= link_to "Cancel", :back, {:class=>"btn-sm btn-default btn-cancel"} %>
 <% end %>
+</div>
