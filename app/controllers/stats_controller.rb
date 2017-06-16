@@ -43,6 +43,14 @@ class StatsController < ApplicationController
     @endlastweek = endlastweek.strftime("%d")
 
 
+
+# FULL MONTH
+    beginning_of_month = Time.current.beginning_of_month
+    end_of_month = beginning_of_month.end_of_month
+      @specfullmonth = Spectator.where(created_at: beginning_of_month..end_of_month)
+
+
+
 # EXPERIMENTAL
     # @test = Spectator.where(:val => 5).group('week(created_at)').count
     # @test = Date.today.strftime("%U").to_i
@@ -59,7 +67,7 @@ class StatsController < ApplicationController
     elsif today.wday != 5
       @test = "Not friday"
     end
-    
+
     @y = Event.all.count
     @s = Event.where("extract(dow from date) = ?", 0).count
     @m = Event.where("extract(dow from date) = ?", 1).count

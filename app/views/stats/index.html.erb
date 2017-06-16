@@ -40,7 +40,7 @@
         <div class="white-box col-sm-1">
           <span class="stat-title">This Week - <%= @startweek %>-<%= @endweek %></span><br>
           <span class="stat-sub">Adult Attendance </span><br>
-          <%= @adultthisweek %><br>
+          <span class="h2-black-clean"><%= @adultthisweek %></span><br>
           <span class="stat-body">Kids Attendance</span> <br>
           <%= @kidsthisweek %><br>
           <span class="stat-body">Serving </span> <br>
@@ -62,7 +62,9 @@
         Total People: <%= @parts.count %> <br>
         Week: <%= @parts7 %>
         Month: <%= @parts30 %>
-        Year: <%= @parts365 %>
+        Year: <%= @parts365 %><br>
+
+      Full Month: <%= @specfullmonth.count %>
 
 </div><br>
 
