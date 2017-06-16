@@ -796,7 +796,7 @@ input[type="image"]
 
 .big-white-box {
 background-color: #fff;
-height: 300px;
+min-height: 300px;
 width: 100%;
 padding: 20px;
 // width: 800px;
@@ -811,9 +811,8 @@ margin: 5px 2.5px;
 }
 
 .chart {
-margin-top: -20px;
-margin-right: -40px;
-width: 100%;
+  margin: -20px -30px 0px 0px;
+// width: 500px;
 }
 .stat-title {
   color: $black;

@@ -39,7 +39,7 @@
 
   <div class="white-box col-sm-1">
         <div class="stat-title">General Stats</div>
-        Total Users <%= @users.count %><br><br>
+        Total User Accounts: <%= @users.count %><br><br>
 
         Total Families: <%= @units.count %><br>
         Week: <%= @units7 %>
@@ -53,6 +53,8 @@
 
 </div><br>
 
+<div class="col-sm-12">
+
         <div class="h3-white">Extra Sample Ideas Families</div>
 
         <div class="h3-white">Users by day</div>
@@ -62,9 +64,8 @@
         <div class="h3-white">People by week</div>
         <%= pie_chart Part.group_by_week(:created_at).count %>
 
-
-      </div>
-      <!-- col end -->
+      </div><!-- col end -->
+    </div> <!-- big-col end -->
     <!-- </div>
   </div>
 </div> -->

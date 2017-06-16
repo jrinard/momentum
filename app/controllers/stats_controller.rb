@@ -2,20 +2,21 @@ class StatsController < ApplicationController
 
   def index
     @user = current_user
-    @units = Unit.all
-    @units7 = User.where("date(created_at) > ?", 6.days.ago).count
-    @units30 = User.where("date(created_at) > ?", 30.days.ago).count
-    @units365 = User.where("date(created_at) > ?", 365.days.ago).count
-    @parts = Part.all
-    @parts7 = User.where("date(created_at) > ?", 6.days.ago).count
-    @parts30 = Part.where("date(created_at) > ?", 30.days.ago).count
-    @parts365 = Part.where("date(created_at) > ?", 365.days.ago).count
     @users = User.all
 
+    @units = Unit.all
+    @units7 = Unit.where('created_at >= :seven_days_ago',:seven_days_ago => 6.days.ago).count
+    @units30 = Unit.where("date(created_at) > ?", 30.days.ago).count
+    @units365 = Unit.where("date(created_at) > ?", 365.days.ago).count
+
+    @parts = Part.all
+    @parts7 = Part.where("date(created_at) > ?", 6.days.ago).count
+    @parts30 = Part.where("date(created_at) > ?", 30.days.ago).count
+    @parts365 = Part.where("date(created_at) > ?", 365.days.ago).count
+
     @events = Event.all
+    
     @spectators = Spectator.all
-
-
     @chart1 = Spectator.group_by_day(:created_at).count
 
     @current_year = Time.new.year
