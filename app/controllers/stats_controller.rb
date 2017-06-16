@@ -58,8 +58,16 @@ class StatsController < ApplicationController
       @test = "Friday"
     elsif today.wday != 5
       @test = "Not friday"
-
     end
+    
+    @y = Event.all.count
+    @s = Event.where("extract(dow from date) = ?", 0).count
+    @m = Event.where("extract(dow from date) = ?", 1).count
+    @t = Event.where("extract(dow from date) = ?", 2).count
+    @w = Event.where("extract(dow from date) = ?", 3).count
+    @th = Event.where("extract(dow from date) = ?", 4).count
+    @f = Event.where("extract(dow from date) = ?", 5).count
+    @sat = Event.where("extract(dow from date) = ?", 6).count
 
 
 

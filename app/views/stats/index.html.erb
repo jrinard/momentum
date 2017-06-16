@@ -14,14 +14,27 @@
               Sunday Average <span class="stat"><%= @sunday_average %></span><br>
               Wednesday Average <span class="stat"><%= @wednesday_average %></span><br>
               Kids Average <span class="stat"><%= @kids_average %></span><br>
-              Serving Average <span class="stat pull-right"><%= @serving_average %></span><br>
-<%= @test %>
+              Serving Average <span class="stat pull-right"><%= @serving_average %></span><br><br>
+<%= @test %><br>
+
             </div>
             <div class="col-sm-9">
               <div class="chart">
                 <%= area_chart @chart1 %>
               </div>
             </div>
+        </div>
+
+
+        <div class="white-box col-sm-1">
+          All Events: <%= @y %><br>
+          Sun <%= @s %><br>
+          Mon <%= @m %><br>
+          Tuesday <%= @t %><br>
+          Wednesday <%= @w %><br>
+          Thursday <%= @th %><br>
+          Friday <%= @f %><br>
+          Saturday <%= @sat %><br>
         </div>
 
         <div class="white-box col-sm-1">
