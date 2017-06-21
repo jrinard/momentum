@@ -2,7 +2,7 @@
   <div class="flex-block-big">
     <div class="row">
       <div class="col-sm-5">
-        <div class="h2-white">Event - Show</div>
+        <div class="h2-white">Revent - Show</div>
         <br><%= link_to 'Back', revents_path %>
         <br>
 
@@ -21,7 +21,8 @@
         <span class="h5-grey">Description</span>
         <p><%#= @event.description %></p>
         <br>
-        <%#= link_to "Delete Event", event_path(@event), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
+        <%= link_to "Delete Event", revent_path(@revent), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
+
         <!-- Javascript form toggle -->
         <div class="edit_family btn btn-sm btn-warning">Edit Event</div>
         <div class="edit_f">
@@ -37,9 +38,11 @@
           <h4>Current Attendance  <%= @revent.spectators.count %></h4>
           <br>
           <% @spectators.each do |spectator| %>
-          <!-- Filters only this event -->
-          <% if spectator.revent.id === @revent.id %>
-    <!-- <div class="people-btn"> -->
+
+Event Id <%= @revent.id %>
+<%#= spectator.revent.id %>
+
+          <%# if spectator.revent.id === @revent.id %>
             <span class="grey-btn white">
               <%= spectator.part.firstname %>
               <%= spectator.part.lastname %>
@@ -47,17 +50,12 @@
             <span class="X">
               <%= link_to "X", spectator, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
             </span></span>
-    <!-- </div> -->
-          <% end %>
+          <%# end %>
           <% end %>
           <!-- Filter end -->
           <br>
           <%= link_to 'Add Person', new_spectator_path, :class => "btn-sm btn-primary" %>
         </div>
-
-
-
-
 
     </div><!-- col end -->
   </div><!--row end -->

@@ -58,6 +58,7 @@
           <h4>People in this department</h4><br>
           <% @positions.each do |position| %>
           <!-- Filters only this department -->
+          <p><%= position.department.name %><p>
           <% if position.department.id === @department.id %>
           <div class="people-btn">
             <span class="grey-btn white">

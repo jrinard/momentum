@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :stats, :only => [:index]
 
   resources :departments
-  resources :events
+  resources :revents
   resources :positions
   resources :spectators
 

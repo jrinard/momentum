@@ -2,17 +2,18 @@ class ReventsController < ApplicationController
   before_action :set_revent, only: [:show, :edit, :update, :destroy]
 
   def index
-    @revents = Revent.all
-    @calendar_events = @revents.flat_map{ |e| e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date) }   # running calendar_events method and passing start date tells our recurring events where we want to grab.. thinking about exceptions
     @user = current_user
     @parts = Part.all
+    @revents = Revent.all
+    @calendar_events = @revents.flat_map{ |e| e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date) }   # running calendar_events method and passing start date tells our recurring events where we want to grab.. thinking about exceptions
+
     @spectators = Spectator.all
   end
 
   def show
     @revents = Revent.all
     @spectators = Spectator.all
-    @count = Revent.all.count
+    # @count = Revent.all.count
 
     if params[:id]
     @revent = Revent.find(params[:id])
@@ -29,11 +30,6 @@ class ReventsController < ApplicationController
     @revent = Revent.new
   end
 
-  def edit
-    @revent = Revent.new
-    @revent = Revent.find(params[:id])
-  end
-
   def create
     @revent = Revent.new(revent_params)
 
@@ -46,6 +42,11 @@ class ReventsController < ApplicationController
         format.json { render json: @revent.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def edit
+    @revent = Revent.new
+    @revent = Revent.find(params[:id])
   end
 
   def update
@@ -70,7 +71,7 @@ class ReventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_revent
       @revent = Revent.find(params[:id])
     end
