@@ -24,6 +24,7 @@ gem 'hightop' # for charts https://github.com/ankane/hightop
 gem 'chosen-rails' # for fancy select form field
 gem 'bootstrap-datepicker-rails' # https://github.com/Nerian/bootstrap-datepicker-rails #not currently working
 gem "simple_calendar", "~> 2.0" #https://github.com/excid3/simple_calendar
+gem 'recurring_select', github: "RundownApp/recurring_select" #Recurring Select uses Ice-Cube gem - rundownapp makes it compatible with rails 5
 
 
 group :development, :test do

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @revent.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @revent.start_time %>
+</p>
+
+<p>
+  <strong>Recurring:</strong>
+  <%= @revent.recurring %>
+</p>
+
+<%= link_to 'Edit', edit_revent_path(@revent) %> |
+<%= link_to 'Back', revents_path %>

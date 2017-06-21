@@ -1,0 +1,37 @@
+
+<h1>Revents</h1>
+
+<div class="well">
+
+
+<p id="notice"><%= notice %></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start time</th>
+      <th>Recurring</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @revents.each do |revent| %>
+      <tr>
+        <td><%= revent.name %></td>
+        <td><%= revent.start_time %></td>
+        <td><%= revent.recurring %></td>
+        <td><%= link_to 'Show', revent %></td>
+        <td><%= link_to 'Edit', edit_revent_path(revent) %></td>
+        <td><%= link_to 'Destroy', revent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Revent', new_revent_path %>
+</div>
