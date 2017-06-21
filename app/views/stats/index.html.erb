@@ -15,6 +15,8 @@
               Wednesday Average <span class="stat"><%= @wednesday_average %></span><br>
               Kids Average <span class="stat"><%= @kids_average %></span><br>
               Serving Average <span class="stat pull-right"><%= @serving_average %></span><br><br>
+
+
 <%= @test %><br>
 
             </div>
@@ -27,7 +29,7 @@
 
 
         <div class="white-box col-sm-1">
-          All Events: <%= @y %><br>
+          All Events by date: <%= @y %><br>
           Sun <%= @s %><br>
           Mon <%= @m %><br>
           Tuesday <%= @t %><br>
@@ -48,6 +50,8 @@
         </div>
         <div class="white-box col-sm-1">
           <span class="stat-title">Last Week - <%= @startlastweek %>-<%= @endlastweek %></span><br>
+          <span class="stat-sub">Adult Attendance </span><br>
+          <span class="h2-black-clean"><%= @lastweek%></span><br>
         </div>
 
   <div class="white-box col-sm-1">

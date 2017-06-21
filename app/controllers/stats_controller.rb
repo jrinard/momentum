@@ -41,7 +41,7 @@ class StatsController < ApplicationController
     @startlastweek = lastweek.strftime("%b %d")
     endlastweek = Date.today.at_beginning_of_week - 1
     @endlastweek = endlastweek.strftime("%d")
-
+    @lastweek = Spectator.where(:created_at => 1.week.ago.beginning_of_week..1.week.ago.end_of_week).count
 
 
 # FULL MONTH
