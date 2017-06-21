@@ -1,13 +1,11 @@
 <div class="well">
-
-
-<%= form_for(revent) do |f| %>
-  <% if revent.errors.any? %>
+<%= form_for [@revent] do |f| %>
+  <% if @revent.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(revent.errors.count, "error") %> prohibited this revent from being saved:</h2>
 
     <ul>
-      <% revent.errors.full_messages.each do |message| %>
+      <% @revent.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -15,8 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => 'Event Name', :class => 'form-control input-lg' %>
   </div>
 
   <div class="field">
@@ -31,7 +28,8 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save", :class => "btn-sm btn-primary"%>
   </div>
 <% end %>
+    <%= link_to "Cancel", :back, {:class=>"btn-sm btn-default btn-cancel"} %>
 </div>

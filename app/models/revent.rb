@@ -3,6 +3,9 @@ class Revent < ApplicationRecord
 
   has_many :revent_exceptions
 
+  has_many :spectators
+  has_many :parts, through: :spectators
+
   def recurring=(value) #check to see if it is a valid rule from select Gem # goal is to parse strings into symbols so we can access things.
     if RecurringSelect.is_valid_rule?(value)
       super(RecurringSelect.dirty_hash_to_rule(value).to_hash) #parse the value and verify it is accurate and pass it to hash and saved by calling super overriding the recurring =

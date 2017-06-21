@@ -4,10 +4,20 @@ class ReventsController < ApplicationController
   def index
     @revents = Revent.all
     @calendar_events = @revents.flat_map{ |e| e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date) }   # running calendar_events method and passing start date tells our recurring events where we want to grab.. thinking about exceptions
+    @user = current_user
+    @parts = Part.all
+    @spectators = Spectator.all
   end
 
-
   def show
+    @revents = Revent.all
+    @spectators = Spectator.all
+    @count = Revent.all.count
+
+    if params[:id]
+    @revent = Revent.find(params[:id])
+    end
+
     begin
       @time = Time.parse(params[:time])
     rescue
@@ -20,6 +30,8 @@ class ReventsController < ApplicationController
   end
 
   def edit
+    @revent = Revent.new
+    @revent = Revent.find(params[:id])
   end
 
   def create
@@ -49,6 +61,7 @@ class ReventsController < ApplicationController
   end
 
   def destroy
+    @revent = Revent.find(params[:id])
     @revent.destroy
     respond_to do |format|
       format.html { redirect_to revents_url, notice: 'Event was successfully destroyed.' }
