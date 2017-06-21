@@ -1,8 +1,16 @@
 
 <h1>Revents</h1>
 
-<div class="well">
+<%= month_calendar events: @calendar_events do |day, events| %>
+  <div><strong><%= day.to_s %></strong></div>
+  <% events.each do |event| %>
+    <div>
+      <%= link_to event.name, event %>
+    </div>
+  <% end %>
+<% end %>
 
+<div class="well">
 
 <p id="notice"><%= notice %></p>
 

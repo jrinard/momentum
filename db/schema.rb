@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170621164943) do
+ActiveRecord::Schema.define(version: 20170621181425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,14 @@ ActiveRecord::Schema.define(version: 20170621164943) do
     t.index ["part_id"], name: "index_positions_on_part_id", using: :btree
   end
 
+  create_table "revent_exceptions", force: :cascade do |t|
+    t.integer  "revent_id"
+    t.datetime "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["revent_id"], name: "index_revent_exceptions_on_revent_id", using: :btree
+  end
+
   create_table "revents", force: :cascade do |t|
     t.string   "name"
     t.datetime "start_time"
@@ -126,6 +134,7 @@ ActiveRecord::Schema.define(version: 20170621164943) do
 
   add_foreign_key "positions", "departments"
   add_foreign_key "positions", "parts"
+  add_foreign_key "revent_exceptions", "revents"
   add_foreign_key "spectators", "events"
   add_foreign_key "spectators", "parts"
 end

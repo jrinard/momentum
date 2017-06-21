@@ -1,34 +1,33 @@
 class ReventsController < ApplicationController
   before_action :set_revent, only: [:show, :edit, :update, :destroy]
 
-  # GET /revents
-  # GET /revents.json
   def index
     @revents = Revent.all
+    @calendar_events = @revents.flat_map{ |e| e.calendar_events(params.fetch(:start_date, Time.zone.now).to_date) }   # running calendar_events method and passing start date tells our recurring events where we want to grab.. thinking about exceptions
   end
 
-  # GET /revents/1
-  # GET /revents/1.json
+
   def show
+    begin
+      @time = Time.parse(params[:time])
+    rescue
+      @time = @revent.start_time
+    end
   end
 
-  # GET /revents/new
   def new
     @revent = Revent.new
   end
 
-  # GET /revents/1/edit
   def edit
   end
 
-  # POST /revents
-  # POST /revents.json
   def create
     @revent = Revent.new(revent_params)
 
     respond_to do |format|
       if @revent.save
-        format.html { redirect_to @revent, notice: 'Revent was successfully created.' }
+        format.html { redirect_to @revent, notice: 'Event was successfully created.' }
         format.json { render :show, status: :created, location: @revent }
       else
         format.html { render :new }
@@ -37,12 +36,10 @@ class ReventsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /revents/1
-  # PATCH/PUT /revents/1.json
   def update
     respond_to do |format|
       if @revent.update(revent_params)
-        format.html { redirect_to @revent, notice: 'Revent was successfully updated.' }
+        format.html { redirect_to @revent, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @revent }
       else
         format.html { render :edit }
@@ -51,12 +48,10 @@ class ReventsController < ApplicationController
     end
   end
 
-  # DELETE /revents/1
-  # DELETE /revents/1.json
   def destroy
     @revent.destroy
     respond_to do |format|
-      format.html { redirect_to revents_url, notice: 'Revent was successfully destroyed.' }
+      format.html { redirect_to revents_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -67,7 +62,6 @@ class ReventsController < ApplicationController
       @revent = Revent.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def revent_params
       params.require(:revent).permit(:name, :start_time, :recurring)
     end
