@@ -7,7 +7,6 @@ class SpectatorsController < ApplicationController
   def show
     @spectator = Spectator.find(params[:id])
     # @spectator = Revents.spectator.find(params[:id])
-    # @revent = Revent.find(params[:test])
     # @revent = Revent.find(params[:id])
   end
 
@@ -46,13 +45,14 @@ class SpectatorsController < ApplicationController
   def destroy
     # @revent = Revent.find(params[:test])
     @spectator = Spectator.find(params[:id])
-    if @spectator.destroy
-      flash[:notice] = "Spectator has been deleted"
-      redirect_to revents_path
-      # redirect_to revent_path(@spectator.revent) #use to allow routing to same page
-    else
+    @spectator.destroy
+    # flash[:notice] = "Spectator has been deleted"
+    # redirect_to revent_path(@spectator.revent) #use to allow routing to same page
+    respond_to do |format|
+            format.html { redirect_to revents_path }
+            format.js
+          end
   end
-end
 
 
   def spectator_params

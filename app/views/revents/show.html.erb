@@ -21,7 +21,7 @@
         <span class="h5-grey">Description</span>
         <p><%#= @event.description %></p>
         <br>
-        <%= link_to "Delete Event", revent_path(@revent), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
+        <%= link_to "Delete Event", revent_path(@revent), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"} %>
 
         <!-- Javascript form toggle -->
         <div class="edit_family btn btn-sm btn-warning">Edit Event</div>
@@ -39,16 +39,17 @@
           <br>
           <% @spectators.each do |spectator| %>
 
-Event Id <%= @revent.id %>
-<%#= spectator.revent.id %>
+          Event Id <%= @revent.id %> |
+          Spec Id <%= spectator.id %>
+
 
           <%# if spectator.revent.id === @revent.id %>
-            <span class="grey-btn white">
+            <span class="grey-btn white" id="spec_<%= spectator.id %>">
               <%= spectator.part.firstname %>
               <%= spectator.part.lastname %>
 
             <span class="X">
-              <%= link_to "X", spectator, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+              <%= link_to "X", spectator, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}, remote: true%>
             </span></span>
           <%# end %>
           <% end %>

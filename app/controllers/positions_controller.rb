@@ -42,11 +42,14 @@ class PositionsController < ApplicationController
 
   def destroy
     @position = Position.find(params[:id])
-    if @position.destroy
-      flash[:notice] = "Position has been deleted!"
-      redirect_to departments_path
-    else
-  end
+    @position.destroy
+    # flash[:notice] = "Position has been deleted!"
+    # redirect_to departments_path
+    respond_to do |format|
+            format.html { redirect_to departments_path }
+            format.js
+          end
+
 end
 
 

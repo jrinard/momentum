@@ -58,10 +58,10 @@
           <h4>People in this department</h4><br>
           <% @positions.each do |position| %>
           <!-- Filters only this department -->
-          <p><%= position.department.name %><p>
+          <%#= position.department.name %>
           <% if position.department.id === @department.id %>
           <div class="people-btn">
-            <span class="grey-btn white">
+            <span class="grey-btn white" id="pos_<%= position.id %>">
               <%= position.part.firstname %>
               <%= position.part.lastname %>
               <% if position.position2 === "Worker" %>
@@ -75,7 +75,7 @@
               <% end %>
 
             <span class="X">
-              <%= link_to "X", position, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+              <%= link_to "X", position, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}, remote: true %>
             </span></span>
           </div>
           <% end %>
