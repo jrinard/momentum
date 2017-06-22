@@ -77,6 +77,6 @@ class ReventsController < ApplicationController
     end
 
     def revent_params
-      params.require(:revent).permit(:name, :start_time, :recurring)
+      params.require(:revent).permit(:name, :start_time, :recurring, :description, :locationname, :street, :state, :city, :zip, :country, :created_at, :updated_at)
     end
 end

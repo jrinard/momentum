@@ -11,15 +11,19 @@
         <span class="h5-grey">Starting</span>
         <p><%= @revent.start_time.strftime("%I:%M %p") %></p><br><!--.strftime("%I:%M %p") -->
         <span class="h5-grey">Location</span>
-        <p><%#= @revent.locationname %></p>
+        <p><%= @revent.locationname %></p>
         <span class="h5-grey">Address</span>
-        <p><%#= @revent.street %><br>
-          <%#= @revent.city %><%#= @revent.state %>
-          <%#= @revent.zip %></p>
+        <p><%= @revent.street %><br>
+          <%= @revent.city %><%= @revent.state %>
+          <%= @revent.zip %></p>
         <span class="h5-grey">Recurring</span>
-        <p><%= @revent.recurring %></p>
+        <% if @revent.recurring === {} %>
+          <p>No</p>
+        <% else %>
+          <p>Yes</p>
+        <% end %>
         <span class="h5-grey">Description</span>
-        <p><%#= @event.description %></p>
+        <p><%= @revent.description %></p>
         <br>
         <%= link_to "Delete Event", revent_path(@revent), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"} %>
 

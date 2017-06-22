@@ -83,8 +83,17 @@ ActiveRecord::Schema.define(version: 20170621194012) do
     t.string   "name"
     t.datetime "start_time"
     t.text     "recurring"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.string   "locationname"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "country"
+    t.integer  "attendance"
+    t.integer  "volunteers"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "spectators", force: :cascade do |t|
