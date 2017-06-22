@@ -7,7 +7,6 @@
         <br>
 
         <h3><%= @revent.name %></h3>
-        <p><%#= @revent.date%></p><!-- .strftime("%A, %b %d, %Y")  Tuesday, Jan 28, 2015 -->
         <span class="h5-grey">Starting</span>
         <p><%= @revent.start_time.strftime("%I:%M %p") %></p><br><!--.strftime("%I:%M %p") -->
         <span class="h5-grey">Location</span>
@@ -37,21 +36,20 @@
       </div><!-- col end -->
       <div class="col-sm-4">
 
-        <!-- SHOWS only spectators in this Event -->
+        <!-- DOES NOT SHOW only spectators in this Event -->
         <div class="people-box">
           <h4>Current Attendance  <%= @revent.spectators.count %></h4>
           <br>
           <% @spectators.each do |spectator| %>
 
-          Event Id <%= @revent.id %> |
-          Spec Id <%= spectator.id %>
-
+          <!-- Event Id <%= @revent.id %> | -->
+          <!-- Spec Id <%= spectator.id %>  -->
+          <p>Currently shows all spectators</p>
 
           <%# if spectator.revent.id === @revent.id %>
             <span class="grey-btn white" id="spec_<%= spectator.id %>">
               <%= spectator.part.firstname %>
               <%= spectator.part.lastname %>
-
             <span class="X">
               <%= link_to "X", spectator, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}, remote: true%>
             </span></span>

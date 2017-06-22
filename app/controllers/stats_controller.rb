@@ -27,7 +27,7 @@ class StatsController < ApplicationController
     # @test = Spectator.group_by_year(:created_at).count
     # @thisweek = Spectator.where("date(created_at) > ?", 6.days.ago).count
 
-    @serving_average = Spectator.count / Event.count
+    @serving_average = Spectator.count / Revent.count
     @chart1 = Spectator.group_by_day(:created_at).count
 
 # THIS WEEK
@@ -63,9 +63,19 @@ class StatsController < ApplicationController
     # end
     today = Date.new(Time.now.year, Time.now.month, Time.now.day)
     if today.wday === 5
-      @test = "Friday"
-    elsif today.wday != 5
-      @test = "Not friday"
+      @today = "Friday"
+    elsif today.wday === 6
+      @today = "Today is Saturday"
+    elsif today.wday === 0
+      @today = "Today is Sunday"
+    elsif today.wday === 1
+      @today = "Today is Monday"
+    elsif today.wday === 2
+      @today = "Today is Tuesday"
+    elsif today.wday === 3
+      @today = "Today is Wednesday"
+    elsif today.wday === 4
+      @today = "Today is Thursday"
     end
 
     @y = Event.all.count

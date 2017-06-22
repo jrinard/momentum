@@ -5,12 +5,12 @@
       <div class="col-sm-5">
 
         <div class="h2-white">Department - Show</div>
-        <br><br>
+        <br><%= link_to 'Back', departments_path %>
+        <br>
 
         <h3><%= @department.name %>
           Department
         </h3><br>
-        <!-- family-name-end -->
         <span class="h5-grey">Description</span>
         <p><%= @department.description %></p>
         <br>

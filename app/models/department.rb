@@ -1,7 +1,7 @@
 class Department < ApplicationRecord
 
   has_many :positions
-  has_many :parts, through: :positions
+  has_many :parts, through: :positions, dependent: :destroy
 
   validates :name, :presence => true
 
