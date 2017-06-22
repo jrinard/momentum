@@ -18,8 +18,8 @@
 //= require chosen-jquery
 //= require scaffold
 //= require bootstrap-datepicker
-
 //= require chartkick
+//= require recurring_select
 
 //Toggle a div
 // $(function() {

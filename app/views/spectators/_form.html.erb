@@ -1,6 +1,6 @@
 <div class="well">
 
-<!-- [@event, @spectator] -->
+<!-- [@revent, @spectator] -->
 <%= form_for(@spectator) do |f| %>
 <% if @spectator.errors.any? %>
 <div id="error_explanation">
@@ -16,8 +16,8 @@
 
 <div class="field">
   <label class="na">Event</label>
-  <%= f.select :event_id,
-  Event.order('name asc').all.collect { |u| [u.name, u.id] },
+  <%= f.select :revent_id,
+  Revent.order('name asc').all.collect { |u| [u.name, u.id] },
                { include_blank: false },
                { class: 'form-control selected' }
                %>
@@ -39,6 +39,6 @@
 <% end %>
   <%= link_to "Cancel", :back, {:class=>"btn-sm btn-default btn-cancel"} %>
 </div>
-<%#= f.select :event_id, @event %>
+<%#= f.select :revent_id, @revent %>
 <%#= f.select :part_id, Part.all{ |u| [u.name, u.id] }  %>
-<%#= f.hidden_field :event_id, value: event.id %>
+<%#= f.hidden_field :revent_id, value: revent.id %>

@@ -1,0 +1,54 @@
+<div class="blue-bar">
+  <div class="h2-white">Revents - Index</div>
+</div>
+
+<div class="col-sm-5">
+  <br><br>
+
+  <%= link_to "New Revent", new_revent_path, :class => "btn btn-sm btn-primary" %>
+  <br><br><br>
+
+  <% if @revents.any? %>
+  <% @revents.each do |revent| %>
+  <div class="well-event">
+
+    <%= link_to "#{revent.name}", revent, :class => "h2-black" %><br><!-- revent_path(revent) -->
+    <%= revent.start_time.strftime("%I:%M %p") %>
+
+    <div class="edit_family pull-right marg-">Quick Edit</div>
+    <div class="edit_f">
+      <%= form_for [revent] do |f| %>
+      <div class="field">
+        <%= f.text_field :name, :required => 'true', :class => 'form-control input-lg' %>
+      </div>
+      <div class="field">
+        <%= f.datetime_select :start_time, :class => 'form-control input-lg' %>
+      </div>
+      <div class="field">
+        <%= f.select_recurring :recurring, nil, allow_blank: true %>
+      </div>
+      <%= f.submit "Save", :name => nil, class: "btn btn-sm btn-primary" %>
+      <% end %>
+    </div>
+    <%#= link_to 'Edit', edit_revent_path(revent) %>
+    <%#= link_to 'Destroy', revent, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div><!-- well-event end -->
+  <% end %>
+<% else %>
+  <h3 class="h2-white pull-left">No events Yet</h3>
+  <% end %>
+  <br>
+</div><!-- col end -->
+<div class="col-sm-7">
+  <%= month_calendar events: @calendar_events do |day, events| %>
+  <div>
+    <strong><%= day.to_s %></strong>
+  </div>
+  <% events.each do |event| %>
+  <div>
+    <%= link_to event.name, revent_path(event.id, time: event.start_time) %>
+    <%= event.start_time.strftime("%I:%M %p") %>
+  </div>
+  <% end %>
+  <% end %>
+</div><!-- col end -->
