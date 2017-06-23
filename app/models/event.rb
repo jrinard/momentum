@@ -1,7 +1,7 @@
 class Event < ApplicationRecord
 
-  # has_many :spectators
-  # has_many :parts, through: :spectators
+  has_many :spectators
+  has_many :parts, through: :spectators
 
   validates :name, :presence => true
 

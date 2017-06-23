@@ -78,14 +78,21 @@ class StatsController < ApplicationController
       @today = "Today is Thursday"
     end
 
-    @y = Event.all.count
-    @s = Event.where("extract(dow from date) = ?", 0).count
-    @m = Event.where("extract(dow from date) = ?", 1).count
-    @t = Event.where("extract(dow from date) = ?", 2).count
-    @w = Event.where("extract(dow from date) = ?", 3).count
-    @th = Event.where("extract(dow from date) = ?", 4).count
-    @f = Event.where("extract(dow from date) = ?", 5).count
-    @sat = Event.where("extract(dow from date) = ?", 6).count
+    @y = Revent.all.count
+    @s = Revent.where("extract(dow from start_time) = ?", 0).count
+    @m = Revent.where("extract(dow from start_time) = ?", 1).count
+    @t = Revent.where("extract(dow from start_time) = ?", 2).count
+    @w = Revent.where("extract(dow from start_time) = ?", 3).count
+    @th = Revent.where("extract(dow from start_time) = ?", 4).count
+    @f = Revent.where("extract(dow from start_time) = ?", 5).count
+    @sat = Revent.where("extract(dow from start_time) = ?", 6).count
+
+
+#average
+
+
+    sunday_event_ids = Revent.where("extract(dow from start_time) = ?", 5).pluck(:id)
+    @sunday_average = Spectator.where(revent_id: sunday_event_ids).count
 
 
 

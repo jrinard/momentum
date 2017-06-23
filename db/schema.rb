@@ -97,10 +97,12 @@ ActiveRecord::Schema.define(version: 20170621194012) do
   end
 
   create_table "spectators", force: :cascade do |t|
+    t.integer  "event_id"
     t.integer  "revent_id"
     t.integer  "part_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_spectators_on_event_id", using: :btree
     t.index ["part_id"], name: "index_spectators_on_part_id", using: :btree
     t.index ["revent_id"], name: "index_spectators_on_revent_id", using: :btree
   end
@@ -144,6 +146,7 @@ ActiveRecord::Schema.define(version: 20170621194012) do
   add_foreign_key "positions", "departments"
   add_foreign_key "positions", "parts"
   add_foreign_key "revent_exceptions", "revents"
+  add_foreign_key "spectators", "events"
   add_foreign_key "spectators", "parts"
   add_foreign_key "spectators", "revents"
 end

@@ -45,7 +45,7 @@
           <br>
           <% @spectators.each do |spectator| %>
           <!-- Filters only this event -->
-          <% if spectator.event.id === @event.id %>
+          <%# if spectator.event.id === @event.id %>
 <!-- <div class="people-btn"> -->
             <span class="grey-btn white">
               <%= spectator.part.firstname %>
@@ -55,7 +55,7 @@
               <%= link_to "X", spectator, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
             </span></span>
 <!-- </div> -->
-          <% end %>
+          <%# end %>
           <% end %>
           <!-- Filter end -->
           <br>
