@@ -21,11 +21,22 @@ class StatsController < ApplicationController
 # BIG CHART
     @current_year = Time.new.year
     @spectactors_year = Spectator.where("date(created_at) > ?", 365.days.ago).count
-    # @sunday_average = Spectactor.
-    # @test = @Spectators.group("year(created_at)").group("month(created_at)").count
-    # @events.spectators.count(:group => "year(created_at),month(created_at)")
-    # @test = Spectator.group_by_year(:created_at).count
-    # @thisweek = Spectator.where("date(created_at) > ?", 6.days.ago).count
+
+    #Average on Sunday # Doesn't take in account for recurring events.
+    s = Revent.where("extract(dow from start_time) = ?", 0).count
+    if s === 0 ? s = s + 1 : s
+    end #stops error if value is 0
+    sunday_event_ids = Revent.where("extract(dow from start_time) = ?", 0).pluck(:id)
+    sunday_total_specs = Spectator.where(revent_id: sunday_event_ids).count
+    @sunday_average = sunday_total_specs / s
+
+    #Average on WEDNESDAY # Doesn't take in account for recurring events.
+    w = Revent.where("extract(dow from start_time) = ?", 3).count
+    if w === 0 ? w = w + 1 : w
+    end #stops error if value is 0
+    w_event_ids = Revent.where("extract(dow from start_time) = ?", 3).pluck(:id)
+    w_total_specs = Spectator.where(revent_id: w_event_ids).count
+    @wednesday_average = w_total_specs / w
 
     @serving_average = Spectator.count / Revent.count
     @chart1 = Spectator.group_by_day(:created_at).count
@@ -63,7 +74,7 @@ class StatsController < ApplicationController
     # end
     today = Date.new(Time.now.year, Time.now.month, Time.now.day)
     if today.wday === 5
-      @today = "Friday"
+      @today = "Today is Friday"
     elsif today.wday === 6
       @today = "Today is Saturday"
     elsif today.wday === 0
@@ -78,6 +89,8 @@ class StatsController < ApplicationController
       @today = "Today is Thursday"
     end
 
+
+
     @y = Revent.all.count
     @s = Revent.where("extract(dow from start_time) = ?", 0).count
     @m = Revent.where("extract(dow from start_time) = ?", 1).count
@@ -86,13 +99,6 @@ class StatsController < ApplicationController
     @th = Revent.where("extract(dow from start_time) = ?", 4).count
     @f = Revent.where("extract(dow from start_time) = ?", 5).count
     @sat = Revent.where("extract(dow from start_time) = ?", 6).count
-
-
-#average
-
-
-    sunday_event_ids = Revent.where("extract(dow from start_time) = ?", 5).pluck(:id)
-    @sunday_average = Spectator.where(revent_id: sunday_event_ids).count
 
 
 

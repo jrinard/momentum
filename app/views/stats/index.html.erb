@@ -10,11 +10,11 @@
           <div class="col-sm-3">
             <div class="stat-title"><%= @current_year %></div>
 
-              <span class="h2-black-clean">Total<span class=" pull-right"><%= @spectactors_year %></span></span><br>
-              Sunday Average <span class="stat"><%= @sunday_average %></span><br>
-              Wednesday Average <span class="stat"><%= @wednesday_average %></span><br>
-              Kids Average <span class="stat"><%= @kids_average %></span><br>
-              Serving Average <span class="stat pull-right"><%= @serving_average %></span><br><br>
+              <span class="h2-black-clean">Total Attendees<span class="pull-right"><%= @spectactors_year %></span></span><br>
+              Sunday Average <span class="pull-right"><%= @sunday_average %></span><br>
+              Wednesday Average <span class="pull-right"><%= @wednesday_average %></span><br>
+              <!-- Kids Average <span class="pull-right"><%= @kids_average %></span><br> -->
+              Serving Average <span class="pull-right"><%= @serving_average %></span><br><br>
 
             <%= @today %><br>
 
@@ -28,7 +28,8 @@
 
 
         <div class="white-box col-sm-1">
-          All Events by date: <%= @y %><br>
+          Total Events: <%= @y %><br><br>
+          Total Events by day:<br>
           Sun <%= @s %><br>
           Mon <%= @m %><br>
           Tuesday <%= @t %><br>
@@ -42,7 +43,7 @@
           <span class="stat-title">This Week - <%= @startweek %>-<%= @endweek %></span><br>
           <span class="stat-sub">Adult Attendance </span><br>
           <span class="h2-black-clean"><%= @adultthisweek %></span><br>
-          <span class="stat-body">Kids Attendance</span> <br>
+          <!-- <span class="stat-body">Kids Attendance</span> <br> -->
           <%= @kidsthisweek %><br>
           <span class="stat-body">Serving </span> <br>
           <%= @servingthisweek %>
