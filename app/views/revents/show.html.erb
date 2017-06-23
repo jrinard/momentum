@@ -36,24 +36,19 @@
       </div><!-- col end -->
       <div class="col-sm-4">
 
-        <!-- DOES NOT SHOW only spectators in this Event -->
+        <!-- Shows only spectators in this Event -->
         <div class="people-box">
           <h4>Current Attendance  <%= @revent.spectators.count %></h4>
           <br>
           <% @spectators.each do |spectator| %>
-
-          <!-- Event Id <%= @revent.id %> | -->
-          <!-- Spec Id <%= spectator.id %>  -->
-          <p>Currently shows all spectators</p>
-
-          <%# if spectator.revent.id === @revent.id %>
+          <% if spectator.revent.id === @revent.id %>
             <span class="grey-btn white" id="spec_<%= spectator.id %>">
               <%= spectator.part.firstname %>
               <%= spectator.part.lastname %>
             <span class="X">
               <%= link_to "X", spectator, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}, remote: true%>
             </span></span>
-          <%# end %>
+          <% end %>
           <% end %>
           <!-- Filter end -->
           <br>

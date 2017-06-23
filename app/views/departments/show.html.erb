@@ -22,43 +22,15 @@
         <div class="edit_f">
           <%= render "form" %>
         </div>
-
       </div>
       <!-- col end -->
       <div class="col-sm-4">
-
-        <!-- <div class="people-box-search center">
-          <h3>Search for People</h3>
-          <%#= form_tag(department_path(@department), :method => "get", id: "search-form") do %>
-          <div class="input-group">
-            <%#= text_field_tag :search_people, params[:search_people], placeholder: "Search People", class: "form-control", required: true %>
-            <div class="input-group-btn">
-              <%#= submit_tag "Search", :name => nil, class: "btn-search btn-sm btn-primary" %>
-            </div>
-          </div>  -->
-        <!-- /btn-group -->
-        <!-- </div> -->
-        <!-- /input-group -->
-        <%# end %>
-        <%# if @searchResultsPeople %>
-        <%# for part in @searchResultsPeople %>
-        <!-- <div class="center grey-bg">
-          <div class="family-card-search family-card-search btn tiny-margin"><%#= part.firstname %> <%#= part.lastname %> -->
-        <%#= form_for [@department] do |f| %>
-        <%#= f.hidden_field :leaderName, :value => "#{part.firstname} #{part.lastname}" %>
-        <%#= f.submit "Leader", :class => "btn btn-sm btn-primary"%>
-        <%# end %>
-        <!-- </div>
-        </div> -->
-        <%# end %>
-        <%# end %>
 
         <!-- SHOWS only positions in this Department -->
         <div class="people-box">
           <h4>People in this department</h4><br>
           <% @positions.each do |position| %>
           <!-- Filters only this department -->
-          <%#= position.department.name %>
           <% if position.department.id === @department.id %>
           <div class="people-btn">
             <span class="grey-btn white" id="pos_<%= position.id %>">
@@ -87,7 +59,6 @@
 
         <!-- Original Version -->
         <%# @positions.each do |position| %>
-        <%#= position.department.name %>
         <%#= position.part.firstname %>
         <%#= link_to 'Show', position %>
         <%#= link_to 'Edit', edit_position_path(position) %>
