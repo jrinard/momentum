@@ -47,14 +47,13 @@
 
     <div id="content-container">
       <div class="right-column"> <!-- col-sm-9 -->
+
         <div class="logo logo-box center">
           <%#= link_to image_tag("logo.png", :class => "logo img-responsive logo-center"), root_path %>
           <%= link_to 'Momentum', root_path, :class => 'NA'  %></span>
         </div>
         <div class="topbar">
-          <span class="pull-left shift-down grey"><%= flash[:notice] %><%= flash[:errors] %></span>
-          <div class="login pull-right">
-
+          <div class="login-desktop pull-right shift-down">
             <% if current_user %>
             <li>
               <span class="blue">
@@ -68,9 +67,28 @@
               <%= link_to image_tag("settings.png", :class => "nav-icon-size"), edit_user_registration_path %>
             <% end %>
           </div>
+          <div class="login-mobile center">
+            <% if current_user %>
+            <li>
+              <span class="blue">
+                <%= link_to current_user.email, edit_user_registration_path %>
+                |
+                <%= link_to "Log-out", destroy_user_session_path, method: "delete" %>
+                <%= link_to image_tag("settings.png", :class => "nav-icon-size"), edit_user_registration_path %>
+                <%#= image_tag("settings.png", :class => "icon-size")%></li>
+            <% else %>
+              <li><%= link_to "Login", new_user_session_path %></a>
+              <%= link_to image_tag("settings.png", :class => "nav-icon-size"), edit_user_registration_path %>
+            <% end %>
+          </div>
+
+
+
+
         </div>
 
         <div class="">
+          <span class="pull-left shift-down grey"><%= flash[:notice] %><%= flash[:errors] %></span>
           <%= yield %>
         </div>
 
