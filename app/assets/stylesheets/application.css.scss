@@ -134,6 +134,14 @@ h6 {
   letter-spacing: 1.4px;
   text-align: center;
 }
+
+.h5-black {
+  color: #000;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
 .h5-white {
   font-family: 'Open Sans', sans-serif;
   color: #fff;
@@ -669,7 +677,7 @@ input[type="image"]
 }
 
 .family-card {
-  width: 200px;
+  width: 300px;
   background-color: #fff;
   padding: 10px 10px;
   margin: 5px 5px;
@@ -815,6 +823,13 @@ input[type="image"]
   padding: 10px;
     min-width: 300px;
 }
+
+.search-results {
+  background-color: $midnight-dark; //#333
+    min-width: 300px;
+}
+
+
 
 //// department
 

@@ -12,11 +12,13 @@ class Unit < ApplicationRecord
   end
 
   def self.search(search)
-    where("familyName LIKE ?", "%#{search}%")
+    s = search.downcase.titleize #fixing input so it always works with case
+    where("familyName LIKE ?", "%#{s}%")
   end
 
   def self.search_people(search_people)
-    where("firstname LIKE ? OR lastname LIKE ?", "%#{search_people}%", "%#{search_people}%")
+    sp = search_people.downcase.titleize #fixing input so it always works with case
+    where("firstname LIKE ? OR lastname LIKE ?", "%#{sp}%", "%#{sp}%")
   end
 
   self.per_page = 10
