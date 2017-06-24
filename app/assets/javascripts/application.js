@@ -29,6 +29,13 @@
 //   });
 // });
 
+//Flash Message Fade
+$('document').ready(function() {
+  setTimeout(function() {
+    $('#flash').fadeOut();
+  }, 3000);
+});
+
 
 
 
@@ -88,6 +95,9 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("content-container").style.marginLeft = "0";
 }
+
+
+
 
 // //overlay
 // /* Set the width of the side navigation to 250px */
