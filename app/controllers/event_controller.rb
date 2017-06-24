@@ -67,15 +67,16 @@ class EventsController < ApplicationController
   end
 
   def checkins
-    @events = Event.where("DATE(date) = ?", Date.today) #works
+    @revents = Revent.all
+    @revents = Revent.where("DATE(start_time) = ?", Date.today) #works
   end
 
   def checkin
-    @events = Event.all
+    @revents = Revent.all
     @spectators = Spectator.order(id: :desc)
-    @count = Event.all.count
+    @count = Revent.all.count
     if params[:id]
-    @event = Event.find(params[:id])
+    @revent = Revent.find(params[:id])
     end
   end
 

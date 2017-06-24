@@ -11,12 +11,11 @@
     <div class="h2-white">Events Today</div>
     <br>
     <br>
-    <% if @events.any? %>
-    <% @events.each do |eve| %>
+    <% if @revents.any? %>
+    <% @revents.each do |eve| %>
     <div class="well-event">
       <%= link_to "#{eve.name}", checkin_path(eve), :class => "h2-black" %><br>
-      <%= eve.date.strftime("%A, %b %d") %><!--   Tuesday, Jan 28, 2015 -->
-      @ <%= eve.starttime.strftime("%I:%M %p") %><br><!--   Javascript form toggle -->
+      <%= eve.start_time.strftime("%A, %b %d %I:%M %p") %><br><!--   Tuesday, Jan 28, 2015  -->
     </div>  <!-- well-event end -->
     <% end %>
     <% else %>

@@ -17,7 +17,7 @@
       <%= image_tag("threelines.png", :class => "menu-icon-size", :onclick => 'openNav()')%>
       <%= link_to image_tag("home.png", :class => "nav-icon-size"), root_path %>
       <%= link_to image_tag("people.png", :class => "nav-icon-size"), units_path %>
-      <%= link_to image_tag("serve.png", :class => "nav-icon-size"), root_path %>
+      <%#= link_to image_tag("serve.png", :class => "nav-icon-size"), root_path %>
       <%= link_to image_tag("stats.png", :class => "nav-icon-size"), stats_path %>
       <%= link_to image_tag("checkin.png", :class => "nav-icon-size"), checkins_path %>
       <%= link_to image_tag("event.png", :class => "nav-icon-size"), revents_path %>
@@ -29,7 +29,7 @@
         <li class="close-menu" onclick="closeNav()"><%= link_to "Menu", root_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
-        <li><%= link_to "Serve", root_path, :class => 'notWorking' %></li>
+        <li><%#= link_to "Serve", root_path, :class => 'notWorking' %></li>
         <li><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
         <li class="NA"><%= link_to "Event Check-in", checkins_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(revents_path) %>"><%= link_to "Events", revents_path, :class => 'notWorking' %></li>

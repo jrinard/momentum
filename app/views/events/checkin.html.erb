@@ -5,19 +5,18 @@
         <div class="h2-white">Check Details</div>
         <br><br>
 
-
-        <h3><%= @event.name %></h3>
-        <p><%= @event.date%></p><!-- .strftime("%A, %b %d, %Y")  Tuesday, Jan 28, 2015 -->
+        <h3><%= @revent.name %></h3>
+        <p><%= @revent.start_time.strftime("%A, %b %d, %Y") %></p><!--   Tuesday, Jan 28, 2015 -->
         <span class="h5-grey">Starting</span>
-        <p><%= @event.starttime %></p><br> <!--.strftime("%I:%M %p") -->
+        <p><%= @revent.start_time.strftime("%I:%M %p") %></p><br> <!--.strftime("%I:%M %p") -->
         <span class="h5-grey">Location</span>
-        <p><%= @event.locationname %></p>
+        <p><%= @revent.locationname %></p>
         <span class="h5-grey">Address</span>
-        <p><%= @event.street %><br>
-           <%= @event.city %><%= @event.state %> <%= @event.zip %></p>
+        <p><%= @revent.street %><br>
+           <%= @revent.city %><%= @revent.state %> <%= @revent.zip %></p>
 
         <span class="h5-grey">Description</span>
-        <p><%= @event.description %></p>
+        <p><%= @revent.description %></p>
         <br>
 
       </div>
@@ -26,11 +25,11 @@
 
         <!-- SHOWS only spectators in this Event -->
         <div class="people-box">
-          <h4>Event Participants  <%= @event.spectators.count %></h4>
+          <h4>Event Participants  <%= @revent.spectators.count %></h4>
           <br>
           <% @spectators.each do |spectator| %>
           <!-- Filters only this event -->
-          <% if spectator.event.id === @event.id %>
+          <% if spectator.revent.id === @revent.id %>
             <span class="grey-btn white">
               <%= spectator.part.firstname %>
               <%= spectator.part.lastname %>
