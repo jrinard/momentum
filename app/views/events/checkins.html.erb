@@ -1,15 +1,14 @@
-<div class="flex-container-big">
-  <div class="flex-block-big">
+<!-- <div class="flex-container-big">
+  <div class="flex-block-big"> -->
 
     <div class="blue-bar">
       <div class="h2-white">Event Checkin</div>
     </div>
 
-    <br><br>
-
+    <div class="col-sm-5"><br>
+      <%= link_to 'Back', units_path, :class => "NA" %><br><br><br>
     <%#= link_to 'Check Person In', new_spectator_path, :class => "btn btn-sm btn-success" %>
-    <div class="h2-white">Events Today</div>
-    <br>
+    <div class="h3-white">Today's Events</div>
     <br>
     <% if @revents.any? %>
     <% @revents.each do |eve| %>
@@ -19,7 +18,9 @@
     </div>  <!-- well-event end -->
     <% end %>
     <% else %>
-      <h4 class="pull-left">No events scheduled today</h4>
+    <div class="people-box">
+      <h4> No events scheduled today</h4>
+    </div>
     <% end %>
-  </div>  <!-- flex block end -->
 </div>
+<!-- </div>  -->

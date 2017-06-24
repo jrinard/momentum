@@ -6,7 +6,7 @@
 
 
     <div class="h2-white pull-left">Part - Person - Show</div><br>
-    <%= link_to 'Back', parts_path %>
+    <%= link_to 'Back', :back %>
 
     <%= link_to "Delete Person", part_path(@part), :class => "btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
 

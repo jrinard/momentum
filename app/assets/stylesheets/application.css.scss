@@ -19,6 +19,7 @@
 $yellow: #feb831;
 $yellow2: #f0ad4e;
 $grey3: #333;
+$grey7: #777;
 $blue: #337ab7;
 $green: #5cb85c;
 $black: #000;
@@ -297,6 +298,7 @@ body {
   // background-size: cover;
   background-color: $midnight-light;
 }
+
 
 .form{
   padding: 20px;
@@ -691,8 +693,9 @@ input[type="image"]
    background-color: $midnight-light; //#777
    display: block;
    margin-bottom: 2px;
-
 }
+
+
 .X {
   color: #fff;
   background-color: $midnight-light; //#777
@@ -727,6 +730,54 @@ input[type="image"]
   letter-spacing: 1.5px;
 }
 
+
+
+.midnight-btn{
+  margin: 0 auto;
+  -webkit-box-shadow: none !important;
+   box-shadow: none  !important;
+   padding: 10px;
+   background-color: $midnight-dark; //#777
+   display: block;
+   margin-bottom: 2px;
+}
+
+
+.midnight-X {
+  color: #fff;
+  background-color: $midnight-dark; //#777
+  padding-right: 10px;
+  margin-top: -2px;
+  float: right;
+}
+
+.midnight-btn a:link {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.midnight-btn a:hover {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.midnight-btn a:visited {
+  color: #fff;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+.midnight-btn a:active {
+  color: #f3f3f3;
+  font-size: 1.2em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+
+
+
 .black a:link {
   color: #000;
   font-size: 1.2em;
@@ -753,14 +804,16 @@ input[type="image"]
 }
 
 .people-box {
-  margin-top: 100px;
+  margin-top: 20px;
   background-color: $midnight-dark; //#333
   padding: 10px;
+  min-width: 300px;
 }
 
 .people-box-search {
   background-color: $midnight-dark; //#333
   padding: 10px;
+    min-width: 300px;
 }
 
 //// department
@@ -866,6 +919,10 @@ margin: 5px 2.5px;
   margin-top: -40px;
   margin-right: 10px;
 }
+.font-light {
+  color: $grey7;
+  font-size: .8em;
+}
 
 .space {
   margin: 25px;
@@ -910,7 +967,7 @@ margin: 5px 2.5px;
 .flip .card .front {
   position: absolute;
   z-index: 1;
-    background-color: $grey3;
+    background-color: $midnight-dark;
     color: white;
     cursor: pointer;
 

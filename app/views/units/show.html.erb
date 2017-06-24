@@ -1,26 +1,23 @@
-<div class="flex-container-big">
-  <div class="flex-block-big">
+<!-- <div class="flex-container-big">
+  <div class="flex-block-big"> -->
 
-    <div class="row">
-      <div class="col-sm-5">
+  <div class="blue-bar">
+    <div class="h2-white"><%= @unit.familyname %> Family</div>
+  </div>
 
-        <div class="h2-white">Unit - Family - Show</div>
-        <br><%= link_to 'Back', units_path %>
-        <br>
-
-        <h3><%= @unit.familyname %> Family
-          <div class="pull-right">
-            <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-warning pull-right" %>
-          </div>
-        </h3><br><!-- family-name-end -->
+      <div class="col-sm-5"><br>
+        <%= link_to 'Back', units_path, :class => "NA" %>
+          <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-primary pull-right" %>
+        <br><br>
 
     <!-- PEOPLE -->
         <% if @unit.parts.any? %>
           <% @unit.parts.each do |part| %>
-            <span class="grey-btn"id="part_<%= part.id %>">
+
+            <span class="midnight-btn white"id="part_<%= part.id %>">
               <%= link_to "#{part.firstname} #{part.lastname}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
 
-                  <span class="X">
+                  <span class="midnight-X">
               <%= link_to "X", unit_part_path(@unit, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
             </span></span>
           <% end %>
@@ -91,7 +88,6 @@
               </div>
 
       </div> <!-- col end -->
-    </div> <!--row end -->
 
-  </div><!-- flex-block end -->
-</div><!-- flex-container end -->
+  <!-- </div>
+</div> -->

@@ -4,7 +4,6 @@
 
 <div class="col-sm-5">
   <br><br>
-
   <%= link_to "New Revent", new_revent_path, :class => "btn btn-sm btn-primary" %>
   <br><br><br>
 
@@ -12,7 +11,8 @@
   <% @revents.each do |revent| %>
   <div class="well-event">
 
-    <%= link_to "#{revent.name}", revent, :class => "h2-black" %><br><!-- revent_path(revent) -->
+    <%= link_to "#{revent.name}", revent, :class => "h2-black" %><br>
+    <!-- revent_path(revent) -->
     <%= revent.start_time.strftime("%I:%M %p") %>
 
     <div class="edit_family pull-right marg-">Quick Edit</div>
@@ -32,13 +32,15 @@
     </div>
     <%#= link_to 'Edit', edit_revent_path(revent) %>
     <%#= link_to 'Destroy', revent, method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div><!-- well-event end -->
+  </div>
+  <!-- well-event end -->
   <% end %>
 <% else %>
   <h3 class="h2-white pull-left">No events Yet</h3>
   <% end %>
   <br>
-</div><!-- col end -->
+</div>
+<!-- col end -->
 <div class="col-sm-7">
   <%= month_calendar events: @calendar_events do |day, events| %>
   <div>
@@ -51,4 +53,5 @@
   </div>
   <% end %>
   <% end %>
-</div><!-- col end -->
+</div>
+<!-- col end -->
