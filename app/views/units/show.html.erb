@@ -17,7 +17,7 @@
     <!-- PEOPLE -->
         <% if @unit.parts.any? %>
           <% @unit.parts.each do |part| %>
-            <span class="grey-btn">
+            <span class="grey-btn"id="part_<%= part.id %>">
               <%= link_to "#{part.firstname} #{part.lastname}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
 
                   <span class="X">
@@ -51,7 +51,7 @@
       </div> <!-- col end -->
 
       <div class="col-sm-4">
-        <div class="people-box">
+        <div class="people-box" id="person_box">
           <h3>Family Members</h3>
 
           <% if @unit.parts.any? %>

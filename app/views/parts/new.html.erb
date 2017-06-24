@@ -1,4 +1,13 @@
-<div class="h2-white pull-left">New Person</div><br><br><br>
+<div class="row">
+  <div class="col-sm-12">
 
+    <div class="form">
+      <div class="h2-white pull-left">New Person</div><br><br><br>
+      <%= link_to 'Back', unit_path(@unit) %><br><br>
+      <%= render "form" %>
+    </div>
 
-    <%= render "form" %>
+  </div>
+  <!-- col end -->
+</div>
+<!--row end -->

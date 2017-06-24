@@ -1,5 +1,13 @@
-<h1>New Revent</h1>
+<div class="row">
+  <div class="col-sm-12">
 
-<%= render 'form', revent: @revent %>
+    <div class="form">
+      <div class="h2-white pull-left">New Revent</div><br><br><br>
+      <%= link_to 'Back', revents_path %><br><br>
+      <%= render 'form', revent: @revent %>
+    </div>
 
-<%= link_to 'Back', revents_path %>
+  </div>
+  <!-- col end -->
+</div>
+<!--row end -->
