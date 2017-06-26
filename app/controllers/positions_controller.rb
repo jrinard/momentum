@@ -18,7 +18,7 @@ class PositionsController < ApplicationController
   def create
     @position = Position.new(position_params)
     if @position.save
-      flash[:notice] = "Position Saved !!!!!"
+      flash[:notice] = "Position Saved"
       redirect_to departments_path
     else
     render :new, notice: 'There was an error saving the person. Please try again.'
@@ -32,10 +32,10 @@ class PositionsController < ApplicationController
   def update
     @position = Position.find(params[:id])
     if @position.update(position_params)
-      flash[:notice] = "Person updated!"
+      flash[:notice] = "Person updated"
       redirect_to departments_path
     else
-      flash[:notice] = "Position is required."
+      flash[:notice] = "Position is required"
       render :edit
     end
   end
@@ -54,7 +54,7 @@ end
 
 
   def position_params
-     params.require(:position).permit(:position, :position2, :user_id, :department_id, :part_id)
+     params.require(:position).permit(:need, :position2, :user_id, :department_id, :part_id)
   end
 
 end

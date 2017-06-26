@@ -4,9 +4,8 @@ class CreatePositions < ActiveRecord::Migration[5.0]
       t.references :department, foreign_key: true
       t.references :part, foreign_key: true
 
-      t.boolean :position
+      t.string :need
       t.string :position2
-
 
       t.timestamps
     end

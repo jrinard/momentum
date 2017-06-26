@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20170621194012) do
   create_table "positions", force: :cascade do |t|
     t.integer  "department_id"
     t.integer  "part_id"
-    t.boolean  "position"
+    t.string   "need"
     t.string   "position2"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

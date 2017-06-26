@@ -307,6 +307,10 @@ body {
   // -moz-background-size: cover;
   // background-size: cover;
   background-color: $midnight-light;
+
+  min-height:100%; //Temp added for flash footer
+  position:relative;//Temp added for flash footer
+  padding-bottom:30px;//Temp added for flash footer
 }
 
 
@@ -655,7 +659,7 @@ input[type="image"]
     line-height: 12px;
 }
 .well2 {
-  min-width: 120px;
+  min-width: 150px;
   max-width: 200px;
   padding: 8px 8px;
   margin: 5px 2.5px 5px 2.5px;
@@ -833,12 +837,25 @@ input[type="image"]
 
 
 
-//// department
+//// DEPARTMENT
+
+.white-box-dep {
+  background-color: #fff;
+  width: 300px;
+  min-height: 110px;
+  padding: 10px 3px 3px 3px;
+  margin: 10px 2.5px;
+  border-radius: 5px;
+}
 
 .people-box2 {
   background-color: $midnight-dark; //#333
   padding: 10px;
   width: 100%;
+}
+
+.people-box-header {
+  padding: 0px 10px;
 }
 
 .black2 {
@@ -940,9 +957,14 @@ margin: 5px 2.5px;
   color: $grey7;
   font-size: .8em;
 }
-
 .space {
   margin: 25px;
+}
+#flash {
+    position: absolute;
+    left: 50px ; right: 0; bottom: 0;
+    height: 30px;
+    color: $grey7;
 }
 
 // input, textarea{
@@ -1063,7 +1085,7 @@ li.selected {
 
 .blue-bar {
   background-color: $blue;
-  height: 55px;
+  min-height: 55px;
   width: 100%;
   padding: 8px;
   // margin: -8px;

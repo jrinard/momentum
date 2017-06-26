@@ -33,7 +33,12 @@
 
 <div class="field">
   <label class="na">Position</label>
-  <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
+  <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position2), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
+</div>
+
+<div class="field">
+  <%#= f.hidden_field :need,%>
+  <%= f.text_field :need, :placeholder => 'Need', :class => 'form-control input-lg' %>
 </div>
 
 <div class="actions">
