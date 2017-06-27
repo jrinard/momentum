@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :stats, :only => [:index]
 
   resources :departments
+  get '/serve', to: 'departments#serve', as: 'serve'
   resources :events
   resources :revents
   resources :positions
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/checkins', to: 'events#checkins', as: 'checkins'
   get '/checkin/:id', to: 'events#checkin', as: 'checkin'
+
+
 
   # post '/', to: 'home#show', as: 'show'
 

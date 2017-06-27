@@ -11,8 +11,7 @@
     <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
     <%= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
 
-    <br><br>
-    <br>
+    <br><br><br>
     <% if @departments.any? %>
     <% @departments.each do |dep| %>
     <div class="white-box-dep col-sm-1">
@@ -54,7 +53,7 @@
               <% if position.position2 === "Department Head" %>
               <%= image_tag("dep_head2.png", :class => "icon-size-tiny")%>
               <% end %>
-              <%= position.need %>
+              <em><%= position.need %></em>
             </span>
 
             <span class="black2">

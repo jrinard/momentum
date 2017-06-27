@@ -835,6 +835,16 @@ input[type="image"]
     min-width: 300px;
 }
 
+//// SERVE
+
+.white-box-ser {
+  background-color: #fff;
+  width: 300px;
+  padding: 10px 3px 3px 3px;
+  margin: 10px 2.5px;
+  border-radius: 5px;
+}
+
 
 
 //// DEPARTMENT
@@ -849,7 +859,7 @@ input[type="image"]
 }
 
 .people-box2 {
-  background-color: $midnight-dark; //#333
+  background-color: $midnight-dark; //#33
   padding: 10px;
   width: 100%;
 }

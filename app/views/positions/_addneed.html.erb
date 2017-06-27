@@ -1,0 +1,39 @@
+<div class="well">
+
+<%= form_for(@position) do |f| %>
+
+<div class="field">
+  <label class="na">Department</label>
+  <%= f.select :department_id,
+  Department.order('name asc').all.collect { |u| [u.name, u.id] },
+               { include_blank: false },
+               { class: 'form-control selected' }
+               %>
+</div>
+
+<div class="field">
+  <label class="na">Person</label>
+  <%= f.select :part_id,
+  Part.order('lastname asc').all.map { |u| [u.lastname + ", " + u.firstname, u.id] },
+               { include_blank: false},
+               { class: 'form-control selected' }
+               %>
+</div>
+
+<div class="field">
+  <label class="na">Position</label>
+    <%= f.hidden_field :position2, :value => "nil" %>
+  <%#= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position2), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
+</div>
+
+<div class="field">
+
+  <%= f.text_field :need, :placeholder => 'Need', :class => 'form-control input-lg' %>
+</div>
+
+<div class="actions">
+  <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+</div>
+  <%= link_to "Cancel", :back, {:class=>"btn-sm btn-default btn-cancel"} %>
+<% end %>
+</div>

@@ -1,0 +1,40 @@
+<div class="blue-bar">
+  <div class="h2-white">Serve</div>
+</div>
+
+
+<div class="col-sm-12"><br>
+
+<%= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
+
+<%#= render "positions/addneed" %>
+
+<br><br><br>
+<% if @departments.any? %>
+<% @departments.each do |dep| %>
+<div class="white-box-ser ">
+
+<span class="h2-black"><%= dep.name%></span>
+
+
+    <div class="people-box2">
+    <p><%= dep.description%></p>
+      <% @positions.each do |position| %>
+      <% if position.department.id === dep.id %>
+      <div class="single-person">
+        <span class="white">
+          <em><%= position.need %></em>
+        </span>
+      </div>
+      <% end %><!-- filter end -->
+
+      <% end %>
+
+    </div><!-- people-box2 end -->
+</div><!-- col-sm-1 end -->
+
+<% end %>
+<% else %>
+<h3 class="h2-white pull-left">No Departments Yet</h3>
+<% end %>
+</div>
