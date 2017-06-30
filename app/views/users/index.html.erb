@@ -1,0 +1,20 @@
+<div class="white center"><br>
+
+  <div class="user-box">
+    Total Users
+    <%= @users.count %>
+  </div>
+  <% @users.each do |u| %>
+  <div class="user-box">
+    <tr>
+      <td><%= u.email %></td>
+      |
+      <td><%= u.role %></td>
+      |
+      <td><%= link_to "View Details", user_path(u.id) %></td>
+      <td><%= link_to_if(can?(:edit, User), image_tag("icon-edit.png", :class => "nav-icon-size"), edit_user_path(u.id)) {} %></td>
+      <td><%= link_to_if(can?(:delete, u), image_tag("icon-delete.png", :class => "nav-icon-size"), u, :data => {:confirm => "Are you sure?",:method => "delete"}) {} %></td>
+    </tr>
+  </div>
+  <% end %>
+</div>

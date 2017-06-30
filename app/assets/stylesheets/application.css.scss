@@ -1174,11 +1174,16 @@ li.selected {
 
 //User Account Related
 
+.user-box {
+  background-color: $midnight-dark;
+  padding: 10px;
+  margin: 2px;
+  width: 100%;
+}
 .grey-box {
   background-color: #666;
   padding: 20px;
 }
-
 
 #icon-menu {
   width: 65px;

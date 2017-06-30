@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-12">
+
+    <div class="form">
+
+      <h3><%= @user == @current_user ? "Your Account Settings" : "Edit User - CUSTOM" %></h3>
+
+      <div class="well">
+
+        <%= form_for(@user, :html => { :method => :put }) do |f| %>
+        <%#= error_messages(@user,"Could not update user") %>
+        <%#= render :partial => 'user_fields', :locals => { :f => f } %>
+
+        <div class="field">
+          <%= f.label :email %><br/>
+          <%= f.email_field :email, autofocus: true, :class => 'form-control input-lg' %>
+        </div>
+
+        <div class="field">
+          <label>New Password</label>
+          <i class="font-light">(use same password if you don't want to change it)
+          </i>
+          <br/>
+          <%= f.password_field :password, autocomplete: "off", :class => 'form-control input-lg' %>
+        </div>
+
+        <div class="field">
+          <label>New Password Confirmation</label><br/>
+          <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control input-lg' %>
+        </div><br>
+
+        <div class="field">
+          <label>Old Password</label>
+          <i class="font-light">(we need your current password to confirm your changes)</i><br/>
+          <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control input-lg' %>
+        </div>
+
+        <div class="field center">
+          <label>User Role</label>
+          <%= f.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %><br><br>
+        </div>
+
+        <div class="actions center">
+          <%= f.submit "Update", :class => "btn btn-primary" %>
+        </div>
+        <% end %>
+        <%= link_to "Back", :back %>
+
+      </div>
+    </div>
+  </div>
+</div>

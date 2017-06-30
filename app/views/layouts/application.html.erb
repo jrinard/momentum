@@ -16,13 +16,14 @@
       <br>
       <%= image_tag("threelines.png", :class => "menu-icon-size", :onclick => 'openNav()')%>
       <%= link_to image_tag("home.png", :class => "nav-icon-size"), root_path %>
-      <%= link_to image_tag("people.png", :class => "nav-icon-size"), units_path %>
+      <%= link_to image_tag("icon-family.png", :class => "nav-icon-size"), units_path %>
       <%= link_to image_tag("serve.png", :class => "nav-icon-size"), serve_path %>
       <%= link_to image_tag("checkin.png", :class => "nav-icon-size"), checkins_path %>
       <% if can? :manage, :all%>
         <%= link_to image_tag("stats.png", :class => "nav-icon-size"), stats_path %>
         <%= link_to image_tag("event.png", :class => "nav-icon-size"), revents_path %>
         <%= link_to image_tag("departments.png", :class => "nav-icon-size"), departments_path %>
+        <%= link_to image_tag("icon-user.png", :class => "nav-icon-size"), users_path %>
       <% end %>
 
       </div>
@@ -33,11 +34,12 @@
         <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
         <li class=""><%= link_to "Serve", serve_path, :class => 'notWorking' %></li>
         <li class=""><%= link_to "Event Check-in", checkins_path, :class => 'notWorking' %></li>
-        <% if @user.role === "admin"%>
+        <%# if @user.role === "admin"%>
           <li class=""><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(revents_path) %>"><%= link_to "Events", revents_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
-        <% end %>
+          <li class="<%= 'active_bg' if current_page?(users_path) %>"><%= link_to "Users", users_path, :class => 'notWorking' %></li>
+        <%# end %>
 
         <h5>Groups</h5>
         <h5>Files</h5>
@@ -63,7 +65,7 @@
             <% if current_user %>
             <li>
               <span class="blue">
-                 <% if @user.role === "admin" %> Admin <% elsif @user.role === "leader" %> Leader <% else %> User <% end %>
+                 <% if current_user.role === "admin" %> Admin <% elsif current_user.role === "leader" %> Leader <% else %> User <% end %>
                  <!-- <%# if can? :manage, :all  %> Admin <%# elsif can? :read, :all %>Staff <%# else %> User <%# end %> -->
                  <!-- <%# if can? :create, Department  %><p>Admin</p> <%# else %>User<%# end %> -->
 
@@ -82,6 +84,7 @@
             <% if current_user %>
             <li>
               <span class="blue">
+                <% if current_user.role === "admin" %> Admin <% elsif current_user.role === "leader" %> Leader <% else %> User <% end %>
                 <%= link_to current_user.email, edit_user_registration_path %>
                 |
                 <%= link_to "Log-out", destroy_user_session_path, method: "delete" %>
@@ -92,9 +95,6 @@
               <%= link_to image_tag("settings.png", :class => "nav-icon-size"), edit_user_registration_path %>
             <% end %>
           </div>
-
-
-
 
         </div>
         <div class="">
