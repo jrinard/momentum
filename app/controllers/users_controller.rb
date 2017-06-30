@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def index
+    @user = current_user
+  end
+
   def show
     @user = current_user
   end
@@ -14,6 +19,10 @@ class UsersController < ApplicationController
       render :edit
       flash[:notice] = "Error User not Deleted"
     end
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation, :role)
   end
 
 

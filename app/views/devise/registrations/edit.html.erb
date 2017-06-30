@@ -5,7 +5,7 @@
       <h3 class="pull-left">Edit
         <%= resource_name.to_s.humanize %></h3><br><br><br>
 
-      <%= link_to "Back", :back  %><br><br>
+      <%= link_to "Back", :back  %><br>
 
       <%= devise_error_messages! %> <br>
 
@@ -41,15 +41,13 @@
           <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control input-lg' %>
         </div>
 
-        <label> User Role</label><br>
-        <% for role in User::ROLES %>
-         <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
-         <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
-        <% end %>
-        <%= hidden_field_tag "user[roles][]", "" %>
+        <div class="field center">
+          <label>User Role</label>
+          <%= f.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %><br><br>
+        </div>
 
         <div class="actions center">
-          <%= f.submit "Update Password", :class => "btn btn-primary" %>
+          <%= f.submit "Update Password and Role", :class => "btn btn-primary" %>
         </div>
         <% end %>
 

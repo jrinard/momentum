@@ -24,6 +24,9 @@
   </div>
 
 
+  <%= f.collection_select(:role, User::ROLES, :to_s, lambda{|i| i.to_s.humanize}) %><br><br>
+
+
   <div class="actions">
     <%= f.submit "Sign up", :class => "btn btn-primary" %>
   </div>

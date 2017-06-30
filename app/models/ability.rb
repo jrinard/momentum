@@ -5,24 +5,60 @@ class Ability
 
   user ||= User.new
 #### SuperAdmin
-  if user.has_role? :superadmin
-    can :manage, :all
-
+  can :manage, :all if user.role == "superadmin"
 #### Admin
-  elsif user.has_role? :admin
-    can :manage, :all
+  can :manage, :all if user.role == "admin"
+#### Leader
+  can :read, :none if user.role == "leader"
+#### User is no role
+  can :read, :none if user.role == "User"
 
-#### STAFF
-  elsif user.has_role? :staff
-    can :create, Department
-    can :update, Department
-    # can :destroy, Department
-    can :read, :all
 
-#### User
-  else
-    can :read, :none
-  end
+
+
+#   if user.superadmin?
+#     can :manage, :all
+#
+# #### Admin
+#   elsif user.admin?
+#     can :manage, :all
+#
+# #### STAFF
+#   elsif user.staff?
+#     can :create, Department
+#     can :update, Department
+#     # can :destroy, Department
+#     can :read, :all
+#
+# #### User
+#   else
+#     can :read, :none
+#   end
+
+
+#Multiple Checkbox
+
+#   user ||= User.new
+# #### SuperAdmin
+#   if user.has_role? :superadmin
+#     can :manage, :all
+#
+# #### Admin
+#   elsif user.has_role? :admin
+#     can :manage, :all
+#
+# #### STAFF
+#   elsif user.has_role? :staff
+#     can :create, Department
+#     can :update, Department
+#     # can :destroy, Department
+#     can :read, :all
+#
+# #### User
+#   else
+#     can :read, :none
+#   end
+
 
 # ORIGINAL
   # user ||= User.new

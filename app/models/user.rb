@@ -6,8 +6,9 @@ class User < ApplicationRecord
 
          has_many :parts
 
-         ROLES = %i[admin staff]
+         ROLES = %i[user leader admin] 
 
+         #For Multiple Roles - Part still used for single
          def roles=(roles)
            roles = [*roles].map { |r| r.to_sym }
            self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
@@ -24,6 +25,8 @@ class User < ApplicationRecord
          end
 
 
+        # For ActiveAdmin
+        # permit_params :name, :email, :role
 
 
 

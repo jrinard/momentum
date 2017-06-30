@@ -67,11 +67,13 @@ class EventsController < ApplicationController
   end
 
   def checkins
+    @user = current_user
     @revents = Revent.all
     @revents = Revent.where("DATE(start_time) = ?", Date.today) #works
   end
 
   def checkin
+    @user = current_user
     @revents = Revent.all
     @spectators = Spectator.order(id: :desc)
     @count = Revent.all.count

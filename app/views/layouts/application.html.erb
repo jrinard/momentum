@@ -33,7 +33,7 @@
         <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
         <li class=""><%= link_to "Serve", serve_path, :class => 'notWorking' %></li>
         <li class=""><%= link_to "Event Check-in", checkins_path, :class => 'notWorking' %></li>
-        <% if can? :manage, :all%>
+        <% if @user.role === "admin"%>
           <li class=""><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(revents_path) %>"><%= link_to "Events", revents_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
@@ -63,7 +63,8 @@
             <% if current_user %>
             <li>
               <span class="blue">
-                 <% if can? :manage, :all  %> Admin <% elsif can? :read, :all %>Staff <% else %> User <% end %>
+                 <% if @user.role === "admin" %> Admin <% elsif @user.role === "leader" %> Leader <% else %> User <% end %>
+                 <!-- <%# if can? :manage, :all  %> Admin <%# elsif can? :read, :all %>Staff <%# else %> User <%# end %> -->
                  <!-- <%# if can? :create, Department  %><p>Admin</p> <%# else %>User<%# end %> -->
 
                 <%= link_to current_user.email, edit_user_registration_path %>

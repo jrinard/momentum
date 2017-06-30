@@ -69,6 +69,7 @@ class DepartmentsController < ApplicationController
   end
 
   def serve
+    @user = current_user
     @departments = Department.all
     @positions = Position.order('position2 asc')
   end

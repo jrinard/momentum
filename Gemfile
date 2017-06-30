@@ -26,7 +26,7 @@ gem 'bootstrap-datepicker-rails' # https://github.com/Nerian/bootstrap-datepicke
 gem "simple_calendar", "~> 2.0" #https://github.com/excid3/simple_calendar
 gem 'recurring_select', github: "RundownApp/recurring_select" #Recurring Select uses Ice-Cube gem - rundownapp makes it compatible with rails 5
 gem 'cancancan' # User Roles https://github.com/CanCanCommunity/cancancan/wiki/defining-abilities and https://github.com/mezbahalam/devise_cancan
-
+# https://github.com/CanCanCommunity/cancancan/wiki/Role-Based-Authorization
 
 group :development, :test do
   gem 'byebug', platform: :mri
