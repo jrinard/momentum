@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-
   def destroy
     @user = User.find(params[:id])
     # @user.people.destroy_all

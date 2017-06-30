@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  # devise_for :users, controllers: {registrations: 'registrations'}
 
   root :to => 'home#index'
 
@@ -18,9 +19,6 @@ Rails.application.routes.draw do
   get '/checkins', to: 'events#checkins', as: 'checkins'
   get '/checkin/:id', to: 'events#checkin', as: 'checkin'
 
-
-
   # post '/', to: 'home#show', as: 'show'
-
 
 end

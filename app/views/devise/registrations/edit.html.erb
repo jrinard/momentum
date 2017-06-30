@@ -2,15 +2,16 @@
   <div class="col-sm-12">
 
     <div class="form">
-
       <h3 class="pull-left">Edit
         <%= resource_name.to_s.humanize %></h3><br><br><br>
 
       <%= link_to "Back", :back  %><br><br>
 
+      <%= devise_error_messages! %> <br>
+
       <div class="well">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
+
 
         <div class="field">
           <%= f.label :email %><br/>
@@ -23,28 +24,29 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :password %>
-          <i class="font-light">(leave blank if you don't want to change it)</i>
-
+          <label>New Password</label>
+          <i class="font-light">(leave blank if you don't want to change it)   <em>Minimum Length <%= @minimum_password_length %></em></i>
           <br/>
           <%= f.password_field :password, autocomplete: "off", :class => 'form-control input-lg' %>
-          <% if @minimum_password_length %>
-          <br/>
-          <em><%= @minimum_password_length %>
-            characters minimum</em>
-          <% end %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br/>
+          <label>New Password Confirmation</label><br/>
           <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control input-lg' %>
-        </div>
+        </div><br>
 
         <div class="field">
-          <%= f.label :current_password %>
+          <label>Old Password</label>
           <i class="font-light">(we need your current password to confirm your changes)</i><br/>
           <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control input-lg' %>
         </div>
+
+        <label> User Role</label><br>
+        <% for role in User::ROLES %>
+         <%= check_box_tag "user[roles][#{role}]", role, @user.roles.include?(role), {:name => "user[roles][]"}%>
+         <%= label_tag "user_roles_#{role}", role.to_s.humanize %><br />
+        <% end %>
+        <%= hidden_field_tag "user[roles][]", "" %>
 
         <div class="actions center">
           <%= f.submit "Update Password", :class => "btn btn-primary" %>
@@ -52,6 +54,8 @@
         <% end %>
 
       </div>
+
+
 
       <h3>Close Account</h3>
       <div class="well">

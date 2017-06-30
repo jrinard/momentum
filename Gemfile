@@ -25,6 +25,7 @@ gem 'chosen-rails' # for fancy select form field
 gem 'bootstrap-datepicker-rails' # https://github.com/Nerian/bootstrap-datepicker-rails #not currently working
 gem "simple_calendar", "~> 2.0" #https://github.com/excid3/simple_calendar
 gem 'recurring_select', github: "RundownApp/recurring_select" #Recurring Select uses Ice-Cube gem - rundownapp makes it compatible with rails 5
+gem 'cancancan' # User Roles https://github.com/CanCanCommunity/cancancan/wiki/defining-abilities and https://github.com/mezbahalam/devise_cancan
 
 
 group :development, :test do

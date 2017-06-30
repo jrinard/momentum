@@ -7,7 +7,9 @@
 
         <div class="col-sm-5">
         <br><br>
-        <%= link_to "New Family", new_unit_path, :class => "btn btn-sm btn-primary" %>
+        <% if can? :manage, :all%>
+          <%= link_to "New Family", new_unit_path, :class => "btn btn-sm btn-primary" %>
+        <%end %>
         <br><br>
         <div class="family-list">
           <h5 class="center">Sort By:

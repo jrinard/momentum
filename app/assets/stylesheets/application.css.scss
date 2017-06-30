@@ -127,9 +127,17 @@ h6 {
   vertical-align: middle;
 }
 
+.h4-white {
+  color: #fff;
+  font-size: 1.3em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.4px;
+  vertical-align: middle;
+}
+
 .h4-black {
   color: #000;
-  font-size: 1.4em;
+  font-size: 1.3em;
   font-family: 'Bangers', cursive;
   letter-spacing: 1.4px;
   text-align: center;
@@ -137,12 +145,13 @@ h6 {
 
 .h5-black {
   color: #000;
-  font-size: 1.2em;
+  font-size: 1em;
   font-family: 'Bangers', cursive;
   letter-spacing: 1.4px;
   text-align: center;
 }
 .h5-white {
+  font-size: 1em;
   font-family: 'Open Sans', sans-serif;
   color: #fff;
   text-align: center;
@@ -1163,6 +1172,12 @@ li.selected {
   .login-desktop { display: block; }   /* hide it elsewhere */
 }
 
+//User Account Related
+
+.grey-box {
+  background-color: #666;
+  padding: 20px;
+}
 
 
 #icon-menu {
