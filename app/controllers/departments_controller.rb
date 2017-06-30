@@ -68,5 +68,10 @@ class DepartmentsController < ApplicationController
     params.require(:department).permit(:name, :description, :leaderName, :p_id)
   end
 
+  def serve
+    @departments = Department.all
+    @positions = Position.order('position2 asc')
+  end
+
 
 end

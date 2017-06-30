@@ -13,13 +13,14 @@
 </div>
 <% end %>
 
+ <!-- :selected => f.object.department.id, -->
+
 <div class="field">
   <label class="na">Department</label>
-  <%= f.select :department_id,
-  Department.order('name asc').all.collect { |u| [u.name, u.id] },
-               { include_blank: false },
-               { class: 'form-control selected' }
-               %>
+<%= f.select :department_id,
+Department.order('name asc').all.collect { |u| [u.name, u.id] },
+  { include_blank: false},
+  { class: 'form-control selected' } %>
 </div>
 
 <div class="field">

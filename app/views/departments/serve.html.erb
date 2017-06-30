@@ -5,11 +5,12 @@
 
 <div class="col-sm-12"><br>
 
-<%= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
+<%#= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
 
 <%#= render "positions/addneed" %>
+<div class="h3-white">Areas where you can serve</div>
 
-<br><br><br>
+<br>
 <% if @departments.any? %>
 <% @departments.each do |dep| %>
 <div class="white-box-ser ">

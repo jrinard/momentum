@@ -39,7 +39,7 @@
         <div class="people-box2">
           <% @positions.each do |position| %>
           <!-- Filters only this department -->
-          <% if position.department.id === dep.id %>
+          <%# if position.department.id === dep.id %>
           <div class="single-person">
             <span class="white">
               <%= position.part.firstname %>
@@ -60,7 +60,7 @@
               <%= link_to "X", position, :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
             </span>
           </div>
-          <% end %><!-- filter end -->
+          <%# end %><!-- filter end -->
           <% end %>
 
         </div><!-- people-box2 end -->
