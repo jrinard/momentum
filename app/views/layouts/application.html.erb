@@ -18,8 +18,8 @@
       <%= link_to image_tag("home.png", :class => "nav-icon-size"), root_path %>
       <%= link_to image_tag("icon-family.png", :class => "nav-icon-size"), units_path %>
       <%= link_to image_tag("serve.png", :class => "nav-icon-size"), serve_path %>
-      <%= link_to image_tag("checkin.png", :class => "nav-icon-size"), checkins_path %>
-      <% if can? :manage, :all%>
+      <%#= link_to image_tag("checkin.png", :class => "nav-icon-size"), checkins_path %>
+      <% if can? :manage, :all %>
         <%= link_to image_tag("stats.png", :class => "nav-icon-size"), stats_path %>
         <%= link_to image_tag("event.png", :class => "nav-icon-size"), revents_path %>
         <%= link_to image_tag("departments.png", :class => "nav-icon-size"), departments_path %>
@@ -33,13 +33,14 @@
         <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
         <li class=""><%= link_to "Serve", serve_path, :class => 'notWorking' %></li>
-        <li class=""><%= link_to "Event Check-in", checkins_path, :class => 'notWorking' %></li>
+        <li class=""><%#= link_to "Event Check-in", checkins_path, :class => 'notWorking' %></li>
         <%# if @user.role === "admin"%>
+        <% if can? :manage, :all %>
           <li class=""><%= link_to "Stats", stats_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(revents_path) %>"><%= link_to "Events", revents_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(users_path) %>"><%= link_to "Users", users_path, :class => 'notWorking' %></li>
-        <%# end %>
+        <% end %>
 
         <h5>Groups</h5>
         <h5>Files</h5>
