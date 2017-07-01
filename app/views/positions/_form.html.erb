@@ -1,5 +1,7 @@
 <div class="well">
 
+
+
 <%= form_for(@position) do |f| %>
 <% if @position.errors.any? %>
 <div id="error_explanation">
@@ -16,16 +18,16 @@
  <!-- :selected => f.object.department.id, -->
 
 <div class="field">
-  <label class="na">Department</label>
+<label class="na">Department</label>
 <%= f.select :department_id,
 Department.order('name asc').all.collect { |u| [u.name, u.id] },
-  { include_blank: false},
+  { selected: @department.id},
   { class: 'form-control selected' } %>
 </div>
 
 <div class="field">
-  <label class="na">Person</label>
-  <%= f.select :part_id,
+<label class="na">Person</label>
+<%= f.select :part_id,
   Part.order('lastname asc').all.map { |u| [u.lastname + ", " + u.firstname, u.id] },
                { include_blank: false},
                { class: 'form-control selected' }

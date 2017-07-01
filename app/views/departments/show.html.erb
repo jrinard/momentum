@@ -54,7 +54,7 @@
           <% end %>
           <!-- Filter end -->
           <br>
-          <%= link_to 'Add Person', new_position_path, :class => "btn-sm btn-primary" %>
+          <%= link_to 'Add Person', new_position_path(:dep_id => @department.id ) %>
         </div>
 
         <!-- Original Version -->
