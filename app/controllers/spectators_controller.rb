@@ -10,8 +10,15 @@ class SpectatorsController < ApplicationController
     # @revent = Revent.find(params[:id])
   end
 
+
+
   def new
+    if params[:revent_id] #giving revent id to spectators controller via add person link
+      @revent = Revent.find(params[:revent_id])
+    end
+
     @spectator = Spectator.new
+
     if params[:search_people]
       @searchResultsPeople = Part.search(params[:search_people])
     end
