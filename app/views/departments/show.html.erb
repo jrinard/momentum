@@ -5,11 +5,12 @@
       <div class="col-sm-5">
 
         <div class="h2-white">Department</div>
-        <br><%= link_to 'Back', :back %>
-        <br>
+        <br><%= link_to 'Back', :back %><br><br>
+
+        <p>Here you can view department details.<br>
+        You can assign people to this department or create needs.</p><br>
 
         <h3><%= @department.name %>
-          Department
         </h3><br>
         <span class="h5-grey">Description</span>
         <p><%= @department.description %></p>
@@ -30,12 +31,46 @@
         <div class="people-box">
           <h4>People in this department</h4><br>
           <% @positions.each do |position| %>
-          <!-- Filters only this department -->
-          <% if position.department.id === @department.id %>
+          <!-- Filters only this department plus if the name is empty it hides. Allows for needs-->
+          <% if position.department.id === @department.id && position.part %>
           <div class="people-btn">
             <span class="grey-btn white" id="pos_<%= position.id %>">
-              <%= position.part.firstname %>
-              <%= position.part.lastname %>
+              <% if position.part %>
+                <%= position.part.firstname %>
+                <%= position.part.lastname %>
+              <% end %>
+              <% if position.position2 === "Worker" %>
+              <%= image_tag("worker.png", :class => "icon-size-tiny")%>
+              <% end %>
+              <% if position.position2 === "Leader" %>
+              <%= image_tag("leader.png", :class => "icon-size-tiny")%>
+              <% end %>
+              <% if position.position2 === "Department Head" %>
+              <%= image_tag("dep_head2.png", :class => "icon-size-tiny")%>
+              <% end %>
+              <%= position.need %>
+            <span class="X">
+              <%= link_to "X", position, :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}, remote: true %>
+            </span></span>
+          </div>
+          <% end %>
+          <% end %>
+          <!-- Filter end -->
+          <br>
+          <%= link_to 'Add Person', new_position_path(:dep_id => @department), :class => "btn-sm btn-primary" %>
+        </div>
+
+
+        <!-- SHOWS only needs in this department-->
+        <div class="people-box">
+          <h4>Open department needs</h4><br>
+          <% @positions.each do |position| %>
+          <!-- Filters only this department + only shows needs-->
+          <% if position.department.id === @department.id %>
+          <% if position.need != "" %>
+          <div class="people-btn">
+            <span class="grey-btn white" id="pos_<%= position.id %>">
+              <%= position.need %>
               <% if position.position2 === "Worker" %>
               <%= image_tag("worker.png", :class => "icon-size-tiny")%>
               <% end %>
@@ -52,9 +87,10 @@
           </div>
           <% end %>
           <% end %>
+          <% end %>
           <!-- Filter end -->
           <br>
-          <%= link_to 'Add Person', new_position_path(:dep_id => @department), :class => "btn-sm btn-primary" %>
+          <%= link_to 'Create Need', new_position_path(:dep_id => @department), :class => "btn-sm btn-primary" %>
         </div>
 
         <!-- Original Version -->

@@ -7,26 +7,29 @@
 
 <%#= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
 
-<%#= render "positions/addneed" %>
-<div class="h3-white">Areas where you can serve</div>
+<p>Here are departments where you can serve.<br>
+In each department are specific needs that can be met</p>
 
 <br>
 <% if @departments.any? %>
 <% @departments.each do |dep| %>
 <div class="white-box-ser ">
 
-<span class="h2-black"><%= dep.name%></span>
-
+<span class="h2-black"><%= dep.name %></span>
 
     <div class="people-box2">
     <p><%= dep.description%></p>
       <% @positions.each do |position| %>
-      <% if position.department.id === dep.id %>
+
+    <!-- Filters this department and shows if the need has a value -->
+      <% if position.department.id === dep.id && position.need != "" %>
+
       <div class="single-person">
         <span class="white">
           <em><%= position.need %></em>
         </span>
       </div>
+
       <% end %><!-- filter end -->
 
       <% end %>

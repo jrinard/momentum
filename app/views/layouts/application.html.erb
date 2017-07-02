@@ -40,7 +40,7 @@
           <li class="<%= 'active_bg' if current_page?(revents_path) %>"><%= link_to "Events", revents_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(positions_path) || current_page?(departments_path) %>"><%= link_to "Departments", departments_path, :class => 'notWorking' %></li>
           <li class="<%= 'active_bg' if current_page?(users_path) %>"><%= link_to "Users", users_path, :class => 'notWorking' %></li>
-        <% end %>
+
 
         <h5>Groups</h5>
         <h5>Files</h5>
@@ -50,6 +50,7 @@
         <h5>Messages</h5>
         <h5>Needs/Announcements</h5>
         <h5>Report Bug</h5>
+        <% end %>
       </div>
 
     <div id="content-container">

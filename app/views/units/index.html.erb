@@ -5,8 +5,10 @@
           <div class="h2-white">Families</div>
         </div>
 
-        <div class="col-sm-5">
-        <br>
+        <div class="col-sm-5"><br>
+
+          <p>Here you can see all the families.</p><br>
+
         <% if can? :manage, :all%>
           <%= link_to "New Family", new_unit_path, :class => "btn btn-sm btn-primary" %>
         <%end %>

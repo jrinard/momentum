@@ -403,6 +403,11 @@ body {
 }
 
 // FORM TEXT
+
+.form-tiny-text{
+  font-style: italic;
+  font-size: .7em;
+}
 .input-lg {
   font-size: 18px;
   height: 30px;
@@ -676,6 +681,17 @@ input[type="image"]
 .well2 {
   min-width: 150px;
   max-width: 200px;
+  padding: 8px 8px;
+  margin: 5px 2.5px 5px 2.5px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+.well-med {
+  min-width: 150px;
+  max-width: 250px;
   padding: 8px 8px;
   margin: 5px 2.5px 5px 2.5px;
   background-color: #fff;

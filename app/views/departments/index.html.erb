@@ -2,11 +2,14 @@
   <div class="flex-block-big"> -->
 
     <div class="blue-bar">
-      <div class="h2-white">Departments - Serving Admin</div>
+      <div class="h2-white">Departments</div>
     </div>
 
 
     <div class="col-sm-12"><br>
+
+      <p>Here can view all departments and create new ones.</p>
+
     <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
     <!-- off for dep id error -->
     <%#= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
@@ -42,8 +45,10 @@
           <% if position.department.id === dep.id %>
           <div class="single-person">
             <span class="white">
-              <%= position.part.firstname %>
-              <%= position.part.lastname %>
+              <% if position.part %>
+                <%= position.part.firstname %>
+                <%= position.part.lastname %>
+              <% end %>
               <% if position.position2 === "Worker" %>
               <%= image_tag("worker.png", :class => "icon-size-tiny")%>
               <% end %>

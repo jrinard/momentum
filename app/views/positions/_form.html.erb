@@ -1,7 +1,8 @@
-<div class="well">
+
+<p>Add a person to a department to meet a need or create empty needs for later.</p>
 
 
-
+<div class="well-med">
 <%= form_for(@position) do |f| %>
 <% if @position.errors.any? %>
 <div id="error_explanation">
@@ -15,8 +16,6 @@
 </div>
 <% end %>
 
- <!-- :selected => f.object.department.id, -->
-
 <div class="field">
 <label class="na">Department</label>
 <%= f.select :department_id,
@@ -26,26 +25,26 @@ Department.order('name asc').all.collect { |u| [u.name, u.id] },
 </div>
 
 <div class="field">
-<label class="na">Person</label>
+<label class="na">Person</label> <span class="form-tiny-text">Leave blank to make just a need</span>
 <%= f.select :part_id,
   Part.order('lastname asc').all.map { |u| [u.lastname + ", " + u.firstname, u.id] },
-               { include_blank: false},
+               { include_blank: true},
                { class: 'form-control selected' }
                %>
 </div>
 
 <div class="field">
-  <label class="na">Position</label>
+  <label class="na">Responsibility Level</label>
   <%= f.select :position2, options_for_select([["Worker", "Worker"], ["Leader", "Leader"], ["Department Head", "Department Head"]], :selected => @position.position2), {:include_blank => false }, {:required => false, :class => 'form-control selected'} %>
 </div>
 
 <div class="field">
-  <%#= f.hidden_field :need,%>
-  <%= f.text_field :need, :placeholder => 'Need', :class => 'form-control input-lg' %>
+    <label class="na">Church Need</label>
+  <%= f.text_field :need, :placeholder => 'ie. Car Parker', :class => 'form-control input-lg' %>
 </div>
 
-<div class="actions">
-  <%= f.submit "Save", :class => "btn-lg btn-primary"%>
+<div class="actions center">
+  <%= f.submit "Save", :class => "btn btn-primary"%>
 </div>
   <%= link_to "Cancel", :back, {:class=>"btn-sm btn-default btn-cancel"} %>
 <% end %>
