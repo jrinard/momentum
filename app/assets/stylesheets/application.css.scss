@@ -171,9 +171,9 @@ h6 {
   vertical-align: center;
 }
 
-
 .shift-down {
-  padding-top: 10px;
+  margin-top: 10px;
+  // margin-left: 30px;
 }
 
 .shift-left {
@@ -649,11 +649,6 @@ input[type="image"]
  margin: 0;
 }
 .topbar > .login > li > a:hover {
-}
-
-.shift-down {
-  margin-top: 10px;
-  margin-left: 30px;
 }
 
 
@@ -1217,4 +1212,22 @@ li.selected {
   background-color: #111;
   height: 100%;
   position:fixed;
+}
+
+// Home
+
+.slider {
+  // background: url("city-slider.jpg");
+  border: solid 8px$midnight-dark;
+  box-shadow: 3px 3px 5px #000;
+  max-width: 600px
+}
+
+.notice-box {
+  background-color: $midnight-dark;
+  height: 270px;
+  max-width: 500px;
+}
+.black-bg {
+  background-color: #000;
 }

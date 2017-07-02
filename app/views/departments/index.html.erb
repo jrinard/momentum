@@ -1,83 +1,83 @@
 <!-- <div class="flex-container-big">
   <div class="flex-block-big"> -->
 
-    <div class="blue-bar">
-      <div class="h2-white">Departments</div>
-    </div>
+<div class="blue-bar">
+  <div class="h2-white center">Departments</div>
+</div>
 
+<div class="col-sm-12"><br>
 
-    <div class="col-sm-12"><br>
+  <p>Here can view all departments and create new ones.</p>
 
-      <p>Here can view all departments and create new ones.</p>
+  <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
+  <!-- off for dep id error -->
+  <%#= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
 
-    <%= link_to "New Department", new_department_path, :class => "btn btn-sm btn-primary" %>
-    <!-- off for dep id error -->
-    <%#= link_to 'Assign Person', new_position_path, :class => "btn btn-sm btn-warning" %>
+  <br><br><br>
+  <% if @departments.any? %>
+  <% @departments.each do |dep| %>
+  <div class="white-box-dep col-sm-1">
+    <div class="people-box-header">
 
-    <br><br><br>
-    <% if @departments.any? %>
-    <% @departments.each do |dep| %>
-    <div class="white-box-dep col-sm-1">
-      <div class="people-box-header">
-
-
-        <%= link_to "#{dep.name}", department_path(dep), :class => "h2-black" %>
-        <!-- Javascript form toggle -->
-        <div class="edit_family pull-right">Edit</div>
-        <div class="edit_f">
-          <%= form_for [dep] do |f| %>
-          <div class="input-group">
-            <%= f.text_field :name, :placeholder => 'Department Name', :class => 'form-control' %>
-            <div class="input-group-btn">
-              <%= f.submit "Save", :name => nil, class: "btn-search btn-sm btn-primary" %>
-            </div>
+      <%= link_to "#{dep.name}", department_path(dep), :class => "h2-black" %>
+      <!-- Javascript form toggle -->
+      <div class="edit_family pull-right">Edit</div>
+      <div class="edit_f">
+        <%= form_for [dep] do |f| %>
+        <div class="input-group">
+          <%= f.text_field :name, :placeholder => 'Department Name', :class => 'form-control' %>
+          <div class="input-group-btn">
+            <%= f.submit "Save", :name => nil, class: "btn-search btn-sm btn-primary" %>
           </div>
-          <% end %>
         </div>
-      </div> <!-- people header end -->
-        <%#= link_to "Edit",  edit_department_path(dep, @dep_id = dep.id), :class => "pull-right" %>
-        <%#= link_to 'Add Person', new_position_path, :class => "btn custom-btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <!-- people header end -->
+    <%#= link_to "Edit",  edit_department_path(dep, @dep_id = dep.id), :class => "pull-right" %>
+    <%#= link_to 'Add Person', new_position_path, :class => "btn custom-btn btn-primary" %>
 
-
-        <div class="people-box2">
-          <% @positions.each do |position| %>
-          <!-- Filters only this department -->
-          <% if position.department.id === dep.id %>
-          <div class="single-person">
-            <span class="white">
-              <% if position.part %>
-                <%= position.part.firstname %>
-                <%= position.part.lastname %>
-              <% end %>
-              <% if position.position2 === "Worker" %>
-              <%= image_tag("worker.png", :class => "icon-size-tiny")%>
-              <% end %>
-              <% if position.position2 === "Leader" %>
-              <%= image_tag("leader.png", :class => "icon-size-tiny")%>
-              <% end %>
-              <% if position.position2 === "Department Head" %>
-              <%= image_tag("dep_head2.png", :class => "icon-size-tiny")%>
-              <% end %>
-              <em><%= position.need %></em>
-            </span>
-
-            <span class="black2">
-              <%= link_to "X", position, :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-            </span>
-          </div>
-          <% end %><!-- filter end -->
+    <div class="people-box2">
+      <% @positions.each do |position| %>
+      <!-- Filters only this department -->
+      <% if position.department.id === dep.id %>
+      <div class="single-person">
+        <span class="white">
+          <% if position.part %>
+          <%= position.part.firstname %>
+          <%= position.part.lastname %>
           <% end %>
+          <% if position.position2 === "Worker" %>
+          <%= image_tag("worker.png", :class => "icon-size-tiny")%>
+          <% end %>
+          <% if position.position2 === "Leader" %>
+          <%= image_tag("leader.png", :class => "icon-size-tiny")%>
+          <% end %>
+          <% if position.position2 === "Department Head" %>
+          <%= image_tag("dep_head2.png", :class => "icon-size-tiny")%>
+          <% end %>
+          <em><%= position.need %></em>
+        </span>
 
-        </div><!-- people-box2 end -->
-    </div><!-- col-sm-1 end -->
+        <span class="black2">
+          <%= link_to "X", position, :class => "", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
+        </span>
+      </div>
+      <% end %>
+      <!-- filter end -->
+      <% end %>
 
-    <% end %>
-  <% else %>
-    <h3 class="h2-white pull-left">No Departments Yet</h3>
-    <% end %>
+    </div>
+    <!-- people-box2 end -->
+  </div>
+  <!-- col-sm-1 end -->
 
-            </div>
+  <% end %>
+<% else %>
+  <h3 class="h2-white pull-left">No Departments Yet</h3>
+  <% end %>
 
+</div>
 
-  <!-- </div>
+<!-- </div>
 </div> -->

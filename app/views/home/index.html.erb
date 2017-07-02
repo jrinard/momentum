@@ -2,15 +2,43 @@
   <div class="flex-block-big"> -->
 
   <div class="blue-bar">
-    <div class="h2-white">Dashboard</div>
+    <div class="h2-white center">Dashboard</div>
   </div>
 
+  <div class="col-sm-5"><br>
+    <div class="h3-white pull-left">Summary</div><br><br>
+      <p>Momentum is a software that allows non profit organizations or social movements to organize their internal structure. The development has been broken into phases with the first one below.</p>
+      <br>
+
+      <div class="slider">
+          <%= image_tag("city-slider.jpg", :class => "img-responsive") %>
+      </div><br>
+
+      <div class="h3-white pull-left">News</div><br><br>
+
+      <div class="notice-box">
+      </div><br>
+
+  </div>
+
+
+  <div class="col-sm-7"><br>
+      <%= calendar number_of_days: 7, events: @calendar_events do |day, events| %>
+      <div>
+        <strong><%= day.to_s %></strong>
+      </div>
+      <% events.each do |event| %>
+      <div>
+        <%= link_to event.name, revent_path(event.id, time: event.start_time) %>
+        <%= event.start_time.strftime("%I:%M %p") %>
+      </div>
+      <% end %>
+      <% end %>
+  </div><!-- col end -->
+
+
   <div class="col-sm-12">
-  <br><br>
-  <div class="h3-white pull-left">Summary</div><br><br><br>
-    <p>Momentum is a software that allows non profit organizations or social movements to organize their internal structure. The development has been broken into phases with the first one below.</p>
-    <br>
-    <div class="edit_family btn btn-sm btn-primary h3-white">User Stories for Phase 1</div>
+    <div class="edit_family btn btn-sm btn-primary h3-white">Development Overview</div>
        <div class="edit_f"><br><br>
       <div class="h3-white pull-left">Implemented</div><br><br><br>
         <p>Admin - store families and people that belong to those families</p>
@@ -51,10 +79,6 @@
         <p>Admin - post announcements/news to the dashboard</p>
 
     </div>
-
-    <%#= calendar number_of_days: 7 do |date| %>
-      <%#= date %>
-    <%# end %>
 
    </div>
 
