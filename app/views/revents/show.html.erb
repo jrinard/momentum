@@ -2,7 +2,7 @@
   <div class="flex-block-big">
     <div class="row">
       <div class="col-sm-5">
-        <div class="h2-white">Revent - Show</div>
+        <div class="h2-white"><%= @revent.name %></div>
         <br><%= link_to 'Back', :back %>
         <br>
 
@@ -15,14 +15,15 @@
         <p><%= @revent.street %><br>
           <%= @revent.city %><%= @revent.state %>
           <%= @revent.zip %></p>
+          <span class="h5-grey">Description</span>
+          <p><%= @revent.description %></p>
         <span class="h5-grey">Recurring</span>
         <% if @revent.recurring === {} %>
           <p>No</p>
         <% else %>
           <p>Yes</p>
         <% end %>
-        <span class="h5-grey">Description</span>
-        <p><%= @revent.description %></p>
+
         <br>
         <%= link_to "Delete Event", revent_path(@revent), :class => "btn btn-sm btn-danger pull-right",:data => {:confirm => "Are you sure?",:method => "delete"} %>
 
