@@ -9,12 +9,11 @@ class PositionsController < ApplicationController
   end
 
   def new
-    @department = Department.find(params[:dep_id])
+    if params[:dep_id]
+      @department = Department.find(params[:dep_id])
+    end
     @position = Position.new
     # @position = Position.new(@dep_id = params[:id])
-
-
-
 
     if params[:search_people]
       @searchResultsPeople = Part.search(params[:search_people])
