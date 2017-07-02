@@ -1218,7 +1218,7 @@ li.selected {
 
 .slider {
   // background: url("city-slider.jpg");
-  border: solid 8px$midnight-dark;
+  border: solid 8px $midnight-dark;
   box-shadow: 3px 3px 5px #000;
   max-width: 600px
 }
@@ -1230,4 +1230,32 @@ li.selected {
 }
 .black-bg {
   background-color: #000;
+}
+
+// Login
+
+.center-box {
+  height: 700px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+.midnight-box {
+  background-color: $midnight-dark;
+  border-radius: 5px;
+}
+
+.login-logo {
+  color: #fff;
+  font-size: 2.5em;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 1.5px;
+}
+
+.pull-down {
+  margin-top: 100px;
 }
