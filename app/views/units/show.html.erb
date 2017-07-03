@@ -66,10 +66,14 @@
                   <%= part.title %>
                   <span class="person-detail"><%= part.firstname %></span>
                   <span class="person-detail"><%= part.lastname %></span><br>
-                  <span class="h5-grey">Allergies:</span>
-                  <%= part.allergies %><br>
-                  <span class="h5-grey">Birthdate:</span>
-                  <%= part.birthdate.strftime("%b %d, %Y") %><br>
+                  <% if part.allergies != "" %>
+                    <span class="h5-grey">Allergies:</span>
+                    <%= part.allergies %><br>
+                  <% end %>
+                  <% if part.birthdate.strftime("%b %d, %Y") != "Jan 01, 2000" %>
+                    <span class="h5-grey">Birthdate:</span>
+                    <%= part.birthdate.strftime("%b %d, %Y") %><br>
+                  <% end %>
                   <%= part.notes %>
                 </div><br>
             <% end %>
