@@ -85,11 +85,11 @@
                     <span class="h5-white">Edit Account Ownership</span>
                   </div>
                   <div class="face back">
-                     <% if @unit.accountowner === "" %>
+                     <%# if @unit.accountowner === "" %>
                      <h5>What email account manages this family?</h5>
-                     <% else %>
-                     <h5> <%= @unit.accountowner %> manages this family.</h5>
-                     <% end %>
+                     <%# else %>
+                     <h5> <%#= @unit.accountowner %> manages this family.</h5>
+                     <%# end %>
 
                     <%= render "form_accountowner" %>
                   </div>
