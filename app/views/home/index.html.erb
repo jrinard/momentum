@@ -7,7 +7,7 @@
 
   <div class="col-sm-5"><br>
     <div class="h3-white pull-left">Summary</div><br><br>
-      <p>Momentum is a software that allows non profit organizations or social movements to organize their internal structure. The development has been broken into phases with the first one below.</p>
+      <p>Momentum is a software that allows non profit organizations or social movements to organize their internal structure. The development has been organized into phases with the first one below.</p>
       <br>
 
       <div class="slider">
@@ -41,7 +41,7 @@
 
         <% if @units.any? %>
           <% @unique_family.each do |p1| %>
-          <%= link_to "#{p1.familyname} Family", unit_path(p1), :class => "family-card btn" %><br>
+          <%= link_to "#{p1.familyname} Family - View Members", unit_path(p1), :class => "family-card btn" %><br>
         <% end %>
         <% else %>
           <h3 class="h2-white pull-left">No Families Yet</h3>
