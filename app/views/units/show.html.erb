@@ -45,14 +45,12 @@
           <p><%= @unit.notes %></p>
           <br><br>
 
-        <%# if can? :manage, :all %>
           <!-- Javascript form toggle -->
           <div class="edit_family btn btn-sm btn-warning">Edit Family</div>
           <div class="edit_f">
             <%= render "form" %>
           </div>
           <%= link_to "Delete Family", unit_path(@unit), :class => "btn btn-sm btn-danger",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
-         <%# end %>
       </div> <!-- col end -->
 
       <div class="col-sm-4">
@@ -77,27 +75,26 @@
           <% end %>
 
         </div> <!-- people-box -->
-          <%# if can? :manage, :all %>
-            <div class="card-box">
-              <div class="flip">
-                <div class="card">
-                  <div class="face front">
-                    <span class="h5-white">Edit Account Ownership</span>
-                  </div>
-                  <div class="face back">
-                     <%# if @unit.accountowner === "" %>
-                     <h5>What email account manages this family?</h5>
-                     <%# else %>
-                     <h5> <%#= @unit.accountowner %> manages this family.</h5>
-                     <%# end %>
+          <div class="card-box">
+            <div class="flip">
+              <div class="card">
+                <div class="face front">
+                  <span class="h5-white">Edit Account Ownership</span>
+                </div>
+                <div class="face back">
+                   <% if @unit.accountowner === "" %>
+                   <h5>What email account manages this family?</h5>
+                   <% else %>
+                   <h5> <%= @unit.accountowner %> manages this family.</h5>
+                   <% end %>
 
-                    <%= render "form_accountowner" %>
-                  </div>
+                  <%= render "form_owner" %>
                 </div>
               </div>
             </div>
-          <%# end %>
-      </div> <!-- col end -->
+          </div>
+
+    </div> <!-- col end -->
 
   <!-- </div>
 </div> -->
