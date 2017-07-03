@@ -8,9 +8,9 @@
       <div class="col-sm-5"><br>
 
         <%= link_to 'Back', units_path, :class => "NA" %>
-           <%# if can? :manage, :all %>
+           <% if current_user.email === @unit.accountowner || current_user.role === "admin"  %>
             <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-primary pull-right" %>
-           <%# end %>
+           <% end %>
         <br><br>
 
     <!-- PEOPLE -->
@@ -19,13 +19,13 @@
 
             <span class="midnight-btn white"id="part_<%= part.id %>">
 
-                <%# if can? :manage, :all %>
+                <% if current_user.email === @unit.accountowner || current_user.role === "admin" %>
                   <%= link_to "#{part.firstname} #{part.lastname}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
                     <span class="midnight-X">
                   <%= link_to "X", unit_part_path(@unit, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-                <%# else %>
-                <!-- <span class="fancy-font"><%= part.firstname %> <%= part.lastname %></span> -->
-                <%# end %>
+                <% else %>
+                <span class="fancy-font"><%= part.firstname %> <%= part.lastname %></span>
+                <% end %>
               </span>
             </span>
           <% end %>
@@ -44,13 +44,16 @@
           <span class="h5-grey">Notes</span>
           <p><%= @unit.notes %></p>
           <br><br>
-
+        <% if current_user.email === @unit.accountowner || current_user.role === "admin" %>
           <!-- Javascript form toggle -->
           <div class="edit_family btn btn-sm btn-warning">Edit Family</div>
           <div class="edit_f">
             <%= render "form" %>
           </div>
+        <% end %>
+        <% if current_user.role === "admin" %>
           <%= link_to "Delete Family", unit_path(@unit), :class => "btn btn-sm btn-danger",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
+        <% end %>
       </div> <!-- col end -->
 
       <div class="col-sm-4">
@@ -75,6 +78,8 @@
           <% end %>
 
         </div> <!-- people-box -->
+
+        <% if current_user.email === @unit.accountowner %>
           <div class="card-box">
             <div class="flip">
               <div class="card">
@@ -93,7 +98,7 @@
               </div>
             </div>
           </div>
-
+        <% end %>
     </div> <!-- col end -->
 
   <!-- </div>
