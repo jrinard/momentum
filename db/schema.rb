@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(version: 20170630193837) do
     t.string   "emailSecondary"
     t.string   "notes"
     t.integer  "user_id"
-    t.string   "accountOwner"
+    t.string   "accountowner"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end

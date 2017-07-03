@@ -2,7 +2,7 @@
 
     <%= form_for [@unit] do |f| %>
 
-    <%= f.text_field :accountOwner, :placeholder => 'Account Owner Email', :class => 'input-sm', :value => current_user.email %>
+    <%= f.text_field :accountowner, :placeholder => 'Account Owner Email', :class => 'input-sm', :value => current_user.email %>
     <%= f.submit "Save", :class => "btn-sm btn-primary" ,:data => {:confirm => "Important! You are about to change ownership of this account. Are you sure?",:method => "update"}%>
 
   <% end %>

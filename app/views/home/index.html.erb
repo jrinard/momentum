@@ -34,7 +34,24 @@
       </div>
       <% end %>
       <% end %>
+
+      <div class="family-list"><br>
+        <%= link_to "Add My Family", new_unit_path, :class => "btn-sm btn-primary pull-right" %>
+        <span class="h3-white">My Family </span><br><br>
+
+        <% if @units.any? %>
+          <% @unique_family.each do |p1| %>
+          <%= link_to "#{p1.familyname} Family", unit_path(p1), :class => "family-card btn" %><br>
+        <% end %>
+        <% else %>
+          <h3 class="h2-white pull-left">No Families Yet</h3>
+        <% end %>
+      </div>
+
   </div><!-- col end -->
+
+
+
 
 
   <div class="col-sm-12">

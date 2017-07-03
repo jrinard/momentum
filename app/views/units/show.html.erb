@@ -8,9 +8,9 @@
       <div class="col-sm-5"><br>
 
         <%= link_to 'Back', units_path, :class => "NA" %>
-          <% if can? :manage, :all %>
+           <%# if can? :manage, :all %>
             <%= link_to "Add Person", new_unit_part_path(@unit), :class => "btn-sm btn-primary pull-right" %>
-          <% end %>
+           <%# end %>
         <br><br>
 
     <!-- PEOPLE -->
@@ -19,13 +19,13 @@
 
             <span class="midnight-btn white"id="part_<%= part.id %>">
 
-                <% if can? :manage, :all %>
+                <%# if can? :manage, :all %>
                   <%= link_to "#{part.firstname} #{part.lastname}", edit_unit_part_path(@unit, part.id), :class => "NA" %>
                     <span class="midnight-X">
                   <%= link_to "X", unit_part_path(@unit, part), :class => "black", :id => "delete-test", :data => {:confirm => "Are you sure?",:method => "delete"}%>
-                <% else %>
-                <span class="fancy-font"><%= part.firstname %> <%= part.lastname %></span>
-                <% end %>
+                <%# else %>
+                <!-- <span class="fancy-font"><%= part.firstname %> <%= part.lastname %></span> -->
+                <%# end %>
               </span>
             </span>
           <% end %>
@@ -45,14 +45,14 @@
           <p><%= @unit.notes %></p>
           <br><br>
 
-        <% if can? :manage, :all %>
+        <%# if can? :manage, :all %>
           <!-- Javascript form toggle -->
           <div class="edit_family btn btn-sm btn-warning">Edit Family</div>
           <div class="edit_f">
             <%= render "form" %>
           </div>
           <%= link_to "Delete Family", unit_path(@unit), :class => "btn btn-sm btn-danger",:data => {:confirm => "Are you sure?",:method => "delete"}, remote: true  %>
-         <% end %>
+         <%# end %>
       </div> <!-- col end -->
 
       <div class="col-sm-4">
@@ -77,6 +77,7 @@
           <% end %>
 
         </div> <!-- people-box -->
+          <%# if can? :manage, :all %>
             <div class="card-box">
               <div class="flip">
                 <div class="card">
@@ -84,18 +85,18 @@
                     <span class="h5-white">Edit Account Ownership</span>
                   </div>
                   <div class="face back">
-                     <% if @unit.accountOwner === "" %>
+                     <% if @unit.accountowner === "" %>
                      <h5>What email account manages this family?</h5>
                      <% else %>
-                     <h5> <%= @unit.accountOwner %> manages this family.</h5>
+                     <h5> <%= @unit.accountowner %> manages this family.</h5>
                      <% end %>
 
-                    <%= render "form_accountOwner" %>
+                    <%= render "form_accountowner" %>
                   </div>
                 </div>
               </div>
             </div>
-
+          <%# end %>
       </div> <!-- col end -->
 
   <!-- </div>

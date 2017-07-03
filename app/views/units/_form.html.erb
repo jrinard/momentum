@@ -35,9 +35,9 @@
     <%= f.text_area :notes, :placeholder => 'notes', :class => 'form-control input-lg'%>
     </div>
 
-
-<!-- Select Box -->
-    <%#= f.select :backCheck, options_for_select([[''], ['True']], :selected => :backCheck) %>
+    <div class="field">
+      <%= f.hidden_field :accountowner, :value => current_user.email, :class => 'form-control input-lg' %>
+    </div>
 
 
     <div class="field">
