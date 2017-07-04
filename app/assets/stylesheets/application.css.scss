@@ -401,6 +401,9 @@ body {
   margin: 0 auto;
   padding: 8px;
 }
+.btn-custom {
+  min-width: 150px;
+}
 
 // FORM TEXT
 
@@ -697,9 +700,9 @@ input[type="image"]
 }
 
 .well-event {
-  width: 200px;
+  min-width: 150px;
   padding: 8px 8px;
-  margin: 5px 2.5px 5px 2.5px;
+  margin: 5px 15px 5px 2.5px;
   background-color: #fff;
   border: 1px solid #e3e3e3;
   border-radius: 5px;
