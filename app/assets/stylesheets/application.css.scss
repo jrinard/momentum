@@ -697,8 +697,7 @@ input[type="image"]
 }
 
 .well-event {
-  min-width: 300px;
-  max-width: 500px;
+  width: 200px;
   padding: 8px 8px;
   margin: 5px 2.5px 5px 2.5px;
   background-color: #fff;
@@ -987,10 +986,10 @@ margin: 5px 2.5px;
   width: 15%;
   display: inline;
 }
-.marg- {
-  margin-top: -40px;
-  margin-right: 10px;
-}
+// .marg- {
+//   margin-top: -40px;
+//   margin-right: 10px;
+// }
 .font-light {
   color: $grey7;
   font-size: .8em;

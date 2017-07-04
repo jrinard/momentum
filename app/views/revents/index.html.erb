@@ -2,7 +2,7 @@
   <div class="h2-white center">Events</div>
 </div>
 
-<div class="col-sm-5">
+<div class="col-sm-3">
   <br><br>
   <%= link_to "New Revent", new_revent_path, :class => "btn btn-sm btn-primary" %>
   <br><br><br>
@@ -12,10 +12,10 @@
   <div class="well-event">
 
     <%= link_to "#{revent.name}", revent, :class => "h2-black" %><br>
-    <!-- revent_path(revent) -->
-    <%= revent.start_time.strftime("%I:%M %p") %>
+    <%= revent.start_time.strftime("%I:%M %p") %>    <!-- .strftime("%b %d, %Y")  -->
 
-    <div class="edit_family pull-right marg-">Quick Edit</div>
+
+    <div class="edit_family pull-right">Quick Edit</div>
     <div class="edit_f">
       <%= form_for [revent] do |f| %>
       <div class="field">
@@ -30,8 +30,7 @@
       <%= f.submit "Save", :name => nil, class: "btn btn-sm btn-primary" %>
       <% end %>
     </div>
-    <%#= link_to 'Edit', edit_revent_path(revent) %>
-    <%#= link_to 'Destroy', revent, method: :delete, data: { confirm: 'Are you sure?' } %>
+
   </div>
   <!-- well-event end -->
   <% end %>
@@ -41,7 +40,7 @@
   <br>
 </div>
 <!-- col end -->
-<div class="col-sm-7">
+<div class="col-sm-9">
   <%= month_calendar events: @calendar_events do |day, events| %>
   <div>
     <strong><%= day.to_s %></strong>
@@ -55,3 +54,6 @@
   <% end %>
 </div>
 <!-- col end -->
+
+<%#= link_to 'Edit', edit_revent_path(revent) %>
+<%#= link_to 'Destroy', revent, method: :delete, data: { confirm: 'Are you sure?' } %>
