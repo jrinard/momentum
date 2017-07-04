@@ -9,17 +9,14 @@
     <div class="h3-white pull-left">Summary</div><br><br>
       <p>Momentum is a software that allows non profit organizations or social movements to organize their internal structure. The development has been organized into phases with the first one below.</p>
       <br>
-
       <div class="slider">
           <%= image_tag("city-slider.jpg", :class => "img-responsive") %>
       </div><br>
 
       <div class="h3-white pull-left">News</div><br><br>
-
       <div class="notice-box">
         <h5>Placeholder</h5>
       </div><br>
-
   </div>
 
 
@@ -37,7 +34,7 @@
       <% end %>
 
       <div class="family-list"><br>
-        <%= link_to "Add My Family", new_unit_path, :class => "btn-sm btn-primary pull-right" %>
+
         <span class="h3-white">My Family </span><br><br>
 
         <% if @units.any? %>
@@ -45,15 +42,11 @@
           <%= link_to "#{p1.familyname} Family - View Members", unit_path(p1), :class => "family-card btn" %><br>
         <% end %>
         <% else %>
-          <h3 class="h2-white pull-left">No Families Yet</h3>
+          <%= link_to "Add My Family", new_unit_path, :class => "btn-sm btn-primary" %>
+          <h3 class="h3-white pull-left">No Family Yet</h3>
         <% end %>
       </div>
-
   </div><!-- col end -->
-
-
-
-
 
   <div class="col-sm-12">
     <div class="edit_family btn btn-sm btn-primary h3-white">Development Overview</div>

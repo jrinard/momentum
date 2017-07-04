@@ -29,7 +29,7 @@
       </div>
       <div id="mySidenav" class="sidenav center">
         <nav class="nav">
-        <li class="close-menu" onclick="closeNav()"><%= link_to "Menu", root_path, :class => 'notWorking' %></li>
+        <li class="close-menu push-down" onclick="closeNav()"><%= link_to "Menu", root_path, :class => 'NA' %></li>
         <li class="<%= 'active_bg' if current_page?(root_path) %>"><%= link_to "Home", root_path, :class => 'notWorking' %></li>
         <li class="<%= 'active_bg' if current_page?(units_path) %>"><%= link_to "People", units_path, :class => 'notWorking' %></li>
         <li class=""><%= link_to "Serve", serve_path, :class => 'notWorking' %></li>
