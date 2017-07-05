@@ -37,7 +37,8 @@
 
         <span class="h3-white">My Family </span><br><br>
 
-        <% if @units.any? %>
+
+        <% if @unique_family.any? %>
           <% @unique_family.each do |p1| %>
           <%= link_to "#{p1.familyname} Family - View Members", unit_path(p1), :class => "family-card btn" %><br>
         <% end %>
