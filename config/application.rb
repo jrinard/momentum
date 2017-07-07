@@ -19,7 +19,7 @@ Bundler.require(*Rails.groups)
 module MovementRails
   class Application < Rails::Application
     # Timezone Global
-    config.time_zone = 'Central Time (US & Canada)'
+    config.time_zone = 'Mountain Time (US & Canada)'
     config.beginning_of_week = :sunday
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
